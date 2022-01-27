@@ -12,7 +12,6 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lottieAnimationView - findViewById(R.id.lottie);
         Handler handler = new Handler(Looper.myLooper());
 
         handler.postDelayed(new Runnable() {
