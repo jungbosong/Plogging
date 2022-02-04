@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".SplishActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -19,19 +19,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UnityActivity"
+            android:name=".Unity.UnityActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:label="@string/app_name"
-            android:name="com.unity.mynativeapp.UnityViewActivity"
+            android:name="com.unity.mynativeapp.Unity.UnityViewActivity"
             android:screenOrientation="fullSensor"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
             android:hardwareAccelerated="false"
             android:process=":Unity">
         </activity>
-
+        <activity android:name=".MainActivity"  android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
