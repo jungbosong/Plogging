@@ -7,13 +7,13 @@
     android:versionName="0.1" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="24"
         android:targetSdkVersion="30" />
 
-    <uses-feature android:glEsVersion="0x00030000" />
-    <uses-feature
-        android:name="android.hardware.vulkan.version"
-        android:required="false" />
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
@@ -23,6 +23,12 @@
     <uses-feature
         android:name="android.hardware.touchscreen.multitouch.distinct"
         android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
 
     <application>
         <activity
@@ -51,7 +57,13 @@
             android:value="portrait|landscape" />
         <meta-data
             android:name="unity.build-id"
-            android:value="f866312d-2db6-406d-9f1b-a9fd97a1f1e2" />
+            android:value="73694aaf-ed9c-4f55-b9fa-2ea39a529801" />
+        <meta-data
+            android:name="unityplayer.SkipPermissionsDialog"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
     </application>
 
 </manifest>
