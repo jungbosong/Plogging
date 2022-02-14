@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "924521752094",
+    "project_id": "final-plogging",
+    "storage_bucket": "final-plogging.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924521752094:android:ccddde0b676d548ee1b00f",
+        "android_client_info": {
+          "package_name": "com.company.unitymynativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924521752094-6gl096c92jltjk50ng9a3ptlc3cd6nql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.unitymynativeapp",
+            "certificate_hash": "6af3a21381c4bf6aac821f2fa56fdec931eb90bc"
+          }
+        },
+        {
+          "client_id": "924521752094-gg62ia2ift5midbeleflongov1e0g9dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5ROZTvJhpInZ5lZ0Q8N65eVOdH_cCDGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924521752094-gg62ia2ift5midbeleflongov1e0g9dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924521752094:android:6c1a8f541d32d946e1b00f",
+        "android_client_info": {
+          "package_name": "com.unity.mynativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924521752094-gg62ia2ift5midbeleflongov1e0g9dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5ROZTvJhpInZ5lZ0Q8N65eVOdH_cCDGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924521752094-gg62ia2ift5midbeleflongov1e0g9dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
