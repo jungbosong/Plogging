@@ -111,7 +111,7 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
 
-    // Firebase DB에서 Trashcan 데이터 검색/정렬
+    // Firebase DB에서 Trashcan 데이터 검색
     public void GetTrashcanDatabase(){
         sort = "region";
 
@@ -146,61 +146,35 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
 
-    // 테스트 함수 : 정보 저장/업데이트/삭제
+    // 테스트 함수 : User 정보만 사용. 저장/업데이트/삭제
     public void TestSave(View view){
         uid = "test12345";
         pw = "12345";
         nickname = "12345n";
         email = "12345@gmail.com";
-        tid = "test12345";
-        name = "12345n";
-        region = "12345r";
-        latitude = 12345.0;
-        longitude = 12345.1;
+
         PostUserDatabase(true);
-        PostTrashcanDatabase(true);
     }
 
     public void TestUpdate(View view){
         uid = "test12345";
         pw = "update12345";
         nickname = "update12345n";
-        email = "update12345@gmail.com";
-        tid = "test12345";
-        name = "update12345n";
-        region = "update12345r";
-        latitude = 12345.2;
-        longitude = 12345.3;
+        email = "12345@gmail.com";
+
         PostUserDatabase(true);
-        PostTrashcanDatabase(true);
     }
 
     public void TestDelete(View view){
         uid = "test12345";
-        tid = "test12345";
         PostUserDatabase(false);
-        PostTrashcanDatabase(false);
     }
 
-    // 테스트 함수 : 정보 검색
+    // 테스트 함수 : Trashcan 정보만 사용. 검색.
     public void TestGet(View view){
         // logcat 확인.
-        GetUserDatabase();
         GetTrashcanDatabase();
         // 추가 확인용 view 사용 필요
-    }
-
-
-    // 사용자 위치 받아서 근처 휴지통 검색
-    public void GetTrashcanInfo(){
-
-//        필요한 기능 : 사용자 위치 지역 검색, 지역별 휴지통 정보 필터링, 휴지통 거리계산
-//        필요한 정보 : 사용자 위치 지역, 사용자 위치(위도경도)
-
-//        입력받은 선택 지역 내 휴지통 필터링
-//        -> 일정 위치(300m) 내 휴지통 검색 (현재 위치에서 각 휴지통 까지 거리계산)
-//        -> 휴지통 가까운 순으로 정렬
-//        -> 화면에 리스트뷰로 보여주기
     }
 
 
