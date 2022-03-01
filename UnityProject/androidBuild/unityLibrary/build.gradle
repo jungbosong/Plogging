@@ -9,6 +9,7 @@ dependencies {
     implementation(name: 'ARPresto', ext:'aar')
     implementation(name: 'unityandroidpermissions', ext:'aar')
     implementation(name: 'UnityARCore', ext:'aar')
+    implementation files('libs\\com.skt.Tmap_1.70.jar')
 }
 
 android {
