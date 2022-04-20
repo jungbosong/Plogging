@@ -2,10 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.unity.mynativeapp">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -15,12 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TmapActivity"></activity>
+
+        <activity android:name=".TmapActivity" />
         <activity android:name=".realtimedb.DatabaseActivity" />
         <activity
             android:name=".SplishActivity"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,13 +33,10 @@
         <activity
             android:name=".Unity.UnityActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-          />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".fragment.recycle.TestActivity"
-            android:label="@string/app_name"
-
-             />
+            android:label="@string/app_name" />
         <activity
             android:name=".Unity.UnityViewActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
@@ -44,33 +44,27 @@
             android:label="@string/app_name"
             android:process=":Unity"
             android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".MainActivity"
-             />
-        <activity
-            android:name=".fragment.recycle.bagActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.canActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.clothActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.glassActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.lightActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.paperActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.plasticActivity"
-            />
-        <activity
-            android:name=".fragment.recycle.pomActivity"
-            />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".fragment.recycle.bagActivity" />
+        <activity android:name=".fragment.recycle.canActivity" />
+        <activity android:name=".fragment.recycle.clothActivity" />
+        <activity android:name=".fragment.recycle.glassActivity" />
+        <activity android:name=".fragment.recycle.lightActivity" />
+        <activity android:name=".fragment.recycle.paperActivity" />
+        <activity android:name=".fragment.recycle.plasticActivity" />
+        <activity android:name=".fragment.recycle.pomActivity" />
+        <activity android:name=".fragment.recycle.tflite.cameraActivity" android:screenOrientation="portrait" />
+        <activity android:name=".fragment.recycle.tflite.galleryActivity" android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.unity.mynativeapp"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

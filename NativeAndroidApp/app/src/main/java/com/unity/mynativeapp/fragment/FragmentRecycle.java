@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -20,10 +21,12 @@ import com.unity.mynativeapp.fragment.recycle.lightActivity;
 import com.unity.mynativeapp.fragment.recycle.paperActivity;
 import com.unity.mynativeapp.fragment.recycle.plasticActivity;
 import com.unity.mynativeapp.fragment.recycle.pomActivity;
+import com.unity.mynativeapp.fragment.recycle.tflite.cameraActivity;
+import com.unity.mynativeapp.fragment.recycle.tflite.galleryActivity;
 
 public class FragmentRecycle extends Fragment {
     ImageButton plastic,bag,glass,can,paper,pom,cloth,light;
-
+    Button camera,gallery;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_recycle,container,false);
         plastic = view.findViewById(R.id.plastic);
@@ -34,13 +37,27 @@ public class FragmentRecycle extends Fragment {
         pom = view.findViewById(R.id.pom);
         cloth = view.findViewById(R.id.cloth);
         light = view.findViewById(R.id.light);
-
+        camera = view.findViewById(R.id.camera_layout);
+        gallery = view.findViewById(R.id.gallery_layout);
+        camera.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), cameraActivity.class);
+                startActivity(intent);
+            }
+        });
+        gallery.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), galleryActivity.class);
+                startActivity(intent);
+            }
+        });
         plastic.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), plasticActivity.class);
                 startActivity(intent);
             }
         });
+
         bag.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), bagActivity.class);
