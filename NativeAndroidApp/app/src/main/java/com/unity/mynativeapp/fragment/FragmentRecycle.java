@@ -2,40 +2,90 @@ package com.unity.mynativeapp.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.unity.mynativeapp.R;
-import com.unity.mynativeapp.fragment.recycle.TestActivity;
+import com.unity.mynativeapp.fragment.recycle.bagActivity;
+import com.unity.mynativeapp.fragment.recycle.canActivity;
+import com.unity.mynativeapp.fragment.recycle.clothActivity;
+import com.unity.mynativeapp.fragment.recycle.glassActivity;
+import com.unity.mynativeapp.fragment.recycle.lightActivity;
+import com.unity.mynativeapp.fragment.recycle.paperActivity;
+import com.unity.mynativeapp.fragment.recycle.plasticActivity;
+import com.unity.mynativeapp.fragment.recycle.pomActivity;
 
 public class FragmentRecycle extends Fragment {
-    Button Test,Camera;
-    @Nullable
+    ImageButton plastic,bag,glass,can,paper,pom,cloth,light;
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_recycle,container,false);
-        Test = v.findViewById(R.id.test);
-        Test.setOnClickListener(new View.OnClickListener() {
+        View view =inflater.inflate(R.layout.fragment_recycle,container,false);
+        plastic = view.findViewById(R.id.plastic);
+        bag = view.findViewById(R.id.bag);
+        glass = view.findViewById(R.id.glass);
+        paper = view.findViewById(R.id.paper);
+        can = view.findViewById(R.id.can);
+        pom = view.findViewById(R.id.pom);
+        cloth = view.findViewById(R.id.cloth);
+        light = view.findViewById(R.id.light);
+
+        plastic.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), TestActivity.class);
+                Intent intent = new Intent(getActivity(), plasticActivity.class);
+                startActivity(intent);
+            }
+        });
+        bag.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), bagActivity.class);
+                startActivity(intent);
+            }
+        });
+        glass.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), glassActivity.class);
+                startActivity(intent);
+            }
+        });
+        can.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), canActivity.class);
                 startActivity(intent);
             }
         });
 
-        Camera = v.findViewById(R.id.camera);
-        Camera.setOnClickListener(new View.OnClickListener() {
+        paper.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 0);
-
+                Intent intent = new Intent(getActivity(), paperActivity.class);
+                startActivity(intent);
             }
         });
-        return v;
+        pom.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), pomActivity.class);
+                startActivity(intent);
+            }
+        });
+        cloth.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), clothActivity.class);
+                startActivity(intent);
+            }
+        });
+        light.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), lightActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        return view;
+
     }
 }

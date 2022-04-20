@@ -20,7 +20,7 @@
         <activity
             android:name=".SplishActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,11 +30,13 @@
         <activity
             android:name=".Unity.UnityActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+          />
         <activity
             android:name=".fragment.recycle.TestActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+
+             />
         <activity
             android:name=".Unity.UnityViewActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
@@ -44,7 +46,31 @@
             android:screenOrientation="fullSensor" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
+        <activity
+            android:name=".fragment.recycle.bagActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.canActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.clothActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.glassActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.lightActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.paperActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.plasticActivity"
+            />
+        <activity
+            android:name=".fragment.recycle.pomActivity"
+            />
     </application>
 
 </manifest>

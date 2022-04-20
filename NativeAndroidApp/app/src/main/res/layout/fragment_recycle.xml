@@ -1,37 +1,364 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:stretchColumns="0,1,2,3"
+        android:paddingVertical="10dp">
+
+        <!--첫번째 Row-->
+
+        <!--두번쨰 Row-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/plastic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_plastic"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/plastic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="플라스틱류"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+            </TableLayout>
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="recycle"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape"
+                android:paddingHorizontal="4dp">
 
-    <Button
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="flowbutton"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        tools:layout_editor_absoluteX="148dp" />
+                <ImageButton
+                    android:id="@+id/bag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_bag"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
 
-    <Button
-        android:id="@+id/camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="camerabutton"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:layout_editor_absoluteX="147dp" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/bag_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/bag" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="비닐류"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="20dp">
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape"
+                android:layout_margin="10dp"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/glass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_glass"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/image_glass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/glasses" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="유리병류"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape"
+                android:layout_margin="10dp"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/can"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_can"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/image_can"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/cam" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="금속캔"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="20dp">
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape"
+                android:layout_margin="10dp"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/paper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_paper"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/image_paper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/paper" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="종이류"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape"
+                android:layout_margin="10dp"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/pom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_form"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/image_pom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="아이스팩/기타"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/cloth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_cloth"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image_cloth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="의류"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape"
+                android:paddingHorizontal="4dp">
+
+                <ImageButton
+                    android:id="@+id/light"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/image_light"
+                    android:gravity="center"
+                    android:padding="25dp"
+                    android:scaleType="fitXY" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image_light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        
+                        android:gravity="center"
+                        android:text="폐 형광등"
+                        android:textColor="@color/textColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+        </TableRow>
+
+    </TableLayout>
+</androidx.core.widget.NestedScrollView>
