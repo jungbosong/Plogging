@@ -1,0 +1,112 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+            {"type": "Feature",
+                "geometry": {
+                        "type": "Point",
+                        "coordinates": [126.92364104902308,37.556759264185274 ]
+                },
+                "properties":{
+                    "index": 1,
+                    "pointIndex": 1,
+                    "name": "",
+                    "guidePointName": "",
+                    "description": "양화로 을 따라 양화로 방면으로 6m 이동",
+                    "direction": "",
+                    "intersectionName": "",
+                    "nearPoiName": "",
+                    "nearPoiX": "0.0",
+                    "nearPoiY": "0.0",
+                    "crossName": "",
+                    "turnType": 200,
+                    "pointType": "SP"
+                }
+            },
+            {"type": "Feature",
+                "geometry": 
+                        {
+                        "type": "LineString",
+                        "coordinates": [
+                            [126.92364104902308,37.556759264185274 ],[126.92359383142113,37.55672315696065 ]
+                            ]
+                },
+                "properties":{
+                    "index": 2,
+                    "lineIndex": 1,
+                    "name": "양화로",
+                    "roadName": "양화로",
+                    "description": "양화로, 6m",
+                    "distance": 6,
+                    "time": 5,
+                    "roadType": 23,
+                    "categoryRoadType": 0,
+                    "facilityType": 17,
+                    "facilityName": "일반보행자도로"
+                }
+            },
+            {"type": "Feature",
+                "geometry": {
+                        "type": "Point",
+                        "coordinates": [126.92359383142113,37.55672315696065 ]
+                },
+                "properties":{
+                    "index": 3,
+                    "pointIndex": 2,
+                    "name": "",
+                    "guidePointName": "",
+                    "description": "양화로 방면으로 좌측 횡단보도 후 양화로 을 따라 19m 이동 ",
+                    "direction": "",
+                    "intersectionName": "",
+                    "nearPoiName": "",
+                    "nearPoiX": "0.0",
+                    "nearPoiY": "0.0",
+                    "crossName": "",
+                    "turnType": 212,
+                    "pointType": "GP"
+                }
+            },
+            {"type": "Feature",
+                "geometry": 
+                        {
+                        "type": "LineString",
+                        "coordinates": [
+                            [126.92359383142113,37.55672315696065 ],[126.92372993148247,37.55659261733597 ]
+                            ]
+                },
+                "properties":{
+                    "index": 4,
+                    "lineIndex": 2,
+                    "name": "양화로",
+                    "roadName": "양화로",
+                    "description": "양화로, 19m",
+                    "distance": 19,
+                    "time": 73,
+                    "roadType": 23,
+                    "categoryRoadType": 0,
+                    "facilityType": 17,
+                    "facilityName": "일반보행자도로"
+                }
+            },
+            {"type": "Feature",
+                "geometry": {
+                        "type": "Point",
+                        "coordinates": [126.92372993148247,37.55659261733597 ]
+                },
+                "properties":{
+                    "index": 5,
+                    "pointIndex": 3,
+                    "name": "대한생명 홍익BRANCH",
+                    "guidePointName": "대한생명 홍익BRANCH",
+                    "description": "대한생명 홍익BRANCH 에서 대한생명 홍익BRANCH 방면으로 우회전 후 양화로 을 따라 94m 이동 ",
+                    "direction": "",
+                    "intersectionName": "",
+                    "nearPoiName": "",
+                    "nearPoiX": "0.0",
+                    "nearPoiY": "0.0",
+                    "crossName": "",
+                    "turnType": 13,
+                    "pointType": "GP"
+                }
+            }
+    ]
+}
