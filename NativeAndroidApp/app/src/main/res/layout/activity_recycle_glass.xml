@@ -1,18 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="recycle glass"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingVertical="20dp">
+
+        <TableRow
+            android:paddingLeft="30dp">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/photo_glasses" />
+        </TableRow>
+        <TableLayout
+            android:paddingLeft="30dp">
+            <TextView
+                android:text="음료수병, 기타 유리"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                />
+
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_glasses" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="내용물은 비우고 물로 헹구는 등 이물질을 제거하여 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="담배꽁초 등 이물질을 넣지 않고 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="유리병이 깨지지 않돌고 주의하여 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+
+
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="보증금 병"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_glasses" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="소주병, 맥주병, 청량음료병 등은 빈용기 보증금 대상 유리병에 해당"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="병뚜껑과 라벨이 보증금 환불 문구 확인"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="소매점 ( 마트, 슈퍼 )에 반납하면 빈병 보증금 환불 가능"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="깨진 유리"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_glasses" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="신문지 또는 종이에 사서 종량제 봉투에 담아 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="깨진 유리의 양이 많은 경우 불연성 종량제 봉투(마대형)을 읍 면 사무에서 구입해 배출해야 한다."
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="재활용이 안되는 품목"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/glasses" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="유백색유리병(화장품 용기 등), 도자기류, 거울, 폐타일, 사기그릇,계진 병, 일반 판 유리 등 "
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+    </TableLayout>
+</androidx.core.widget.NestedScrollView>

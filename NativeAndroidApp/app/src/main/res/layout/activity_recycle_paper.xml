@@ -1,18 +1,298 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="recycle paper"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingVertical="20dp">
+
+        <TableRow
+            android:paddingLeft="30dp">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/photo_papers" />
+        </TableRow>
+        <TableLayout
+            android:paddingLeft="30dp">
+            <TextView
+                android:text="종이류"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                />
+
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp"/>
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="신문지,책자,종이컵,상자류"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+            <TextView
+                android:paddingLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="(골판지 상자 등)"
+                android:textColor="@color/black"
+                android:textSize="23dp" />
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_can" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="일정량 묶어서 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="다른재질(스프링,철핀 등)은 제거 후 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="종이컵은 물로 헹군 후 압착하여 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="종이팩"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+            <TextView
+                android:paddingLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="(우유팩,음료팩)"
+                android:textColor="@color/black"
+                android:textSize="23dp" />
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_can" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="내용물은 비우고 물로 헹군 후 펴서 말린후 읍면사무소 및 동 행정복지센터 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="보상기준 : 종이팩 1kg ⇒ 종량제봉투 20ℓ 2매"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="2021년 1월 부터 수거보상제 실시"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="재활용이 안되는 품목"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_can" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="비닐코팅 종이류, 1회용 기저귀, 사진, 화장실 사용 휴지, 세척하지 않은 종이컵 등"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+    </TableLayout>
+</androidx.core.widget.NestedScrollView>

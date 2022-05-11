@@ -1,18 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="recycle bag"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingVertical="20dp">
+
+        <TableRow
+            android:paddingLeft="30dp">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/photo_bag" />
+        </TableRow>
+        <TableLayout
+            android:paddingLeft="30dp">
+            <TextView
+                android:text="라면, 과자 등 비닐봉투"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                />
+
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_bag" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="내용물은 비우고 물로 헹구는 등 이물질을 제거후 물기를 제거후 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="흩날리지 않도록 봉투에 담거나 잘 묶어 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="필름지, 시트지, 랩 필름 등 분리배출 표시가 없어도 비닐류로 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="재활용이 안되는 품목"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+        </TableLayout>
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/photo_bag" />
+            </TableRow>
+
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/bag"
+                android:text="깨끗하게 이물질이 제거가 되지 않은 랩 필름과 식탁보, 고무장갑, 장판, 돗자리, 섬유 등 ( 천막, 현수막, 의류, 침구류 등)은 종량제 봉투, 특수 규격마대 또는 대형 폐기물로배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+    </TableLayout>
+</androidx.core.widget.NestedScrollView>
