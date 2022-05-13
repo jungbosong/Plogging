@@ -66,8 +66,7 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="15"
-            android:hint="홍길동"
-            android:inputType="textPassword" />
+            android:hint="홍길동" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +82,7 @@
             android:autofillHints=""
             android:ems="15"
             android:hint="example@gnu.ac.kr"
-            android:inputType="textPassword" />
+            android:inputType="textEmailAddress" />
     </LinearLayout>
 
     <Button

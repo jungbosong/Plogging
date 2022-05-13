@@ -55,6 +55,7 @@
         <activity android:name=".fragment.recycle.pomActivity" />
         <activity android:name=".fragment.recycle.tflite.cameraActivity" android:screenOrientation="portrait" />
         <activity android:name=".fragment.recycle.tflite.galleryActivity" android:screenOrientation="portrait" />
+        <activity android:name=".fragment.FragmentTest" />
         <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".JoinActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".JoinModifyActivity" />

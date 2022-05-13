@@ -6,11 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SlidingDrawer;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.unity.mynativeapp.MainActivity;
 import com.unity.mynativeapp.R;
 import com.unity.mynativeapp.TmapActivity;
 import com.unity.mynativeapp.realtimedb.DatabaseActivity;
@@ -19,7 +24,7 @@ public class FragmentHome extends Fragment {
 
     private Button moveTmap_btn;
     private Button moveDB_btn;
-
+    private FloatingActionButton locationHere;
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_home,container,false);
@@ -47,6 +52,22 @@ public class FragmentHome extends Fragment {
             }
         });
 
+        locationHere = v.findViewById(R.id.locationHere);
+        locationHere.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+            }
+        });
+
         return v;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            ((MainActivity) activity).setActionBarTitle("지도");
+        }
     }
 }

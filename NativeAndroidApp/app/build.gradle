@@ -21,8 +21,8 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:2.7.0'
     implementation "androidx.multidex:multidex:2.0.1"
     implementation 'org.tensorflow:tensorflow-lite-support:0.3.0'
-
-
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
 }
 
 

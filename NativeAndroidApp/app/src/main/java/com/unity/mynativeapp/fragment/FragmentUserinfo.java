@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.unity.mynativeapp.JoinModifyActivity;
 import com.unity.mynativeapp.MainActivity;
@@ -22,7 +23,7 @@ import com.unity.mynativeapp.Unity.UnityActivity;
 public class FragmentUserinfo extends Fragment {
     @Nullable
     TextView userinfoNickName,userinfoEmail,userinfoLogout;
-    TextView userregister,usertrashcan,userinforeset;
+    TextView userregister,usertrashcan,userinforeset,unity;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_userinfo,container,false);
         //로그아웃
@@ -51,7 +52,23 @@ public class FragmentUserinfo extends Fragment {
                 startActivity(intent);
             }
         });
+
+        unity = view.findViewById(R.id.unity);
+        unity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), FragmentTest.class);
+                startActivity(intent);
+            }
+        });
         return view;
 
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            ((MainActivity) activity).setActionBarTitle("내 정보");
+        }
     }
 }

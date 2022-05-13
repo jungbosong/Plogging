@@ -128,6 +128,17 @@
             android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             />
+        <TextView
+            android:id="@+id/unity"
+            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="unity연결test"
+            android:textSize="25dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            />
 
     </LinearLayout>
 
