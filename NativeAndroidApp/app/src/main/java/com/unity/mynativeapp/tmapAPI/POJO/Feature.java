@@ -13,6 +13,30 @@ import com.google.gson.annotations.SerializedName;
 @Expose : object 중 해당 값이 null일 경우, json으로 만들 필드를 자동 생략
  */
 
+/*
+{"type": "Feature",
+        "geometry": {
+                "type": "Point",
+                "coordinates": [126.92364104902308,37.556759264185274 ]
+        },
+        "properties":{
+            "index": 1,
+            "pointIndex": 1,
+            "name": "",
+            "guidePointName": "",
+            "description": "양화로 을 따라 양화로 방면으로 6m 이동",
+            "direction": "",
+            "intersectionName": "",
+            "nearPoiName": "",
+            "nearPoiX": "0.0",
+            "nearPoiY": "0.0",
+            "crossName": "",
+            "turnType": 200,
+            "pointType": "SP"
+        }
+}
+ */
+
 @Generated("jsonschema2pojo")
 public class Feature {
 

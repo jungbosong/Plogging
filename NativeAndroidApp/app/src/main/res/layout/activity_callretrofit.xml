@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".tmapAPI.APITestActivity">
+    tools:context=".tmapAPI.CallRetrofitActivity">
 
     <Button
         android:id="@+id/response_btn"
