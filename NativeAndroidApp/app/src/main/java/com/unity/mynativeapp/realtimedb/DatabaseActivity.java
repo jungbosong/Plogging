@@ -89,7 +89,7 @@ public class DatabaseActivity extends AppCompatActivity {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {   // child 개수만큼 반복
                     String key = postSnapshot.getKey();
                     UserInfo get = postSnapshot.getValue(UserInfo.class);
-                    String[] user_info = {get.uid, get.pw, get.nickname, get.email};
+                    String[] user_info = {get.getUid(), get.getPw(), get.getNickname(), get.getEmail()};
                     Log.d("GetUserDatabase", "key: " + key);
                     Log.d("GetUserDatabase", "info: " + user_info[0] +", "+ user_info[1] +", "+ user_info[2] +", "+ user_info[3]);
                 }
@@ -123,7 +123,7 @@ public class DatabaseActivity extends AppCompatActivity {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {   // child 개수만큼 반복
                     String key = postSnapshot.getKey();
                     TrashcanInfo get = postSnapshot.getValue(TrashcanInfo.class);
-                    String[] t_info = {get.name, get.region, String.valueOf(get.latitude), String.valueOf(get.longitude)};
+                    String[] t_info = {get.getName(), get.getRegion(), String.valueOf(get.getLatitude()), String.valueOf(get.getLongitude())};
                     Log.d("GetTrashcanDatabase", "key: " + key);
                     Log.d("GetTrashcanDatabase", "info: " + t_info[0] +", "+ t_info[1] +", "+ t_info[2] +", "+ t_info[3]);
                 }

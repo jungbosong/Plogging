@@ -17,7 +17,7 @@ import com.unity.mynativeapp.MainActivity;
 import com.unity.mynativeapp.R;
 import com.unity.mynativeapp.TmapActivity;
 import com.unity.mynativeapp.realtimedb.DatabaseActivity;
-import com.unity.mynativeapp.tmapAPI.APITestActivity;
+import com.unity.mynativeapp.tmapAPI.CallRetrofitActivity;
 
 public class FragmentHome extends Fragment {
 
@@ -34,7 +34,7 @@ public class FragmentHome extends Fragment {
         moveRetrofit_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getActivity(), APITestActivity.class);
+                Intent intent = new Intent(getActivity(), CallRetrofitActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }

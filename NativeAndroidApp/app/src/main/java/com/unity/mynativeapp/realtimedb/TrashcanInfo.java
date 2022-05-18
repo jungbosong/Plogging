@@ -8,11 +8,11 @@ import java.util.Map;
 //각 trashcan 정보를 임시저장하는 자바 객체
 public class TrashcanInfo
 {
-    public String tid;       //trashcan 고유 id
-    public String name;      //trashcan 이름
-    public String region;    //trashcan 지역
-    public Double latitude;  //trashcan location : 위도
-    public Double longitude; //trashcan location : 경도
+    private String tid;       //trashcan 고유 id
+    private String name;      //trashcan 이름
+    private String region;    //trashcan 지역
+    private Double latitude;  //trashcan location : 위도
+    private Double longitude; //trashcan location : 경도
 
     public TrashcanInfo() {
 
@@ -39,7 +39,7 @@ public class TrashcanInfo
         return result;
     }
 
-    /*
+    // 각 정보 get/set
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getRegion() { return region; }
@@ -48,7 +48,7 @@ public class TrashcanInfo
     public void setLatitude(Double latitude) { this.latitude = latitude; }
     public Double getLongitude() { return longitude; }
     public void setLongitude(Double longitude) { this.longitude = longitude; }
-     */
+
 
 }
 

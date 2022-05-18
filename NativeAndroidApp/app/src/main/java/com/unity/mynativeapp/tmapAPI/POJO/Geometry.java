@@ -11,6 +11,13 @@ import com.google.gson.annotations.SerializedName;
 @Expose : object 중 해당 값이 null일 경우, json으로 만들 필드를 자동 생략
  */
 
+/*
+{
+    "type": "Point",
+    "coordinates": [126.92364104902308,37.556759264185274 ]
+}
+ */
+
 @Generated("jsonschema2pojo")
 public class Geometry {
 
@@ -25,16 +32,8 @@ public class Geometry {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public ArrayList getCoordinates() {
         return coordinates;
-    }
-
-    public void setCoordinates(ArrayList coordinates) {
-        this.coordinates = coordinates;
     }
 
     @Override

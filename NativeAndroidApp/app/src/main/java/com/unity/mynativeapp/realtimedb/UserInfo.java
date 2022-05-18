@@ -8,10 +8,10 @@ import java.util.Map;
 // 각 user 정보를 임시저장하는 자바 객체
 public class UserInfo
 {
-    public String uid;         //user 고유 id
-    public String pw;          //user pw
-    public String nickname;    //user nickname
-    public String email;       //user email address
+    private String uid;         //user 고유 id
+    private String pw;          //user pw
+    private String nickname;    //user nickname
+    private String email;       //user email address
 
     public UserInfo() {
 
@@ -36,12 +36,14 @@ public class UserInfo
         return result;
     }
 
-    /*
-    public String getUserpw() { return userpw; }
-    public void setUserpw(String userpw) { this.userpw = userpw; }
+    // 각 정보 get/set
+    public String getUid() { return uid; }
+    public void setUid(String uid) { this.uid = uid; }
+    public String getPw() { return pw; }
+    public void setPw(String pw) { this.pw = pw; }
     public String getNickname() { return nickname; }
     public void setNickname(String nickname) { this.nickname = nickname; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-     */
+
 }

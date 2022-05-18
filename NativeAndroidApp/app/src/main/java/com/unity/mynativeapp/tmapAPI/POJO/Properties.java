@@ -9,6 +9,24 @@ import com.google.gson.annotations.SerializedName;
 @Expose : object 중 해당 값이 null일 경우, json으로 만들 필드를 자동 생략
  */
 
+/*
+{
+    "index": 1,
+    "pointIndex": 1,
+    "name": "",
+    "guidePointName": "",
+    "description": "양화로 을 따라 양화로 방면으로 6m 이동",
+    "direction": "",
+    "intersectionName": "",
+    "nearPoiName": "",
+    "nearPoiX": "0.0",
+    "nearPoiY": "0.0",
+    "crossName": "",
+    "turnType": 200,
+    "pointType": "SP"
+}
+ */
+
 @Generated("jsonschema2pojo")
 public class Properties {
 
@@ -77,16 +95,8 @@ public class Properties {
         return totalDistance;
     }
 
-    public void setTotalDistance(Integer totalDistance) {
-        this.totalDistance = totalDistance;
-    }
-
     public Integer getTotalTime() {
         return totalTime;
-    }
-
-    public void setTotalTime(Integer totalTime) {
-        this.totalTime = totalTime;
     }
 
     public Integer getIndex() {
@@ -101,10 +111,6 @@ public class Properties {
         return pointIndex;
     }
 
-    public void setPointIndex(Integer pointIndex) {
-        this.pointIndex = pointIndex;
-    }
-
     public String getName() {
         return name;
     }
@@ -117,121 +123,62 @@ public class Properties {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getDirection() {
         return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
     }
 
     public String getNearPoiName() {
         return nearPoiName;
     }
 
-    public void setNearPoiName(String nearPoiName) {
-        this.nearPoiName = nearPoiName;
-    }
-
     public String getNearPoiX() {
         return nearPoiX;
-    }
-
-    public void setNearPoiX(String nearPoiX) {
-        this.nearPoiX = nearPoiX;
     }
 
     public String getNearPoiY() {
         return nearPoiY;
     }
 
-    public void setNearPoiY(String nearPoiY) {
-        this.nearPoiY = nearPoiY;
-    }
-
     public String getIntersectionName() {
         return intersectionName;
-    }
-
-    public void setIntersectionName(String intersectionName) {
-        this.intersectionName = intersectionName;
     }
 
     public String getFacilityType() {
         return facilityType;
     }
 
-    public void setFacilityType(String facilityType) {
-        this.facilityType = facilityType;
-    }
-
     public String getFacilityName() {
         return facilityName;
-    }
-
-    public void setFacilityName(String facilityName) {
-        this.facilityName = facilityName;
     }
 
     public Integer getTurnType() {
         return turnType;
     }
 
-    public void setTurnType(Integer turnType) {
-        this.turnType = turnType;
-    }
-
     public String getPointType() {
         return pointType;
-    }
-
-    public void setPointType(String pointType) {
-        this.pointType = pointType;
     }
 
     public Integer getLineIndex() {
         return lineIndex;
     }
 
-    public void setLineIndex(Integer lineIndex) {
-        this.lineIndex = lineIndex;
-    }
-
     public Integer getDistance() {
         return distance;
-    }
-
-    public void setDistance(Integer distance) {
-        this.distance = distance;
     }
 
     public Integer getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
-        this.time = time;
-    }
-
     public Integer getRoadType() {
         return roadType;
-    }
-
-    public void setRoadType(Integer roadType) {
-        this.roadType = roadType;
     }
 
     public Integer getCategoryRoadType() {
         return categoryRoadType;
     }
 
-    public void setCategoryRoadType(Integer categoryRoadType) {
-        this.categoryRoadType = categoryRoadType;
-    }
 
     @Override
     public String toString() {

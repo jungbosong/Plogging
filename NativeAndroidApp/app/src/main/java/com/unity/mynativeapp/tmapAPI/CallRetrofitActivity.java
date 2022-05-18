@@ -8,12 +8,16 @@ import android.view.View;
 import com.unity.mynativeapp.R;
 import com.unity.mynativeapp.tmapAPI.POJO.Route;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class APITestActivity extends AppCompatActivity{
+public class CallRetrofitActivity extends AppCompatActivity{
 
     public void testResponse(View view){
         String TAG = "REST API TEST";
@@ -45,7 +49,22 @@ public class APITestActivity extends AppCompatActivity{
                 if(response.isSuccessful()){
                     // 정상적으로 통신이 성공 된 경우
                     Route result = response.body();
-                    Log.d(TAG, "onResponse: 성공, 결과\n"+ result.toString());
+                    //Log.d(TAG, "onResponse: 성공, 결과\n"+ result.toString());
+
+                    // feature 반환 메소드 사용 방법
+                    // 1. List<Map<String, Object>> 빈 객체 생성
+                    List<Map<String, Object>> feature = new ArrayList<>();
+
+                    // 2. 객체에 Route 클래스의  getTypeFeatures(type) 메소드 반환값 저장
+                    // type = "Point" or "LineString"
+                    feature = result.getTypeFeatures("Point");
+
+                    // 3. key값으로 원하는 객체 및 값에 접근
+                    // 이때 각 key는 각 정보명을 _로 연결한 이름 (ex turnType -> turn_type)
+                    // ex1) 하나의 객체에 접근(key값 전달)
+                    Integer point_index = (Integer) feature.get(0).get("point_index");
+                    Log.d(TAG, "getTypeFeature: 호출 성공, 결과 \n" + "point_index: " + point_index);
+
                 } else {
                     // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                     Log.d(TAG, "onResponse: 실패");
@@ -64,6 +83,6 @@ public class APITestActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apitest);
+        setContentView(R.layout.activity_callretrofit);
     }
 }
