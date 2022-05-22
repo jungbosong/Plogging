@@ -107,12 +107,5 @@ public class FragmentRecycle extends Fragment {
         return view;
 
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        FragmentActivity activity = getActivity();
-        if (activity != null) {
-            ((MainActivity) activity).setActionBarTitle("분리수거하기");
-        }
-    }
+
 }

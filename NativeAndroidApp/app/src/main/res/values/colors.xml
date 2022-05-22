@@ -8,4 +8,5 @@
     <color name="windowBackground">#ffffff</color>
     <color name = "colorAccent" >#00574B</color>
     <color name = "imageColor" >#00574B</color>
+    <color name="white">#FFFFFF</color>
 </resources>

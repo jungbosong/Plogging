@@ -2,6 +2,8 @@ package com.unity.mynativeapp.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +27,10 @@ public class FragmentHome extends Fragment {
     private Button moveDB_btn;
     private Button moveRetrofit_btn;
     private FloatingActionButton locationHere;
+
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_home,container,false);
-
         // 상단 버튼 클릭 시 TestActivity로 이동
         moveRetrofit_btn = (Button) v.findViewById(R.id.retrofit_btn);
         moveRetrofit_btn.setOnClickListener(new View.OnClickListener(){
@@ -74,12 +76,5 @@ public class FragmentHome extends Fragment {
 
         return v;
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        FragmentActivity activity = getActivity();
-        if (activity != null) {
-            ((MainActivity) activity).setActionBarTitle("지도");
-        }
-    }
+
 }
