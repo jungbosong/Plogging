@@ -2,8 +2,6 @@ package com.unity.mynativeapp.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +10,10 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.unity.mynativeapp.MainActivity;
 import com.unity.mynativeapp.R;
-import com.unity.mynativeapp.TmapActivity;
+import com.unity.mynativeapp.tmapAPI.TmapActivity;
 import com.unity.mynativeapp.realtimedb.DatabaseActivity;
 import com.unity.mynativeapp.tmapAPI.CallRetrofitActivity;
 

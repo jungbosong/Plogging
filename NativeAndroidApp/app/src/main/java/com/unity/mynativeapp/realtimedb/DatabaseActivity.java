@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,6 +14,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.unity.mynativeapp.POJO.TrashcanInfo;
+import com.unity.mynativeapp.POJO.UserInfo;
 import com.unity.mynativeapp.R;
 
 import java.util.HashMap;
@@ -35,12 +36,13 @@ public class DatabaseActivity extends AppCompatActivity {
     String region;      // trashcan 지역
     Double latitude;    // trashcan location : 위도
     Double longitude;   // trashcan location : 경도
+    int report;         // trashcan 신고횟수
     String sort;        // 데이터 정렬 기준 child
 
 
     // Firebase DB에서 User 데이터 저장/업데이트/삭제
     // 매개변수 add (false:삭제, true:저장/업데이트)
-    public void PostUserDatabase(boolean add){
+    public void SetUserDatabase(boolean add){
         mPostReference = FirebaseDatabase.getInstance().getReference();     // Database 인스턴스
 
         // update할 child(경로+값)와 해당 child의 값을 저장할 HashMap
@@ -63,14 +65,14 @@ public class DatabaseActivity extends AppCompatActivity {
 
     // Firebase DB에서 Trashcan 데이터 저장/업데이트/삭제
     // 부가 설명은 PostUserDatabase 함수와 동일
-    public void PostTrashcanDatabase(boolean add){
+    public void SetTrashcanDatabase(boolean add){
         mPostReference = FirebaseDatabase.getInstance().getReference();
 
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
 
         if (add){
-            TrashcanInfo post = new TrashcanInfo(tid, name, region, latitude, longitude);
+            TrashcanInfo post = new TrashcanInfo(tid, name, region, latitude, longitude, report);
             postValues = post.TrashcantoMap();
         }
 
@@ -79,7 +81,7 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
 
-    // Firebase DB에서 User 데이터 검색
+    // Firebase DB에서 모든 User 데이터 검색
     public void GetUserDatabase(){
         sort = "uid";
         ValueEventListener postListener = new ValueEventListener() {
@@ -111,7 +113,7 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
 
-    // Firebase DB에서 Trashcan 데이터 검색/정렬
+    // Firebase DB에서 모든 Trashcan 데이터 검색/정렬
     public void GetTrashcanDatabase(){
         sort = "region";
 
@@ -123,9 +125,9 @@ public class DatabaseActivity extends AppCompatActivity {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {   // child 개수만큼 반복
                     String key = postSnapshot.getKey();
                     TrashcanInfo get = postSnapshot.getValue(TrashcanInfo.class);
-                    String[] t_info = {get.getName(), get.getRegion(), String.valueOf(get.getLatitude()), String.valueOf(get.getLongitude())};
+                    String[] t_info = {get.getName(), get.getRegion(), String.valueOf(get.getLatitude()), String.valueOf(get.getLongitude()), String.valueOf(get.getReport())};
                     Log.d("GetTrashcanDatabase", "key: " + key);
-                    Log.d("GetTrashcanDatabase", "info: " + t_info[0] +", "+ t_info[1] +", "+ t_info[2] +", "+ t_info[3]);
+                    Log.d("GetTrashcanDatabase", "info: " + t_info[0] +", "+ t_info[1] +", "+ t_info[2] +", "+ t_info[3] +", "+ t_info[4]);
                 }
                 // getKey() API를 통해 해당 children의 key인 tid를 가져오고
                 // getValue를 통해 tid의 하부 child인 name, region, latitude, longitude에 대한 데이터를 받아와
@@ -157,8 +159,9 @@ public class DatabaseActivity extends AppCompatActivity {
         region = "12345r";
         latitude = 12345.0;
         longitude = 12345.1;
-        PostUserDatabase(true);
-        PostTrashcanDatabase(true);
+        report = 0;
+        SetUserDatabase(true);
+        SetTrashcanDatabase(true);
     }
 
     public void TestUpdate(View view){
@@ -171,15 +174,16 @@ public class DatabaseActivity extends AppCompatActivity {
         region = "update12345r";
         latitude = 12345.2;
         longitude = 12345.3;
-        PostUserDatabase(true);
-        PostTrashcanDatabase(true);
+        report = 0;
+        SetUserDatabase(true);
+        SetTrashcanDatabase(true);
     }
 
     public void TestDelete(View view){
         uid = "test12345";
         tid = "test12345";
-        PostUserDatabase(false);
-        PostTrashcanDatabase(false);
+        SetUserDatabase(false);
+        SetTrashcanDatabase(false);
     }
 
     // 테스트 함수 : 정보 검색

@@ -1,4 +1,4 @@
-package com.unity.mynativeapp.tmapAPI.POJO;
+package com.unity.mynativeapp.POJO.pedestrianPath;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
@@ -54,24 +54,12 @@ public class Feature {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public Geometry getGeometry() {
         return geometry;
     }
 
-    public void setGeometry(Geometry geometry) {
-        this.geometry = geometry;
-    }
-
     public Properties getProperties() {
         return properties;
-    }
-
-    public void setProperties(Properties properties) {
-        this.properties = properties;
     }
 
     @Override

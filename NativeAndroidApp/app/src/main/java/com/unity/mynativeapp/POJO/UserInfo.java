@@ -1,4 +1,4 @@
-package com.unity.mynativeapp.realtimedb;
+package com.unity.mynativeapp.POJO;
 
 import com.google.firebase.database.Exclude;
 import java.util.HashMap;

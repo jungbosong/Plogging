@@ -1,4 +1,4 @@
-package com.unity.mynativeapp.tmapAPI.POJO;
+package com.unity.mynativeapp.POJO.pedestrianPath;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;

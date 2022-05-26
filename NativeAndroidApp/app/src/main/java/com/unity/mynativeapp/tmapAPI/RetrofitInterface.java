@@ -1,6 +1,6 @@
 package com.unity.mynativeapp.tmapAPI;
 
-import com.unity.mynativeapp.tmapAPI.POJO.Route;
+import com.unity.mynativeapp.POJO.pedestrianPath.Route;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".TmapActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".tmapAPI.TmapActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".realtimedb.DatabaseActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SplishActivity"
