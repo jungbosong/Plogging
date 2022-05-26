@@ -1,4 +1,4 @@
-package com.unity.mynativeapp;
+package com.unity.mynativeapp.tmapAPI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.skt.Tmap.TMapView;
 import com.skt.Tmap.TMapGpsManager;
+import com.unity.mynativeapp.R;
 
 
 public class TmapActivity extends AppCompatActivity implements TMapGpsManager.onLocationChangedCallback {

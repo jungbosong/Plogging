@@ -1,4 +1,4 @@
-package com.unity.mynativeapp.realtimedb;
+package com.unity.mynativeapp.POJO;
 
 import com.google.firebase.database.Exclude;
 import java.util.HashMap;
@@ -13,18 +13,20 @@ public class TrashcanInfo
     private String region;    //trashcan 지역
     private Double latitude;  //trashcan location : 위도
     private Double longitude; //trashcan location : 경도
+    private int report;       //trashcan 신고 횟수
 
     public TrashcanInfo() {
 
     }
 
     //TrashcanInfo 객체 생성 시 매개변수 값을 객체에 저장
-    public TrashcanInfo(String tid, String name, String region, Double latitude, Double longitude) {
+    public TrashcanInfo(String tid, String name, String region, Double latitude, Double longitude, int report) {
         this.tid = tid;
         this.name = name;
         this.region = region;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.report = report;
     }
 
     // 객체에 저장된 정보를 HashMap 형태로 저장
@@ -36,6 +38,7 @@ public class TrashcanInfo
         result.put("region", region);
         result.put("latitude", latitude);
         result.put("longitude", longitude);
+        result.put("report", report);
         return result;
     }
 
@@ -48,6 +51,9 @@ public class TrashcanInfo
     public void setLatitude(Double latitude) { this.latitude = latitude; }
     public Double getLongitude() { return longitude; }
     public void setLongitude(Double longitude) { this.longitude = longitude; }
+    public int getReport() { return report; }
+    public void setReport(int report) { this.report = report; }
+
 
 
 }

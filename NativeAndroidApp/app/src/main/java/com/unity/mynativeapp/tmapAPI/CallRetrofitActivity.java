@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.unity.mynativeapp.R;
-import com.unity.mynativeapp.tmapAPI.POJO.Route;
+import com.unity.mynativeapp.POJO.pedestrianPath.Route;
 
 import java.util.ArrayList;
 import java.util.List;

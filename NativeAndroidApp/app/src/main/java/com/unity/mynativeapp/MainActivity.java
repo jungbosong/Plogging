@@ -12,13 +12,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.unity.mynativeapp.fragment.FragmentRecycle;
 import com.unity.mynativeapp.fragment.FragmentJoinModify;
 import com.unity.mynativeapp.fragment.FragmentTrashcanList;
 import com.unity.mynativeapp.fragment.FragmentTrashcanRegister;
+import com.unity.mynativeapp.tmapAPI.TmapActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         //여기에 옵션이 클릭됐을 때 하는 동작을 기재
         switch(item.getItemId()){
             case R.id.menu_search:
-                Intent intent = new Intent(getApplicationContext(),TmapActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TmapActivity.class);
                 startActivity(intent);
                 break;
         }
