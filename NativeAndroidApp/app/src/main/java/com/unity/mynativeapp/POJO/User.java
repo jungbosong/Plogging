@@ -6,19 +6,19 @@ import java.util.Map;
 
 
 // 각 user 정보를 임시저장하는 자바 객체
-public class UserInfo
+public class User
 {
     private String uid;         //user 고유 id
     private String pw;          //user pw
     private String nickname;    //user nickname
     private String email;       //user email address
 
-    public UserInfo() {
+    public User() {
 
     }
 
-    // UserInfo 객체 생성 시 매개변수 값을 객체에 저장
-    public UserInfo(String uid, String pw, String nickname, String email){
+    // User 객체 생성 시 매개변수 값을 객체에 저장
+    public User(String uid, String pw, String nickname, String email){
         this.uid = uid;
         this.pw = pw;
         this.nickname = nickname;

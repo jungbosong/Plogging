@@ -10,19 +10,15 @@ import retrofit2.http.Query;
 public interface RetrofitInterface {
 
     @GET("pedestrian")
-    Call<Route> getfeatures(@Header("appKey") String appkey,
-                            @Query("startX") double startX,
-                            @Query("startY") double startY,
-                            @Query("angle") int angle,
-                            @Query("speed") int speed,
-                            @Query("endPoiId") String endPoiId,
-                            @Query("endX") double endX,
-                            @Query("endY") double endY,
-                            @Query("passList") String passList,
-                            @Query("startName") String startName,
-                            @Query("endName") String endName,
-                            @Query("searchOption") int searchOption,
-                            @Query("resCoordType") String resCoordType);
+    Call<Route> getroute(@Header("appKey") String appkey,
+                         @Query("startX") double startX,
+                         @Query("startY") double startY,
+                         @Query("angle") int angle,
+                         @Query("speed") int speed,
+                         @Query("endX") double endX,
+                         @Query("endY") double endY,
+                         @Query("startName") String startName,
+                         @Query("endName") String endName);
 
 }
 
@@ -33,11 +29,9 @@ appKey=l7xx6eef69fa1aad46c19eb598ba67dfc0b8
 startX=126.92365493654832
 startY=37.556770374096615
 angle=1
-speed=60
-endPoiId=334852
+speed=4
 endX=126.92432158129688
 endY=37.55279861528311
-passList=126.92774822,37.55395475
 startName=%EC%B6%9C%EB%B0%9C
 endName=%EB%B3%B8%EC%82%AC
 searchOption=0

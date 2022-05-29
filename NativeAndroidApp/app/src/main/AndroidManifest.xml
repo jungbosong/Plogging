@@ -21,7 +21,6 @@
         android:usesCleartextTraffic="true">
 
         <activity android:name=".tmapAPI.TmapActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".realtimedb.DatabaseActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SplishActivity"
             android:theme="@style/AppTheme.NoActionBar"
