@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:paddingVertical="20dp">
+        android:paddingVertical="50dp">
 
         <TableRow
             android:paddingLeft="30dp">
@@ -39,11 +39,11 @@
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            >
         <TableRow>
 
             <ImageView
-                android:layout_width="359dp"
+                android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:src="@drawable/bags" />
 
@@ -57,7 +57,8 @@
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,7 +79,8 @@
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="50dp">
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -99,7 +101,8 @@
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="50dp">
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -120,7 +123,8 @@
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="50dp">
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,7 +147,8 @@
         <TableRow
             android:paddingLeft="30dp"/>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,19 +169,19 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
 
                 <ImageView
-                    android:layout_width="300dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/bags2" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:src="@drawable/bag2" />
             </TableRow>
 
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -191,13 +196,58 @@
                 android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/circlecolor"
                 android:drawableTint="#5C0E95"
-                android:text="깨끗하게 이물질이 제거가 되지 않은 랩 필름과 식탁보, 고무장갑, 장판, 돗자리, 섬유 등 ( 천막, 현수막, 의류, 침구류 등)은 종량제 봉투, 특수 규격마대 또는 대형 폐기물로배출"
+                android:text="랩 필름과 식탁보, 고무장갑, 장판, 돗자리, 섬유( 천막, 현수막, 의류, 침구류 등)"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#5C0E95"
+                android:text="종량제 봉투, 특수 규격마대 또는 대형 폐기물로배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#5C0E95"
+                android:text="이물질이 제거가 되지 않거나 힘든 경우는 종량제 봉투에 담아서 배출 "
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"

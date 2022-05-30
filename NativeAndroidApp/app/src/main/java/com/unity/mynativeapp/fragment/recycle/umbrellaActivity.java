@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.unity.mynativeapp.R;
 
-public class bagActivity extends AppCompatActivity {
+public class umbrellaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycle_bag);
+        setContentView(R.layout.activity_recycle_umbrella);
+
+
     }
 }
+

@@ -13,9 +13,10 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:paddingVertical="20dp">
+        android:paddingVertical="50dp">
 
         <TableRow
+
             android:paddingLeft="30dp">
             <ImageView
                 android:layout_width="100dp"
@@ -41,18 +42,19 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:src="@drawable/can1" />
             </TableRow>
 
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,14 +66,17 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#908C8C"
                 android:text="이물질 제거 후 내용물을 비우고 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,14 +88,17 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#908C8C"
                 android:text="가능한 압축하여 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,7 +110,9 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#908C8C"
                 android:text="플라스틱 뚜껑 등 다른 재질은 제거"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -111,7 +121,8 @@
 
 
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,17 +154,20 @@
         </TableLayout>
         <TableLayout>
             <TableRow
-                android:paddingLeft="30dp">
+                >
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+
+                    android:src="@drawable/can2" />
             </TableRow>
 
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -165,14 +179,17 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#908C8C"
                 android:text="구멍을 뚫어 내용물은 비운 후 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,7 +201,9 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#908C8C"
                 android:text="보플라스틱 뚜겅 등 다른 재질은 제거"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -203,6 +222,10 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/starcolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FFE500"
+
                 android:text="재활용이 안되는 품목"
                 android:textColor="@color/black"
                 android:textSize="25dp" />
@@ -210,17 +233,18 @@
         </TableLayout>
         <TableLayout>
             <TableRow
-                android:paddingLeft="30dp">
+                android:paddingTop="10dp">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:src="@drawable/can3" />
             </TableRow>
 
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -232,7 +256,9 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="#908C8C"
                 android:text="패인트 폐유통, 합성철사(옷걸이),제품 등 이물질이 묻은 제품"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
