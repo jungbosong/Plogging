@@ -89,8 +89,12 @@ public class Route {
     public List<Feature> getFeatures() {
         return features;
     }
-
-    // 원하는 타입 입력받아 feature hashmap으로 반환
+    
+    // <summery>
+    // 원하는 Feature 타입을 입력받아 Feature을 반환.
+    // <param> String. 원하는 Feature 타입으로 반환할 데이터 요소를 구분하는데 사용.
+    // <return> List<Map<String, Object>>. 각 Feature 정보를 hashmap으로 저장하여 모든 Feature를 List로 반환
+    // </summery>
     public List<Map<String, Object>> getTypeFeatures(String type) {
         // 반환할 Feature list
         List<Map<String, Object>> features_hash = new ArrayList<>();

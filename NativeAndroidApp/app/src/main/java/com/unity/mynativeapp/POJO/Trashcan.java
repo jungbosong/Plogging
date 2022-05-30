@@ -6,21 +6,21 @@ import java.util.Map;
 
 
 //각 trashcan 정보를 임시저장하는 자바 객체
-public class TrashcanInfo
+public class Trashcan
 {
     private String tid;       //trashcan 고유 id
     private String name;      //trashcan 이름
     private String region;    //trashcan 지역
     private Double latitude;  //trashcan location : 위도
     private Double longitude; //trashcan location : 경도
-    private int report;       //trashcan 신고 횟수
+    private Integer report;       //trashcan 신고 횟수
 
-    public TrashcanInfo() {
+    public Trashcan() {
 
     }
 
-    //TrashcanInfo 객체 생성 시 매개변수 값을 객체에 저장
-    public TrashcanInfo(String tid, String name, String region, Double latitude, Double longitude, int report) {
+    //Trashcan 객체 생성 시 매개변수 값을 객체에 저장
+    public Trashcan(String tid, String name, String region, Double latitude, Double longitude, Integer report) {
         this.tid = tid;
         this.name = name;
         this.region = region;
@@ -43,6 +43,7 @@ public class TrashcanInfo
     }
 
     // 각 정보 get/set
+    public String getTid() { return tid; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getRegion() { return region; }
@@ -54,7 +55,44 @@ public class TrashcanInfo
     public int getReport() { return report; }
     public void setReport(int report) { this.report = report; }
 
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("tid");
+        sb.append('=');
+        sb.append(this.tid);
+        sb.append(',');
+        sb.append(System.getProperty("line.separator"));
+        sb.append("name");
+        sb.append('=');
+        sb.append(this.name);
+        sb.append(',');
+        sb.append(System.getProperty("line.separator"));
+        sb.append("region");
+        sb.append('=');
+        sb.append(this.region);
+        sb.append(',');
+        sb.append(System.getProperty("line.separator"));
+        sb.append("latitude");
+        sb.append('=');
+        sb.append(((this.latitude == null)?"<null>":this.latitude));
+        sb.append(',');
+        sb.append(System.getProperty("line.separator"));
+        sb.append("longitude");
+        sb.append('=');
+        sb.append(((this.longitude == null)?"<null>":this.longitude));
+        sb.append(',');
+        sb.append(System.getProperty("line.separator"));
+        sb.append("report");
+        sb.append('=');
+        sb.append(((this.report == null)?"<null>":this.report));
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
+    }
 
 }
 

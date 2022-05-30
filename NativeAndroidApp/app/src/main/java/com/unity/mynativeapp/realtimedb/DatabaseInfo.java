@@ -1,12 +1,9 @@
 package com.unity.mynativeapp.realtimedb;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,18 +11,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.unity.mynativeapp.POJO.TrashcanInfo;
-import com.unity.mynativeapp.POJO.UserInfo;
-import com.unity.mynativeapp.R;
+import com.unity.mynativeapp.POJO.Trashcan;
+import com.unity.mynativeapp.POJO.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-//Firebase DB 데이터 입출력 파일
-public class DatabaseActivity extends AppCompatActivity {
+public class DatabaseInfo {
 
     private DatabaseReference mPostReference;   // firebase 실시간 DB의 데이터 사용을 위한 객체
-    ArrayAdapter<String> arrayAdapter;
 
     String uid;         // user id
     String pw;          // user pw
@@ -36,12 +32,14 @@ public class DatabaseActivity extends AppCompatActivity {
     String region;      // trashcan 지역
     Double latitude;    // trashcan location : 위도
     Double longitude;   // trashcan location : 경도
-    int report;         // trashcan 신고횟수
+    Integer report;     // trashcan 신고횟수
     String sort;        // 데이터 정렬 기준 child
 
 
+    // <summery>
     // Firebase DB에서 User 데이터 저장/업데이트/삭제
-    // 매개변수 add (false:삭제, true:저장/업데이트)
+    // <param> String add (false:삭제, true:저장/업데이트)
+    // </summery>
     public void SetUserDatabase(boolean add){
         mPostReference = FirebaseDatabase.getInstance().getReference();     // Database 인스턴스
 
@@ -50,7 +48,7 @@ public class DatabaseActivity extends AppCompatActivity {
         Map<String, Object> postValues = null;
 
         if (add){
-            UserInfo post = new UserInfo(uid, pw, nickname, email);     // 입력된 user 정보로 객체 생성
+            User post = new User(uid, pw, nickname, email);     // 입력된 user 정보로 객체 생성
             postValues = post.UsertoMap();                              // 객체에 저장된 정보를 HashMap으로 전환
         }
         childUpdates.put("/User/" + uid, postValues);   // uid를 key로 하여 경로와 업데이트 할 값을 childUpdates에 저장
@@ -63,8 +61,10 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
 
+    // <summery>
     // Firebase DB에서 Trashcan 데이터 저장/업데이트/삭제
-    // 부가 설명은 PostUserDatabase 함수와 동일
+    // <param> String add (false:삭제, true:저장/업데이트)
+    // </summery>
     public void SetTrashcanDatabase(boolean add){
         mPostReference = FirebaseDatabase.getInstance().getReference();
 
@@ -72,7 +72,7 @@ public class DatabaseActivity extends AppCompatActivity {
         Map<String, Object> postValues = null;
 
         if (add){
-            TrashcanInfo post = new TrashcanInfo(tid, name, region, latitude, longitude, report);
+            Trashcan post = new Trashcan(tid, name, region, latitude, longitude, report);
             postValues = post.TrashcantoMap();
         }
 
@@ -80,8 +80,9 @@ public class DatabaseActivity extends AppCompatActivity {
         mPostReference.updateChildren(childUpdates);
     }
 
-
+    // <summery>
     // Firebase DB에서 모든 User 데이터 검색
+    // </summery>
     public void GetUserDatabase(){
         sort = "uid";
         ValueEventListener postListener = new ValueEventListener() {
@@ -90,14 +91,14 @@ public class DatabaseActivity extends AppCompatActivity {
                 Log.e("GetUserDatabase", "key: " + snapshot.getChildrenCount());    //snapshot의 직계자식 수 반환
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {   // child 개수만큼 반복
                     String key = postSnapshot.getKey();
-                    UserInfo get = postSnapshot.getValue(UserInfo.class);
+                    User get = postSnapshot.getValue(User.class);
                     String[] user_info = {get.getUid(), get.getPw(), get.getNickname(), get.getEmail()};
                     Log.d("GetUserDatabase", "key: " + key);
                     Log.d("GetUserDatabase", "info: " + user_info[0] +", "+ user_info[1] +", "+ user_info[2] +", "+ user_info[3]);
                 }
                 // getKey() API를 통해 해당 children의 key인 uid를 가져오고
                 // getValue를 통해 uid의 하부 child인 uid, pw, nickname, email에 대한 데이터를 받아와
-                // UserInfo.class를 통해 옮겨담는다.
+                // User.class를 통해 옮겨담는다.
             }
 
             @Override
@@ -113,7 +114,10 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
 
+
+    // <summery>
     // Firebase DB에서 모든 Trashcan 데이터 검색/정렬
+    // </summery>
     public void GetTrashcanDatabase(){
         sort = "region";
 
@@ -124,14 +128,14 @@ public class DatabaseActivity extends AppCompatActivity {
                 Log.e("GetTrashcanDatabase", "key: " + snapshot.getChildrenCount());    //snapshot의 직계자식 수 반환(총 쓰레기통 개수)
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {   // child 개수만큼 반복
                     String key = postSnapshot.getKey();
-                    TrashcanInfo get = postSnapshot.getValue(TrashcanInfo.class);
+                    Trashcan get = postSnapshot.getValue(Trashcan.class);
                     String[] t_info = {get.getName(), get.getRegion(), String.valueOf(get.getLatitude()), String.valueOf(get.getLongitude()), String.valueOf(get.getReport())};
                     Log.d("GetTrashcanDatabase", "key: " + key);
                     Log.d("GetTrashcanDatabase", "info: " + t_info[0] +", "+ t_info[1] +", "+ t_info[2] +", "+ t_info[3] +", "+ t_info[4]);
                 }
                 // getKey() API를 통해 해당 children의 key인 tid를 가져오고
                 // getValue를 통해 tid의 하부 child인 name, region, latitude, longitude에 대한 데이터를 받아와
-                // TrashcanInfo.class를 통해 옮겨담는다.
+                // Trashcan.class를 통해 옮겨담는다.
             }
 
             @Override
@@ -191,26 +195,6 @@ public class DatabaseActivity extends AppCompatActivity {
         // logcat 확인.
         GetUserDatabase();
         GetTrashcanDatabase();
-        // 추가 확인용 view 사용 필요
     }
 
-
-    // 사용자 위치 받아서 근처 휴지통 검색
-    public void GetTrashcanInfo(){
-
-//        필요한 기능 : 사용자 위치 지역 검색, 지역별 휴지통 정보 필터링, 휴지통 거리계산
-//        필요한 정보 : 사용자 위치 지역, 사용자 위치(위도경도)
-
-//        입력받은 선택 지역 내 휴지통 필터링
-//        -> 일정 위치(300m) 내 휴지통 검색 (현재 위치에서 각 휴지통 까지 거리계산)
-//        -> 휴지통 가까운 순으로 정렬
-//        -> 화면에 리스트뷰로 보여주기
-    }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_database);
-    }
 }

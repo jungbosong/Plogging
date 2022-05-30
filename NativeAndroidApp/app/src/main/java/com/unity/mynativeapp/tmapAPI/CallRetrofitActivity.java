@@ -1,13 +1,15 @@
 package com.unity.mynativeapp.tmapAPI;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import com.unity.mynativeapp.R;
 import com.unity.mynativeapp.POJO.pedestrianPath.Route;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,54 +21,39 @@ import retrofit2.Response;
 
 public class CallRetrofitActivity extends AppCompatActivity{
 
-    public void testResponse(View view){
-        String TAG = "REST API TEST";
-        //test data (t map 지도연결 후 관련데이터 수집)
-        String appKey = "l7xx6eef69fa1aad46c19eb598ba67dfc0b8";
-        double startX = 126.92365493654832;
-        double startY = 37.556770374096615;
-        int angle = 1;
-        int speed = 60;
-        String endPoiId = "334852";
-        double endX = 126.92432158129688;
-        double endY = 37.55279861528311;
-        String passList = "126.92774822,37.55395475";
-        String startName = "%EC%B6%9C%EB%B0%9C";
-        String endName = "%EB%B3%B8%EC%82%AC";
-        int searchOption = 0;
-        String resCoordType = "WGS84GEO";
+    String TAG = "REST API TEST";
+
+    // feature 반환을 위한 빈 객체
+    List<Map<String, Object>> features;
+
+    // 고정 data
+    String appKey = "l7xx6eef69fa1aad46c19eb598ba67dfc0b8";
+    int angle = 1;
+    int speed = 4;
+    String startName = "출발지";
+    String endName = "도착지";
+
+    public List<Map<String, Object>> GetFeatures(double startX, double startY, double endX, double endY, String type) {
 
         // Retrofit 인스턴스로 인터페이스 객체 구현
         RetrofitInterface service1 = RetrofitClient.getInterface();
-        // 사용할 메소드 선언
-        Call<Route> call = service1.getfeatures(appKey, startX, startY, angle, speed, endPoiId,
-                endX, endY, passList, startName, endName, searchOption, resCoordType);
 
+        // 사용할 메소드 선언
+        Call<Route> call = service1.getroute(appKey, startX, startY, angle, speed, endX, endY, startName, endName);
         call.enqueue(new Callback<Route>() {
             @Override
             public void onResponse(Call<Route> call, Response<Route> response){
                 Log.e(TAG, "log test");
-                if(response.isSuccessful()){
-                    // 정상적으로 통신이 성공 된 경우
+                if(response.isSuccessful()){    // 정상적으로 통신이 성공 된 경우
+                    // 통신 결과 데이터(보행자 경로) 저장
                     Route result = response.body();
-                    //Log.d(TAG, "onResponse: 성공, 결과\n"+ result.toString());
+                    // Log.d(TAG, "onResponse: 성공, 결과\n"+ result.toString());
 
-                    // feature 반환 메소드 사용 방법
-                    // 1. List<Map<String, Object>> 빈 객체 생성
-                    List<Map<String, Object>> feature = new ArrayList<>();
+                    // 객체에 Route 클래스의 getTypeFeatures(type) 메소드 반환값 저장
+                    features = result.getTypeFeatures(type);
+                    // Log.d(TAG, "onResponse: 성공, 결과\n" + features.get(0).get("description"));
 
-                    // 2. 객체에 Route 클래스의  getTypeFeatures(type) 메소드 반환값 저장
-                    // type = "Point" or "LineString"
-                    feature = result.getTypeFeatures("Point");
-
-                    // 3. key값으로 원하는 객체 및 값에 접근
-                    // 이때 각 key는 각 정보명을 _로 연결한 이름 (ex turnType -> turn_type)
-                    // ex1) 하나의 객체에 접근(key값 전달)
-                    Integer point_index = (Integer) feature.get(0).get("point_index");
-                    Log.d(TAG, "getTypeFeature: 호출 성공, 결과 \n" + "point_index: " + point_index);
-
-                } else {
-                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                } else {    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                     Log.d(TAG, "onResponse: 실패");
                 }
             }
@@ -78,11 +65,15 @@ public class CallRetrofitActivity extends AppCompatActivity{
             }
 
         });
+
+        return features;
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_callretrofit);
     }
+
 }

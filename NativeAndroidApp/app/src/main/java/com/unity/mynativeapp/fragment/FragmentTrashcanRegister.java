@@ -11,7 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.unity.mynativeapp.POJO.Trashcan;
 import com.unity.mynativeapp.R;
+
+import java.util.List;
 
 public class FragmentTrashcanRegister extends Fragment {
     EditText trashcanName;
