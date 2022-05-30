@@ -1,5 +1,6 @@
 package com.unity.mynativeapp.POJO.pedestrianPath;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.annotation.Generated;
@@ -19,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 @Generated("jsonschema2pojo")
-public class Geometry {
+public class Geometry implements Serializable {
 
     @SerializedName("type")
     @Expose

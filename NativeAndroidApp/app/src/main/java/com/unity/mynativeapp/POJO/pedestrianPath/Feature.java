@@ -4,6 +4,8 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 // Plain Old Java Object
 // 재사용을 위한 오브젝트(api에 요청한 데이터 모델)
 // feature
@@ -38,7 +40,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 @Generated("jsonschema2pojo")
-public class Feature {
+public class Feature implements Serializable {
 
     @SerializedName("type")
     @Expose
