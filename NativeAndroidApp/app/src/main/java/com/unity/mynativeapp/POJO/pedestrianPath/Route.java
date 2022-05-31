@@ -1,5 +1,6 @@
 package com.unity.mynativeapp.POJO.pedestrianPath;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -73,7 +74,8 @@ import com.google.gson.annotations.SerializedName;
  */
 
 @Generated("jsonschema2pojo")
-public class Route {
+public class Route implements Serializable
+{
 
     @SerializedName("type")
     @Expose

@@ -1,19 +1,22 @@
 package com.unity.mynativeapp.POJO;
 
 import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 
 //각 trashcan 정보를 임시저장하는 자바 객체
-public class Trashcan
+public class Trashcan implements Serializable, Comparable<Trashcan>
 {
     private String tid;       //trashcan 고유 id
     private String name;      //trashcan 이름
     private String region;    //trashcan 지역
     private Double latitude;  //trashcan location : 위도
     private Double longitude; //trashcan location : 경도
-    private Integer report;       //trashcan 신고 횟수
+    private Integer report;     //trashcan 신고 횟수
+    private Integer distance;   //trashcan 현재위치에서의 거리 (임시)
 
     public Trashcan() {
 
@@ -27,6 +30,7 @@ public class Trashcan
         this.latitude = latitude;
         this.longitude = longitude;
         this.report = report;
+        this.distance = 0;
     }
 
     // 객체에 저장된 정보를 HashMap 형태로 저장
@@ -54,6 +58,8 @@ public class Trashcan
     public void setLongitude(Double longitude) { this.longitude = longitude; }
     public int getReport() { return report; }
     public void setReport(int report) { this.report = report; }
+    public int getDistance() {return distance; }
+    public void setDistance(int distance) { this.distance = distance; }
 
     @Override
     public String toString() {
@@ -94,5 +100,16 @@ public class Trashcan
         return sb.toString();
     }
 
+    
+    // 정렬 메소드
+    @Override
+    public int compareTo(Trashcan t) {
+        if (t.distance < distance) {
+            return 1;
+        } else if (t.distance > distance) {
+            return -1;
+        }
+        return 0;
+    }
 }
 
