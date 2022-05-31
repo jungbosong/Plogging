@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,25 +23,14 @@ import java.util.Map;
 public class DatabaseInfo {
 
     private DatabaseReference mPostReference;   // firebase 실시간 DB의 데이터 사용을 위한 객체
-
-    String uid;         // user id
-    String pw;          // user pw
-    String nickname;    // user nickname
-    String email;       // user email address
-    String tid;         // trashcan id
-    String name;        // trashcan 이름
-    String region;      // trashcan 지역
-    Double latitude;    // trashcan location : 위도
-    Double longitude;   // trashcan location : 경도
-    Integer report;     // trashcan 신고횟수
     String sort;        // 데이터 정렬 기준 child
 
 
     // <summery>
     // Firebase DB에서 User 데이터 저장/업데이트/삭제
-    // <param> String add (false:삭제, true:저장/업데이트)
+    // <param> boolean add (false:삭제, true:저장/업데이트), user 정보
     // </summery>
-    public void SetUserDatabase(boolean add){
+    public void SetUserDatabase(boolean add, String uid, String pw, String nickname, String email){
         mPostReference = FirebaseDatabase.getInstance().getReference();     // Database 인스턴스
 
         // update할 child(경로+값)와 해당 child의 값을 저장할 HashMap
@@ -49,7 +39,7 @@ public class DatabaseInfo {
 
         if (add){
             User post = new User(uid, pw, nickname, email);     // 입력된 user 정보로 객체 생성
-            postValues = post.UsertoMap();                              // 객체에 저장된 정보를 HashMap으로 전환
+            postValues = post.UsertoMap();                      // 객체에 저장된 정보를 HashMap으로 전환
         }
         childUpdates.put("/User/" + uid, postValues);   // uid를 key로 하여 경로와 업데이트 할 값을 childUpdates에 저장
         mPostReference.updateChildren(childUpdates);    // childUpdates(경로, 업데이트값)를 DB에 전달
@@ -61,23 +51,24 @@ public class DatabaseInfo {
     }
 
 
+
     // <summery>
     // Firebase DB에서 Trashcan 데이터 저장/업데이트/삭제
-    // <param> String add (false:삭제, true:저장/업데이트)
+    // <param> boolean add (false:삭제, true:저장/업데이트), Trashcan 정보
     // </summery>
-    public void SetTrashcanDatabase(boolean add){
+    public void SetTrashcanDatabase(boolean add, String tid, String creator, String name, double latitude, double longitude, int report){
         mPostReference = FirebaseDatabase.getInstance().getReference();
 
-        Map<String, Object> childUpdates = new HashMap<>();
-        Map<String, Object> postValues = null;
-
+        Map<String, Object> childUpdates = new HashMap<>();     // update할 child(경로+값)
+        Map<String, Object> postValues = null;                  // child 값을 저장할 HashMap
         if (add){
-            Trashcan post = new Trashcan(tid, name, region, latitude, longitude, report);
-            postValues = post.TrashcantoMap();
+            //저장일 경우만 tid 생성
+            //tid = mPostReference.child("Trashcan").push().getKey(); // tid 랜덤 생성, 빈 쓰레기통 목록 추가
+            Trashcan post = new Trashcan(tid, creator, name, latitude, longitude, report);  // 입력된 trashcan 정보로 객체 생성
+            postValues = post.TrashcantoMap();                  // 객체에 저장된 정보를 HashMap으로 전환
         }
-
-        childUpdates.put("/Trashcan/" + tid, postValues);
-        mPostReference.updateChildren(childUpdates);
+        childUpdates.put("/Trashcan/" + tid, postValues);       // tid를 key로 하여 경로와 업데이트 할 값을 childUpdates에 저장(업데이트)
+        mPostReference.updateChildren(childUpdates);            // childUpdates(경로, 업데이트값)를 DB에 전달
     }
 
     // <summery>
@@ -129,12 +120,12 @@ public class DatabaseInfo {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {   // child 개수만큼 반복
                     String key = postSnapshot.getKey();
                     Trashcan get = postSnapshot.getValue(Trashcan.class);
-                    String[] t_info = {get.getName(), get.getRegion(), String.valueOf(get.getLatitude()), String.valueOf(get.getLongitude()), String.valueOf(get.getReport())};
+                    String[] t_info = {get.getName(), String.valueOf(get.getLatitude()), String.valueOf(get.getLongitude()), String.valueOf(get.getReport())};
                     Log.d("GetTrashcanDatabase", "key: " + key);
                     Log.d("GetTrashcanDatabase", "info: " + t_info[0] +", "+ t_info[1] +", "+ t_info[2] +", "+ t_info[3] +", "+ t_info[4]);
                 }
                 // getKey() API를 통해 해당 children의 key인 tid를 가져오고
-                // getValue를 통해 tid의 하부 child인 name, region, latitude, longitude에 대한 데이터를 받아와
+                // getValue를 통해 tid의 하부 child의 데이터를 받아와
                 // Trashcan.class를 통해 옮겨담는다.
             }
 
@@ -147,54 +138,7 @@ public class DatabaseInfo {
         // 지정된 하위 키(sort)에 따라 가져온 데이터를 정렬한다. 여기서는 지역 이름순서로.
         Query sortbyAge = FirebaseDatabase.getInstance().getReference().child("Trashcan").orderByChild(sort);
         // addListenerForSingleValueEvent : 이벤트를 한 번만 받도록 리스너를 등록하는 API.
-        // 콜백을 삭제하지 않는 한 지정한 위치의 하부에 존재하는 값들이 변경될 때 마다 리스너 호출
         sortbyAge.addListenerForSingleValueEvent(postListener);
-    }
-
-
-    // 테스트 함수 : 정보 저장/업데이트/삭제
-    public void TestSave(View view){
-        uid = "test12345";
-        pw = "12345";
-        nickname = "12345n";
-        email = "12345@gmail.com";
-        tid = "test12345";
-        name = "12345n";
-        region = "12345r";
-        latitude = 12345.0;
-        longitude = 12345.1;
-        report = 0;
-        SetUserDatabase(true);
-        SetTrashcanDatabase(true);
-    }
-
-    public void TestUpdate(View view){
-        uid = "test12345";
-        pw = "update12345";
-        nickname = "update12345n";
-        email = "update12345@gmail.com";
-        tid = "test12345";
-        name = "update12345n";
-        region = "update12345r";
-        latitude = 12345.2;
-        longitude = 12345.3;
-        report = 0;
-        SetUserDatabase(true);
-        SetTrashcanDatabase(true);
-    }
-
-    public void TestDelete(View view){
-        uid = "test12345";
-        tid = "test12345";
-        SetUserDatabase(false);
-        SetTrashcanDatabase(false);
-    }
-
-    // 테스트 함수 : 정보 검색
-    public void TestGet(View view){
-        // logcat 확인.
-        GetUserDatabase();
-        GetTrashcanDatabase();
     }
 
 }

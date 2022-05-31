@@ -47,11 +47,9 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
     TMapView tMapView = null;       // T Map View
     TMapGpsManager tMapGPS = null;  // T Map GPS
-    TMapPoint tMapPoint = null;     // T Map Point
     List<TMapMarkerItem> markerList = null;
 
-    private final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private final DatabaseReference databaseReference = database.getReference();
+    private final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
     Intent intentMap;   // navigation 지도 Activity
     Intent intentList;  // 쓰레기통 목록 Activity
@@ -64,7 +62,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
     String start_name = "출발지";
     String end_name = "도착지";
 
-    List<Trashcan> trashcans = new ArrayList<>();                   // 전체 쓰레기통 목록
+    List<Trashcan> trashcans = new ArrayList<>();        // 전체 쓰레기통 목록
     List<Trashcan> trashcanList = new ArrayList<>();    // 근처 쓰레기통 목록(+ 이동 거리/시간)
     double latitude, longitude;             // 현재위치 위도, 경도 임시저장
 
@@ -168,21 +166,13 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
                     /*
                     // Activity로 데이터 전달, Activity 이동 - 지연
-                    intentMap = new Intent(this, OtherActivity.class);  // 데이터를 받을 Activity intent 생성(OtherActivity 위치 수정)
-                    intentMap.putExtra("start_lat", latitude);         // 현재 위치
+                    intentMap = new Intent(TMapActivity.this, TmapNavigationActivity.class);  // TmapNavigationActivity intent 생성
+                    intentMap.putExtra("start_lat", latitude);         // 현재 위치(double)
                     intentMap.putExtra("start_lon", longitude);
-                    intentMap.putExtra("end_lat", end_latitude);       // 쓰레기통 위치
+                    intentMap.putExtra("end_lat", end_latitude);       // 쓰레기통 위치(double)
                     intentMap.putExtra("end_lon", end_longitude);
-                    intentMap.putExtra("Route", result);               // 경로 데이터
+                    intentMap.putExtra("Route", result);               // 경로 데이터(Route)
                     startActivity(intentMap);  // Activity 이동
-                    */
-
-                    /*
-                    데이터 받는 Activity에서 데이터 사용 예시 코드(지연)
-                    double start_lat = getIntent().getDoubleExtra("start_lat");
-                    double start_lon = getIntent().getDoubleExtra("start_lon");
-                    ..
-                    Route route = getIntent().getSerializableExtra("Route");
                     */
 
                     //test
@@ -239,12 +229,11 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
         latitude = 35.153759;   // 애뮬 사용
         longitude = 128.098837;
 
-
         tMapView.setLocationPoint(longitude, latitude);     // 지도 현재위치 지정
         tMapView.setCenterPoint(longitude, latitude, false);   // 지도 중심좌표 이동
 
 
-        // 쓰레기통 정보 변동 시 전체 쓰레기통 목록 자동 update
+        // 쓰레기통 정보 한 번 읽어오기
         databaseReference.child("Trashcan").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -294,14 +283,11 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
                         /*
                         // Activity로 데이터 전달, Activity 이동
-                        intentList = new Intent(this, OtherActivity.class);  // 데이터를 받을 Activity intent 생성(OtherActivity 위치 수정)
-                        intent_map.putExtra("trashcanList", trashcanList);   // 쓰레기통 목록
+                        intentList = new Intent(TMapActivity.this, TrashcanfloatingActivity.class);  // TrashcanfloatingActivity intent 생성
+                        intentList.putExtra("trashcanList", trashcanList);   // 쓰레기통 목록
+                        intentList.putExtra("start_lat", latitude);          // 현재 위치(double)
+                        intentList.putExtra("start_lon", longitude);
                         startActivity(intentList);  // Activity 이동
-                        */
-
-                        /*
-                        데이터 받는 Activity에서 데이터 사용 예시 코드(채연)
-                        List<Trashcan> trashcanList = getIntent().getSerializableExtra("trashcanList");
                         */
                     }
                 });
@@ -310,7 +296,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("GetTrashcanDatabase","loadPost:onCancelled", error.toException());
+                Log.w("TmapActivity","loadPost:onCancelled", error.toException());
             }
         });
     }
