@@ -164,15 +164,23 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                     // 통신 결과 데이터(보행자 경로) 저장
                     Route result = response.body();
 
-                    /*
+
                     // Activity로 데이터 전달, Activity 이동 - 지연
-                    intentMap = new Intent(TMapActivity.this, TmapNavigationActivity.class);  // TmapNavigationActivity intent 생성
+                    intentMap = new Intent(TmapActivity.this, TmapNavigationActivity.class);  // TmapNavigationActivity intent 생성
                     intentMap.putExtra("start_lat", latitude);         // 현재 위치(double)
                     intentMap.putExtra("start_lon", longitude);
                     intentMap.putExtra("end_lat", end_latitude);       // 쓰레기통 위치(double)
                     intentMap.putExtra("end_lon", end_longitude);
                     intentMap.putExtra("Route", result);               // 경로 데이터(Route)
                     startActivity(intentMap);  // Activity 이동
+
+
+                    /*
+                    데이터 받는 Activity에서 데이터 사용 예시 코드(지연)
+                    double start_lat = getIntent().getDoubleExtra("start_lat");
+                    double start_lon = getIntent().getDoubleExtra("start_lon");
+                    ..
+                    Route route = getIntent().getSerializableExtra("Route");
                     */
 
                     //test
