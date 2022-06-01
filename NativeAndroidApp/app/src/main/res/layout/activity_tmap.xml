@@ -6,14 +6,33 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical">
 
-    <Button
-        android:id="@+id/move_list_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:layout_marginLeft="5dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="List" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/trashcanlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:tint="@color/white"
+            android:src="@drawable/trashcan"
+            android:layout_marginRight="20dp"
+
+            android:layout_gravity="bottom|right"
+
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/locationHere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:tint="@color/white"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/here"
+            />
+
+
+
 
     <LinearLayout
         android:id="@+id/linearLayoutTmap"

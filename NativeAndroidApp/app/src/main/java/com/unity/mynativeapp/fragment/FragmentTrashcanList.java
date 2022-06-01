@@ -6,10 +6,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -33,14 +37,25 @@ public class FragmentTrashcanList extends Fragment {
     ArrayList<FragmentAdapter> certificationBoards;
     ArrayList<String> contentIdList;
 
+
+
     private final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-    List<Trashcan> trashcanList = new ArrayList<>();
+
+    ListView listView;
+    ArrayList<Trashcan> trashcanList = new ArrayList<>();
+    private static FragmentTrashcanAdapter adapter;
+
+    String title;
+    int subtitle;
+    Double latitude ;
+    Double longitude ;
+    int report;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trashcan_list, container, false);
-
 
         String uid = "uid1";  // 로그인 구현 전 uid 임시생성!!!
 
@@ -56,9 +71,15 @@ public class FragmentTrashcanList extends Fragment {
                     trashcanList.add(trashcan);
                 }
                 Log.e("GET USER TRASHCAN LIST TEST", " trashcan info\n");
-                Log.d("GET USER TRASHCAN LIST TEST", " Latitude: " + trashcanList.get(0).getLatitude() + ", "+ trashcanList.get(0).getLongitude());
+                listView = view.findViewById(R.id.list);
+                adapter = new FragmentTrashcanAdapter(getContext(),trashcanList);
+                listView.setAdapter(adapter);
+
+
 
                 /*
+
+
                 여기에 데이터와 리스트뷰 연결하는 함수 or 코드
                 (되도록 함수 따로 만들어서 콜 하는 쪽으로 추천드려욧)
                 List<Trashcan> trashcanList 분해해서 사용하시면 됩니다!!
@@ -75,5 +96,6 @@ public class FragmentTrashcanList extends Fragment {
 
         return view;
     }
+
 
 }

@@ -8,7 +8,7 @@
     android:background="@color/white">
 
     <include
-        layout="@layout/trashcan_item_view"
+        layout="@layout/trashcan_myitem_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

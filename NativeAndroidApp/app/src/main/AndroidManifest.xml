@@ -101,6 +101,10 @@
         <activity
             android:name=".tmapAPI.CallRetrofitActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tmapAPI.TrashcanfloatingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

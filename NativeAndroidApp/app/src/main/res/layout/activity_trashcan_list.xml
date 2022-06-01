@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ListView
         android:dividerHeight="10dp"
-        android:id="@+id/list"
+        android:id="@+id/trashcanlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -16,6 +15,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-
-        android:paddingTop="0dp" />
-</FrameLayout>
+        android:layout_marginTop="-2dp"
+        android:paddingTop="30dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
