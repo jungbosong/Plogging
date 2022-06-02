@@ -60,7 +60,7 @@
         android:gravity="center"
         android:text="시작할려면 로그인 해주세요"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/userIdLogin"
+        app:layout_constraintBottom_toTopOf="@+id/userEmailLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
         app:layout_constraintVertical_bias="0.838" />
 
     <EditText
-        android:id="@+id/userIdLogin"
+        android:id="@+id/userEmailLogin"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginBottom="200dp"
@@ -133,24 +133,7 @@
             android:text="계정을 잊으셨나요? "
             android:textSize="15dp"
             />
-        <TextView
-            android:id="@+id/findId"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="ID찾기"
-            android:textSize="15dp"
-            />
-        <TextView
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="또는"
-            android:textSize="15dp"
-            />
+
         <TextView
             android:id="@+id/findPw"
             android:paddingTop="20dp"
@@ -158,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="비밀번호 찾기"
+            android:text=" 비밀번호 찾기"
             android:textSize="15dp"
             />
 
@@ -193,7 +176,7 @@
             android:drawableRight="@drawable/camera"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:text="회원가입하기"
+            android:text="회원가입하기 "
             android:textColor="@color/black"
             android:textSize="15dp" />
 

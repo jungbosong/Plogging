@@ -1,21 +1,22 @@
 package com.unity.mynativeapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.unity.mynativeapp.fragment.FragmentRecycle;
+import com.google.firebase.auth.FirebaseAuth;
 import com.unity.mynativeapp.fragment.FragmentJoinModify;
+import com.unity.mynativeapp.fragment.FragmentRecycle;
 import com.unity.mynativeapp.fragment.FragmentTrashcanList;
 import com.unity.mynativeapp.fragment.FragmentTrashcanRegister;
 import com.unity.mynativeapp.tmapAPI.TmapActivity;
@@ -62,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.logout:
                         Toast.makeText(MainActivity.this, "logout", Toast.LENGTH_SHORT).show();
+                        // 파이어베이스 계정 로그아웃
+                        FirebaseAuth.getInstance().signOut();
+                        // 로그인 화면으로 이동
+                        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.joinmodify:
                         Toast.makeText(MainActivity.this, "joinmodify", Toast.LENGTH_SHORT).show();
