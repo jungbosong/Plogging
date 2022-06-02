@@ -8,12 +8,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:paddingVertical="20dp">
+        android:layout_height="match_parent">
 
         <TableRow
             android:paddingLeft="30dp">
@@ -60,14 +55,12 @@
         </TableLayout>
         <TableLayout>
 
-            <TableRow
-                android:layout_height="match_parent"
-                android:paddingLeft="30dp">
+            <TableRow>
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/pet1" />
             </TableRow>
 
 
@@ -85,7 +78,10 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#3F51B5"
+                android:paddingTop="10dp"
                 android:text="내용물은 비우고 부착상표 제거 후 (뚜껑은 부착)가능한 압착하여 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -104,7 +100,10 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:paddingTop="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#3F51B5"
                 android:text="투명페트병 별도 분리배출 시행"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -144,12 +143,11 @@
                 android:textSize="23dp" />
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/pet2" />
             </TableRow>
 
 
@@ -165,9 +163,12 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#3F51B5"
                 android:text="다른 재질(뚜껑,부착상표)은 제거한 후 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -193,12 +194,11 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/pet3" />
             </TableRow>
 
 
@@ -214,9 +214,12 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#3F51B5"
                 android:text="CD,장판,그릇,쟁반 등"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -231,11 +234,14 @@
                 android:layout_margin="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#3F51B5"
                 android:text="복합재질 플라스틱 류(문구류,완구류등)"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -251,10 +257,13 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#3F51B5"
                 android:text="열에 녹지 않는 플라스틱 용기, 화장품 용기, 전열기 등"
                 android:textColor="@color/black"
                 android:textSize="15dp" />

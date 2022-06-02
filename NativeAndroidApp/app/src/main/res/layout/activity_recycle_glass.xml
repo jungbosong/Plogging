@@ -9,11 +9,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:paddingVertical="20dp">
+        >
 
         <TableRow
             android:paddingLeft="30dp">
@@ -41,22 +37,24 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_glasses" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/glass1" />
             </TableRow>
 
 
         </TableLayout>
-        <TableLayout
-            android:paddingLeft="30dp">
+        <TableLayout>
+        <TableRow
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_margin="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
@@ -64,14 +62,19 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="내용물은 비우고 물로 헹구는 등 이물질을 제거하여 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
-
+        </TableRow>
         </TableLayout>
-        <TableLayout
-            android:paddingLeft="30dp">
+        <TableLayout>
+        <TableRow
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,15 +86,19 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="담배꽁초 등 이물질을 넣지 않고 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
-
+        </TableRow>
         </TableLayout>
-        <TableLayout
-            android:paddingLeft="30dp">
+        <TableLayout>
 
+            <TableRow
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,17 +109,23 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="유리병이 깨지지 않돌고 주의하여 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
-
+        </TableRow>
         </TableLayout>
 
 
         <TableLayout
             android:paddingLeft="30dp">
-
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,15 +139,21 @@
                 android:text="보증금 병"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/glass3"
+                    >
 
+                </ImageView>
+            </LinearLayout>
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_glasses" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/glass2" />
             </TableRow>
 
 
@@ -146,13 +165,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="소주병, 맥주병, 청량음료병 등은 빈용기 보증금 대상 유리병에 해당"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -168,10 +190,13 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="병뚜껑과 라벨이 보증금 환불 문구 확인"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -184,13 +209,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="소매점 ( 마트, 슈퍼 )에 반납하면 빈병 보증금 환불 가능"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -218,9 +246,9 @@
             <TableRow
                 android:paddingLeft="30dp">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_glasses" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:src="@drawable/glass4" />
             </TableRow>
 
 
@@ -232,13 +260,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="신문지 또는 종이에 사서 종량제 봉투에 담아 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -254,10 +285,13 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="깨진 유리의 양이 많은 경우 불연성 종량제 봉투(마대형)을 읍 면 사무에서 구입해 배출해야 한다."
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -274,6 +308,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
                 android:text="재활용이 안되는 품목"
@@ -282,12 +317,11 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/glasses" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/glass5" />
             </TableRow>
 
 
@@ -305,7 +339,10 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:paddingTop="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="#FF9800"
                 android:text="유백색유리병(화장품 용기 등), 도자기류, 거울, 폐타일, 사기그릇,계진 병, 일반 판 유리 등 "
                 android:textColor="@color/black"
                 android:textSize="15dp" />

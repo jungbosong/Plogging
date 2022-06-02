@@ -57,6 +57,13 @@
                 android:textColor="@color/black"
                 android:textSize="25dp" />
         </TableLayout>
+        <TableLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="180dp"
+                android:src="@drawable/icepack1">
+            </ImageView>
+        </TableLayout>
         <TableLayout
             android:paddingLeft="30dp">
 
@@ -65,12 +72,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:layout_marginStart="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="겉면의 절취선을 따라 비닐을 잘라주고 내용물을 하수구에 버리기"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -89,7 +99,10 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:paddingTop="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="내용물을 비운 비닐봉지는 비닐류로 분리배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -115,7 +128,13 @@
                 android:textColor="@color/black"
                 android:textSize="23dp" />
         </TableLayout>
-
+        <TableLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="180dp"
+                android:src="@drawable/icepack2">
+            </ImageView>
+        </TableLayout>
         <TableLayout
             android:paddingLeft="30dp">
 
@@ -128,8 +147,11 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="1. 통째로 종량제 봉투에 분리"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -147,8 +169,11 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="2. 내용물은 일반쓰레기에 포장재는 비닐류로 분류"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -163,11 +188,14 @@
                 android:layout_margin="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="3. 아이스팩 수거함 설치 장소에 분류"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -264,12 +292,11 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/icepack3" />
             </TableRow>
 
 
@@ -299,12 +326,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="다른 재질(부착상표,테이프 등)제거 후 배출"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -329,12 +360,11 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/photo_can" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/icepack4" />
             </TableRow>
 
 
@@ -348,11 +378,14 @@
                 android:layout_margin="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="유색 코팅된 스티로폼이나 단열용 건축자재 스티로폼"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -368,10 +401,13 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
+                android:paddingTop="10dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
                 android:text="음식물 등 이물질이 묻은 용기나 다른 재질과 혼합된 스티로폼"
                 android:textColor="@color/black"
                 android:textSize="15dp" />

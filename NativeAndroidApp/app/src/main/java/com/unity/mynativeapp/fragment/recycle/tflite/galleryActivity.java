@@ -145,7 +145,7 @@ public class galleryActivity extends AppCompatActivity {
             });
         }
         else if (value == 4) {
-            builder.setTitle("도자기입니다.").setMessage("분리수거 화면으로 가겠습니까?");
+            builder.setTitle("도자기로 종량제 봉투에 버려주세요").setMessage("분리수거 화면으로 가겠습니까?");
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

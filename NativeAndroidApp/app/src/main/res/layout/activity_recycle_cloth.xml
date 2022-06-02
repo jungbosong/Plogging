@@ -9,10 +9,6 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:paddingVertical="20dp">
 
         <TableRow
@@ -45,13 +41,37 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="180dp"
-                    android:src="@drawable/image_cloth" />
-            </TableRow>
+                    android:src="@drawable/cloth1" />
 
+            </TableRow>
+            <TableRow/>
 
         </TableLayout>
         <TableLayout
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="@color/black"
+                android:text="옷이 비교적 깨끗하고 다른 사람이 입을 수 있는 상태면 의류수거함 배출"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+        </TableLayout>
+        <TableLayout
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp">
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,10 +83,13 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
-                android:text="젖지않은 상태로 끈으로 묶어서 투명한 비닐봉투 및 의류전용 수거함에 배출"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="@color/black"
+                android:text="많은 양의 옷을 처분해야 한다면 의류수거 업체 또는 아름다운 가게에 연락해보세요  "
                 android:textColor="@color/black"
                 android:textSize="15dp" />
+
 
         </TableLayout>
 
@@ -91,18 +114,40 @@
 
         </TableLayout>
         <TableLayout>
-            <TableRow
-                android:paddingLeft="30dp">
+            <TableRow>
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/image_cloth" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:src="@drawable/cloth2" />
             </TableRow>
 
 
         </TableLayout>
-        <TableLayout
-            android:paddingLeft="30dp">
+        <TableLayout>
+            <TableRow
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:drawablePadding="10dp"
+                    android:drawableLeft="@drawable/circlecolor"
+                    android:drawableTint="@color/black"
+                    android:text="속옷, 양말, 스타킹, 솜 이불, 배게, 방석, 인형, 수건등"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </TableRow>
+            <TableRow
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp">
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,11 +159,13 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:drawableLeft="@drawable/bag"
-                android:text="이불, 담요 등"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/circlecolor"
+                android:drawableTint="@color/black"
+                android:text="찢어졌거나 오염이 심해져서 다른 사람이 입을 수 없는 상태면 일반 종량제 봉투로 배출 "
                 android:textColor="@color/black"
                 android:textSize="15dp" />
-
+            </TableRow>
         </TableLayout>
     </TableLayout>
 </androidx.core.widget.NestedScrollView>

@@ -45,11 +45,6 @@ public class FragmentTrashcanList extends Fragment {
     ArrayList<Trashcan> trashcanList = new ArrayList<>();
     private static FragmentTrashcanAdapter adapter;
 
-    String title;
-    int subtitle;
-    Double latitude ;
-    Double longitude ;
-    int report;
 
 
     @Nullable
@@ -75,16 +70,6 @@ public class FragmentTrashcanList extends Fragment {
                 adapter = new FragmentTrashcanAdapter(getContext(),trashcanList);
                 listView.setAdapter(adapter);
 
-
-
-                /*
-
-
-                여기에 데이터와 리스트뷰 연결하는 함수 or 코드
-                (되도록 함수 따로 만들어서 콜 하는 쪽으로 추천드려욧)
-                List<Trashcan> trashcanList 분해해서 사용하시면 됩니다!!
-                ex) String name = (String) trashcanList.get(0).getName();
-                */
 
             }
 
