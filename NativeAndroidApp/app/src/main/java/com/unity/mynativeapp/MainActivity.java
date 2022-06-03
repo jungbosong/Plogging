@@ -11,6 +11,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -21,7 +22,11 @@ import com.unity.mynativeapp.fragment.FragmentTrashcanList;
 import com.unity.mynativeapp.fragment.FragmentTrashcanRegister;
 import com.unity.mynativeapp.tmapAPI.TmapActivity;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    private long lastTimeBackPressed;
 
     NavigationView navigationView;
     DrawerLayout  drawerLayout;
@@ -105,4 +110,31 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    // 백버튼 클릭 이벤트 함수 생성
+    // 프래그먼트에서 백버튼 클릭 시 이전 프래그먼트 자동 이동 불가능. 인터페이스 사용 필요
+    @Override
+    public void onBackPressed() {
+
+        //프래그먼트 BackPressedListener사용
+        List<Fragment> fragmentList = getSupportFragmentManager().getFragments();
+        for(Fragment fragment : fragmentList){
+            if(fragment instanceof BackPressedListener){
+                ((BackPressedListener)fragment).onBackPressed();
+                return;
+            }
+        }
+
+        //두 번 클릭시 어플 종료
+        if(System.currentTimeMillis() - lastTimeBackPressed < 1500){
+            moveTaskToBack(true);   // 현재 테스크를 백그라운드로 즉시 이동
+            finish();   // 현재 액티비티 종료
+            android.os.Process.killProcess(android.os.Process.myPid()); // 프로세스 강제 종료
+        }
+
+        lastTimeBackPressed = System.currentTimeMillis();
+        Toast.makeText(this,"'뒤로' 버튼을 한 번 더 누르면 종료됩니다.",Toast.LENGTH_SHORT).show();
+    }
+
+
 }//MainActivity class..

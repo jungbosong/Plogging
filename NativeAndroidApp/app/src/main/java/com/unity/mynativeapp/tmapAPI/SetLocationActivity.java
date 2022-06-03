@@ -69,13 +69,13 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         tMapGPS.setMinDistance(1000);
         tMapGPS.setMinDistance(10);
         tMapGPS.setProvider(tMapGPS.GPS_PROVIDER);
-        //tMapGPS.OpenGps(); // 실제 device 사용
+        tMapGPS.OpenGps();
 
         // 지도 중심 위치 지정
-        //tMapPoint = tMapGPS.getLocation();  // 실제 device 사용
-        TMapPoint tempPoint = new TMapPoint(35.153759, 128.098837); // 애뮬 사용
+        tMapPoint = tMapGPS.getLocation();  // 실제 device 사용
+        /*TMapPoint tempPoint = new TMapPoint(35.153759, 128.098837); // 애뮬 사용
         tMapView.setLocationPoint(tempPoint.getLongitude(), tempPoint.getLatitude());
-        tMapView.setCenterPoint(tempPoint.getLongitude(), tempPoint.getLatitude());
+        tMapView.setCenterPoint(tempPoint.getLongitude(), tempPoint.getLatitude());*/
 
 
         // 지도화면 터치 시 마커 추가
@@ -91,7 +91,7 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
                 tMapView.addMarkerItem("set_marker", markerItem);   // 지도에 마커 추가
 
                 //test
-                Toast.makeText(getApplicationContext(), "핀 위치 : " + tMapClickPoint.getLatitude() + ", " + tMapClickPoint.getLatitude(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "(선택) 핀 위치 : " + tMapClickPoint.getLatitude() + ", \n" + tMapClickPoint.getLatitude(), Toast.LENGTH_SHORT).show();
                 return false;
             }
 
@@ -106,12 +106,14 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
             @Override
             public void onClick(View v) {
                 // 실제 device
-                // tMapPoint = tMapGPS.getLocation();
-                // double set_lat = tMapPoint.getLatitude();
-                // double set_lon = tMapPoint.getLongitude();
-                //애뮬 test
+                tMapPoint = tMapGPS.getLocation();
+                double set_lat = tMapPoint.getLatitude();
+                double set_lon = tMapPoint.getLongitude();
+                /*//애뮬 test
                 double set_lat = tempPoint.getLatitude();
-                double set_lon = tempPoint.getLongitude();
+                double set_lon = tempPoint.getLongitude();*/
+
+                Toast.makeText(getApplicationContext(), "(전달) 핀 위치 : " + set_lat + ", \n" + set_lon, Toast.LENGTH_SHORT).show();
 
                 // 위치정보 반환
                 Intent result_intent = new Intent();
