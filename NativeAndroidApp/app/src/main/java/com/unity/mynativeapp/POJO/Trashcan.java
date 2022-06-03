@@ -51,7 +51,9 @@ public class Trashcan implements Serializable, Comparable<Trashcan>
 
     // 각 정보 get/set
     public String getTid() { return tid; }
+    public void setTid(String tid) { this.tid = tid; }
     public String getCreator() {return creator;}
+    public void setCreator(String creator) { this.creator = creator; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     //public String getRegion() { return region; }

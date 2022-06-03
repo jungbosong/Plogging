@@ -44,6 +44,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
     TMapView tMapView = null;       // T Map View
     TMapGpsManager tMapGPS = null;  // T Map GPS
+    TMapPoint tMapPoint = null;
     List<TMapMarkerItem> markerList = null;
 
     private final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -93,8 +94,8 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
             }
         }
         //test
-        Log.e("SEARCH TEST", "First Trashcan Info \n");
-        Log.d("SEARCH TEST", trashcanList.get(0).toString());
+        Log.e("TmapActivity", " SEARCH TEST\n");
+        Log.d("SEARCH TEST", " First Trashcan Info: "+ trashcanList.get(0).toString());
     }
 
 
@@ -138,8 +139,8 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
             m_index++;
         }
         //test
-        Log.e("MARKER TEST", "MARKER ID \n");
-        Log.d("MARKER TEST", markerList.get(0).getID());
+        Log.e("TmapActivity", " MARKER TEST \n");
+        Log.d("MARKER TEST", " MARKER ID" + markerList.get(0).getID());
     }
 
 
@@ -168,17 +169,17 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                     intentMap.putExtra("Route", result);               // 경로 데이터(Route)
                     startActivity(intentMap);  // Activity 이동
                     //test
-                    Log.e("REST API TEST", "onResponse: 성공 \n");
-                    Log.d("REST API TEST", result.toString());
+                    Log.e("TmapActivity", " REST API TEST - onResponse: 성공 \n");
+                    Log.d("REST API TEST", "first feature"+result.getFeatures().get(0).toString());
 
                 } else {    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                    Log.d("REST API TEST", "onResponse: 실패");
+                    Log.e("TmapActivity", " REST API TEST - onResponse: 실패 \n");
                 }
             }
             @Override
             public void onFailure(Call<Route> call, Throwable t) {
                 // 통신 실패(인터넷 끊김, 예외 발생 등 시스템적인 이유)
-                Log.e("REST API TEST", "onFailure: "+t.getMessage());
+                Log.e("TmapActivity", "REST API TEST - onFailure: "+t.getMessage());
             }
         });
     }
@@ -213,37 +214,47 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
         tMapGPS = new TMapGpsManager(this);
 
         // Initial Setting
-        tMapGPS.setMinTime(1000);
+        //tMapGPS.setMinTime(1000);     // 애뮬 테스트할 때 주석처리
         tMapGPS.setMinDistance(10);
         tMapGPS.setProvider(tMapGPS.GPS_PROVIDER);
 
-        //tMapGPS.OpenGps();    // 실제 device 사용
-        latitude = 35.153759;   // 애뮬 사용
+        //tMapGPS.OpenGps();            // 애뮬 테스트할 때 주석처리
+        /*latitude = tMapGPS.getLocation().getLatitude();         // 실제 device 사용
+        longitude = tMapGPS.getLocation().getLongitude();*/
+        latitude = 35.153759;           // 애뮬 사용
         longitude = 128.098837;
 
-        tMapView.setLocationPoint(longitude, latitude);     // 지도 현재위치 지정
+        tMapView.setLocationPoint(longitude, latitude);                 // 지도 현재위치 지정
         tMapView.setCenterPoint(longitude, latitude, false);   // 지도 중심좌표 이동
-        // 쓰레기통 목록 버튼 클릭
-
 
         // 쓰레기통 정보 한 번 읽어오기
         databaseReference.child("Trashcan").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                // 만약 DB에 등록된 쓰레기통 목록이 없다면
+                if(snapshot.getChildren()==null) {
+                    Toast.makeText(TmapActivity.this, "쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
+                    return; // 메소드 빠져나감
+                }
+
                 // 지정한 위치의 데이터를 포함하는 DataSnapshot을 수신한다
                 for (DataSnapshot postSnapshot: snapshot.getChildren()){
                     Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
                     trashcans.add(trashcan);
                 }
-                // getValue를 통해 tid의 하부 child인 name, region, latitude, longitude, report, tid에 대한 데이터를 받아와
+                // getValue를 통해 tid의 하부 child인 name, creator, latitude, longitude, report, tid에 대한 데이터를 받아와
                 // Trashcan.class를 통해 옮겨담는다.
 
-                Log.e("GET TRASHCAN LIST TEST", " trashcan info\n");
-                Log.d("GET TRASHCAN LIST TEST", " Latitude: " + trashcans.get(0).getLatitude() + ", "+ trashcans.get(0).getLongitude());
+                Log.e("TmapActivity", "GET TRASHCAN LIST TEST\n");
+                Log.d("GET TRASHCAN LIST TEST", "trashcan info: \n Latitude: " + trashcans.get(0).getLatitude() + ", "+ trashcans.get(0).getLongitude());
 
                 // 근처 쓰레기통 검색 및 저장
                 getTrashcanList();
+                if(trashcanList.size() < 1){
+                    Toast.makeText(TmapActivity.this, "근처 쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 // 쓰레기통 위치에 핀 생성
                 addMarketMarker();
@@ -261,13 +272,6 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                     }
                 });
 
-                // 현재위치 버튼
-                herebutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        System.out.println("test");
-                    }
-                });
                 // 쓰레기통 버튼
                 trashcanbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -279,7 +283,8 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                             trashcan.setDistance(distance);
                         }
                         Collections.sort(trashcanList); // distance 기준 근처 쓰레기통 목록 오름차순 정렬
-                        Log.e("trashcnabutton TEST",String.valueOf(trashcanList.get(0).getDistance()));
+                        Log.e("TmapActivity ", "trashcnabutton TEST");
+                        Log.d("trashcnabutton TEST ", "first trashcan distance: "+ trashcanList.get(0).getDistance());
 
 
                         // Activity로 데이터 전달, Activity 이동
@@ -288,10 +293,6 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                         intentList.putExtra("start_lat", latitude);          // 현재 위치(double)
                         intentList.putExtra("start_lon", longitude);
                         startActivity(intentList);  // Activity 이동
-
-                        // Activity 이동
-                        // List<Trashcan> trashcanList = getIntent().getSerializableExtra("trashcanList");
-
                     }
                 });
 
@@ -300,6 +301,14 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.w("TmapActivity","loadPost:onCancelled", error.toException());
+            }
+        });
+
+        // 현재위치 버튼
+        herebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tMapView.setCenterPoint(longitude, latitude, true);   // 지도 중심좌표 이동
             }
         });
     }
