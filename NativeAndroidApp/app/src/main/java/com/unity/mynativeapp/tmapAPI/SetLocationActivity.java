@@ -33,14 +33,15 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
     TMapGpsManager tMapGPS = null;
     TMapMarkerItem markerItem = null;
     Button set_button;
+
+    String name;
+    boolean check;
     double latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_location);
-
-        String name = getIntent().getStringExtra("name");
 
         tMapView = new TMapView(this);
         tMapView.setSKTMapApiKey(api_key);
@@ -73,25 +74,29 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
 
         // 지도 중심 위치 지정
         tMapPoint = tMapGPS.getLocation();  // 실제 device 사용
+        tMapView.setCenterPoint(tMapPoint.getLongitude(), tMapPoint.getLatitude());
         /*TMapPoint tempPoint = new TMapPoint(35.153759, 128.098837); // 애뮬 사용
-        tMapView.setLocationPoint(tempPoint.getLongitude(), tempPoint.getLatitude());
         tMapView.setCenterPoint(tempPoint.getLongitude(), tempPoint.getLatitude());*/
 
+        name = getIntent().getStringExtra("name");
+        check = getIntent().getBooleanExtra("check", false);
+
+        // 수정 중인 경우 - 내가 등록한 쓰레기통을 통한 경우 (FragmentTrashcanAdapter)
+        if(check==true){
+            // 수정된 name 적용
+            name = getIntent().getStringExtra("name");
+            // 전달받은 위치에 마커 추가
+            double t_lat = getIntent().getDoubleExtra("latitude", 0.0);
+            double t_lon = getIntent().getDoubleExtra("longitude", 0.0);
+            tMapView.setCenterPoint(t_lon, t_lat);
+            addMarker(new TMapPoint(t_lat, t_lon));
+        }
 
         // 지도화면 터치 시 마커 추가
         tMapView.setOnClickListenerCallBack(new TMapView.OnClickListenerCallback() {
             @Override
             public boolean onPressEvent(ArrayList<TMapMarkerItem> arrayList, ArrayList<TMapPOIItem> arrayList1, TMapPoint tMapClickPoint, PointF pointF) {
-                tMapView.removeAllMarkerItem();
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.marker_pin);
-                markerItem = new TMapMarkerItem();
-                markerItem.setIcon(bitmap);                 // bitmap를 Marker icon으로 사용
-                markerItem.setPosition(0.5f, 1.0f);  // Marker img의 position
-                markerItem.setTMapPoint(tMapClickPoint);    // Marker 위치 지정
-                tMapView.addMarkerItem("set_marker", markerItem);   // 지도에 마커 추가
-
-                //test
-                Toast.makeText(getApplicationContext(), "(선택) 핀 위치 : " + tMapClickPoint.getLatitude() + ", \n" + tMapClickPoint.getLatitude(), Toast.LENGTH_SHORT).show();
+                addMarker(tMapClickPoint);
                 return false;
             }
 
@@ -135,5 +140,19 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
 
         tMapView.setLocationPoint(longitude, latitude);
         tMapView.setCenterPoint(longitude, latitude);
+    }
+
+    // 지도에 마커 추가
+    public void addMarker(TMapPoint point){
+        tMapView.removeAllMarkerItem();
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.marker_pin);
+        markerItem = new TMapMarkerItem();
+        markerItem.setIcon(bitmap);                 // bitmap를 Marker icon으로 사용
+        markerItem.setPosition(0.5f, 1.0f);  // Marker img의 position
+        markerItem.setTMapPoint(point);             // Marker 위치 지정
+        tMapView.addMarkerItem("set_marker", markerItem);   // 지도에 마커 추가
+
+        //test
+        Toast.makeText(getApplicationContext(), "(선택) 핀 위치 : " + point.getLatitude() + ", \n" + point.getLatitude(), Toast.LENGTH_SHORT).show();
     }
 }
