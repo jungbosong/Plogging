@@ -24,16 +24,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".tmapAPI.ShowLocationActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/title_activity_show_location">
+        </activity>
 
         <activity
             android:name=".tmapAPI.SetLocationActivity"
-            android:label="@string/title_activity_set_location">
-        </activity>
+            android:label="@string/title_activity_set_location" />
         <activity
             android:name=".tmapAPI.TmapActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".tmapAPI.TmapNavigationActivity" />
+        <activity android:name=".tmapAPI.TmapNavigationActivity" />
         <activity
             android:name=".SplishActivity"
             android:label="@string/app_name"
@@ -104,7 +107,6 @@
         <activity
             android:name=".tmapAPI.TrashcanfloatingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
 
         <provider
             android:name="androidx.core.content.FileProvider"

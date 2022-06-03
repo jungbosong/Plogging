@@ -48,6 +48,8 @@ public class FragmentTrashcanList extends Fragment implements BackPressedListene
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trashcan_list, container, false);
 
+        trashcanList.clear();
+
         // firebaseAuth의 인스턴스를 가져옴
         firebaseUser =  FirebaseAuth.getInstance().getCurrentUser();
         String uid = firebaseUser.getUid();     // 현재 사용자의 uid 가져오기
@@ -63,9 +65,10 @@ public class FragmentTrashcanList extends Fragment implements BackPressedListene
                     Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
                     trashcanList.add(trashcan);
                 }
-                Log.e("GET USER TRASHCAN LIST TEST", " trashcan info\n");
+                Log.e("FragmentTrashcanList", "GET USER TRASHCAN LIST TEST");
+                Log.d("GET USER TRASHCAN LIST TEST", "first trashcan name: " + trashcanList.get(0).getName());
                 listView = view.findViewById(R.id.list);
-                adapter = new FragmentTrashcanAdapter(getContext(),trashcanList);
+                adapter = new FragmentTrashcanAdapter(getContext(),trashcanList, FragmentTrashcanList.this);
                 listView.setAdapter(adapter);
             }
 

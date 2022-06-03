@@ -52,6 +52,16 @@ public class FragmentTrashcanRegister extends Fragment implements BackPressedLis
         // 쓰레기통 이름 EditText
         trashcanName = (EditText) view.findViewById(R.id.trashcanName);
 
+        // 수정 중인 경우 - 내가 등록한 쓰레기통 선택에서 넘어온 경우 (FragmentTrashcanAdapter)
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            tid = bundle.getString("tid");
+            name = bundle.getString("name");
+            latitude = bundle.getDouble("latitude");
+            longitude = bundle.getDouble("longitude");
+            trashcanName.setText(name);
+        }
+
         // 쓰레기통 위치 선택 버튼
         locationchoose = view.findViewById(R.id.locationchoose);
         locationchoose.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +70,14 @@ public class FragmentTrashcanRegister extends Fragment implements BackPressedLis
                 if(!(name == null || name.length() == 0)){
                     // 위치 선택 지도 이동
                     Intent intent = new Intent(getActivity(), SetLocationActivity.class);
+                    if(bundle != null) {    // 수정 중인 경우
+                        intent.putExtra("latitude", latitude);
+                        intent.putExtra("longitude", longitude);
+                        intent.putExtra("check", true);
+                    }
+                    else{
+                        intent.putExtra("check", false);
+                    }
                     intent.putExtra("name", name);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivityForResult(intent, REQUEST_CODE);
@@ -72,15 +90,20 @@ public class FragmentTrashcanRegister extends Fragment implements BackPressedLis
 
         // 쓰레기통 등록 버튼
         trashcanRegister = view.findViewById(R.id.trashcanRegister);
+        // DB에 쓰레기통 데이터 추가
         trashcanRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if(latitude != 0.0){
-
-                    // DB에 쓰레기통 데이터 추가
                     Map<String, Object> childUpdates = new HashMap<>();     // update할 child(경로+값)
                     Map<String, Object> postValues = null;                  // child 값을 저장할 HashMap
 
-                    tid = mDatabase.child("Trashcan").push().getKey();      // tid 랜덤 생성, 빈 쓰레기통 목록 추가
+                    // 수정 중 아닐 경우
+                    if(bundle == null)
+                        tid = mDatabase.child("Trashcan").push().getKey();      // tid 랜덤 생성, 빈 쓰레기통 목록 추가
+                    else
+                        name = trashcanName.getText().toString();   // name만 변경하는 경우 name 다시 가져오기
+
+                    
                     Trashcan post = new Trashcan(tid, uid, name, latitude, longitude, 0);  // 입력된 trashcan 정보로 객체 생성
                     postValues = post.TrashcantoMap();                      // 객체에 저장된 정보를 HashMap으로 전환
 
