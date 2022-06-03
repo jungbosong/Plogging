@@ -9,6 +9,7 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
     public static OverrideUnityActivity instance = null;
 
     abstract protected void showMainActivity(String setToColor);
+    abstract protected Integer getPointCount();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

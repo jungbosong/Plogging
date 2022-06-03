@@ -15,6 +15,7 @@ public class NativeAPI {
 public class Cube : MonoBehaviour
 {
     public Text text;    
+    int pointCount;
     void appendToText(string line) { text.text += line + "\n"; }
 
     void Update()
@@ -47,6 +48,7 @@ public class Cube : MonoBehaviour
             AndroidJavaClass jc = new AndroidJavaClass("com.company.product.OverrideUnityActivity");
             AndroidJavaObject overrideActivity = jc.GetStatic<AndroidJavaObject>("instance");
             overrideActivity.Call("showMainActivity", lastStringColor);
+            pointCount = overrideActivity.Call<int>("GetPointCount");
         } catch(Exception e)
         {
             appendToText("Exception during showHostMainWindow");
