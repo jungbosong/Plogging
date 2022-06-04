@@ -100,19 +100,5 @@ public class RouteManager : MonoBehaviour
             Debug.Log(data[i]);
         }
     }
-
-
-/*
-    void OnGUI()
-    {
-        GUIStyle style = new GUIStyle("button");
-        style.fontSize = 30;        
-        
-        if (GUI.Button(new Rect(10, 10, 200, 100), "GetPointCount", style)) PrintPointCount();
-        if (GUI.Button(new Rect(10, 400, 400, 100), "Unload", style)) Application.Unload();
-        if (GUI.Button(new Rect(440, 400, 400, 100), "Quit", style)) Application.Quit();
-    }
-    */
-    
 }
 
