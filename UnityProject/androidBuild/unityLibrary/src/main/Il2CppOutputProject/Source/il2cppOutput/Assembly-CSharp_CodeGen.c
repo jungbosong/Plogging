@@ -46,71 +46,69 @@ extern void ReadJson_Load_m8552047011A6FCD458AE6A14340B3502D86E0BC1 (void);
 extern void ReadJson__ctor_mB3BF7AAFA5B159C8797FFE7056E5CCBC6C93C203 (void);
 // 0x00000011 System.Int32 RouteManager::GetPointCount()
 extern void RouteManager_GetPointCount_m37E2BD991FB1C56832F4FFB6C7CC70208A8548F9 (void);
-// 0x00000012 System.Void RouteManager::appendToText(System.String)
-extern void RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346 (void);
-// 0x00000013 System.Void RouteManager::Awake()
+// 0x00000012 System.Void RouteManager::Awake()
 extern void RouteManager_Awake_mE776B9D13AE0D6C1520A3F72F50D548F587D50B2 (void);
-// 0x00000014 System.Void RouteManager::Start()
+// 0x00000013 System.Void RouteManager::Start()
 extern void RouteManager_Start_mEDD05886F372824BE29038664349EEFD5101E66A (void);
-// 0x00000015 System.Void RouteManager::Update()
+// 0x00000014 System.Void RouteManager::Update()
 extern void RouteManager_Update_m5F6FDC1B88D7BEF1A56F44494B4BC17D75B9DAAD (void);
-// 0x00000016 System.Void RouteManager::GetRouteData()
+// 0x00000015 System.Void RouteManager::GetRouteData()
 extern void RouteManager_GetRouteData_mA908EC50FAE878ADBDE0061E5CB5ED2545AE0A62 (void);
-// 0x00000017 System.Collections.Generic.List`1<System.Single> RouteManager::ParsingData(System.String)
+// 0x00000016 System.Collections.Generic.List`1<System.Single> RouteManager::ParsingData(System.String)
 extern void RouteManager_ParsingData_mDD49746F6E3DF9D2ED11A47ED468A3E1DE2ACE22 (void);
-// 0x00000018 System.Void RouteManager::PrintList(System.Collections.Generic.List`1<System.Single>)
+// 0x00000017 System.Void RouteManager::PrintList(System.Collections.Generic.List`1<System.Single>)
 extern void RouteManager_PrintList_m8A43F127172B9952E72E4ADA73FE8036509F3DE1 (void);
-// 0x00000019 System.Void RouteManager::.ctor()
+// 0x00000018 System.Void RouteManager::.ctor()
 extern void RouteManager__ctor_m4104BE2D87B2EDABF8400B8C7427D38EF9E454CB (void);
-// 0x0000001A System.Object MiniJSON.Json::Deserialize(System.String)
+// 0x00000019 System.Object MiniJSON.Json::Deserialize(System.String)
 extern void Json_Deserialize_m699D585677C2862DBAFA44EC31F8B6BEFB90970A (void);
-// 0x0000001B System.String MiniJSON.Json::Serialize(System.Object)
+// 0x0000001A System.String MiniJSON.Json::Serialize(System.Object)
 extern void Json_Serialize_m39431EDE1526C8634DECB4F2FECF100067432169 (void);
-// 0x0000001C System.Boolean MiniJSON.Json/Parser::IsWordBreak(System.Char)
+// 0x0000001B System.Boolean MiniJSON.Json/Parser::IsWordBreak(System.Char)
 extern void Parser_IsWordBreak_mC0D8CFAB5531BC6B513F269FB4DDB1A306D580DA (void);
-// 0x0000001D System.Void MiniJSON.Json/Parser::.ctor(System.String)
+// 0x0000001C System.Void MiniJSON.Json/Parser::.ctor(System.String)
 extern void Parser__ctor_m4E1732BA0BD698178125471DC1511219299898F8 (void);
-// 0x0000001E System.Object MiniJSON.Json/Parser::Parse(System.String)
+// 0x0000001D System.Object MiniJSON.Json/Parser::Parse(System.String)
 extern void Parser_Parse_m0C859F2B5F4F846DE4C1BA6A25C1F5CDE0A4E225 (void);
-// 0x0000001F System.Void MiniJSON.Json/Parser::Dispose()
+// 0x0000001E System.Void MiniJSON.Json/Parser::Dispose()
 extern void Parser_Dispose_mAA3BFFD7355890D49D822235E90A2344EBDBE6C5 (void);
-// 0x00000020 System.Collections.Generic.Dictionary`2<System.String,System.Object> MiniJSON.Json/Parser::ParseObject()
+// 0x0000001F System.Collections.Generic.Dictionary`2<System.String,System.Object> MiniJSON.Json/Parser::ParseObject()
 extern void Parser_ParseObject_mDDD2FB38855612FD864DBA2DFEA9C11BF73DC39E (void);
-// 0x00000021 System.Collections.Generic.List`1<System.Object> MiniJSON.Json/Parser::ParseArray()
+// 0x00000020 System.Collections.Generic.List`1<System.Object> MiniJSON.Json/Parser::ParseArray()
 extern void Parser_ParseArray_m652900CDFFD881DF9449BDD372556C340DCD75D3 (void);
-// 0x00000022 System.Object MiniJSON.Json/Parser::ParseValue()
+// 0x00000021 System.Object MiniJSON.Json/Parser::ParseValue()
 extern void Parser_ParseValue_m59151796F1BD6D3E46D554A49EF34BCDB403AA79 (void);
-// 0x00000023 System.Object MiniJSON.Json/Parser::ParseByToken(MiniJSON.Json/Parser/TOKEN)
+// 0x00000022 System.Object MiniJSON.Json/Parser::ParseByToken(MiniJSON.Json/Parser/TOKEN)
 extern void Parser_ParseByToken_m911C011FACC990674C6B917558E12B9DA2CBE444 (void);
-// 0x00000024 System.String MiniJSON.Json/Parser::ParseString()
+// 0x00000023 System.String MiniJSON.Json/Parser::ParseString()
 extern void Parser_ParseString_m0D81629614AB969C04BBD74965821A39E1573D63 (void);
-// 0x00000025 System.Object MiniJSON.Json/Parser::ParseNumber()
+// 0x00000024 System.Object MiniJSON.Json/Parser::ParseNumber()
 extern void Parser_ParseNumber_m2A376DA74162CDEE4A283B5BD92FCF80E066A04E (void);
-// 0x00000026 System.Void MiniJSON.Json/Parser::EatWhitespace()
+// 0x00000025 System.Void MiniJSON.Json/Parser::EatWhitespace()
 extern void Parser_EatWhitespace_m8C75236AFAB8FFF856DA2BFE53BC84F9C7E05AA1 (void);
-// 0x00000027 System.Char MiniJSON.Json/Parser::get_PeekChar()
+// 0x00000026 System.Char MiniJSON.Json/Parser::get_PeekChar()
 extern void Parser_get_PeekChar_mC5C7804B362B6A163532B53F1D9270D8F7F8C55A (void);
-// 0x00000028 System.Char MiniJSON.Json/Parser::get_NextChar()
+// 0x00000027 System.Char MiniJSON.Json/Parser::get_NextChar()
 extern void Parser_get_NextChar_m02DE23E038D31DE928B6F89B149590A35209D4A1 (void);
-// 0x00000029 System.String MiniJSON.Json/Parser::get_NextWord()
+// 0x00000028 System.String MiniJSON.Json/Parser::get_NextWord()
 extern void Parser_get_NextWord_m7DA018BF5C404FE6FB873F46E721A512FD63ED2F (void);
-// 0x0000002A MiniJSON.Json/Parser/TOKEN MiniJSON.Json/Parser::get_NextToken()
+// 0x00000029 MiniJSON.Json/Parser/TOKEN MiniJSON.Json/Parser::get_NextToken()
 extern void Parser_get_NextToken_m889CBAFA9C9DDDE25A59F5CD4BC592654A1CA567 (void);
-// 0x0000002B System.Void MiniJSON.Json/Serializer::.ctor()
+// 0x0000002A System.Void MiniJSON.Json/Serializer::.ctor()
 extern void Serializer__ctor_mE358C3CEC17F0D9F2158C5D09F9BD1CB6B760F84 (void);
-// 0x0000002C System.String MiniJSON.Json/Serializer::Serialize(System.Object)
+// 0x0000002B System.String MiniJSON.Json/Serializer::Serialize(System.Object)
 extern void Serializer_Serialize_mBEDF816D5B952D6C2EDFEE5475395CD4249BDB9C (void);
-// 0x0000002D System.Void MiniJSON.Json/Serializer::SerializeValue(System.Object)
+// 0x0000002C System.Void MiniJSON.Json/Serializer::SerializeValue(System.Object)
 extern void Serializer_SerializeValue_mBE0C676D8B5F4EBD76E9019A7FE931F8BB2416EE (void);
-// 0x0000002E System.Void MiniJSON.Json/Serializer::SerializeObject(System.Collections.IDictionary)
+// 0x0000002D System.Void MiniJSON.Json/Serializer::SerializeObject(System.Collections.IDictionary)
 extern void Serializer_SerializeObject_m8B5E760CF414451768C00F044DBC2B36A028E1D4 (void);
-// 0x0000002F System.Void MiniJSON.Json/Serializer::SerializeArray(System.Collections.IList)
+// 0x0000002E System.Void MiniJSON.Json/Serializer::SerializeArray(System.Collections.IList)
 extern void Serializer_SerializeArray_m72FB41798EAB678E1064FC4DC830E3F34EB72302 (void);
-// 0x00000030 System.Void MiniJSON.Json/Serializer::SerializeString(System.String)
+// 0x0000002F System.Void MiniJSON.Json/Serializer::SerializeString(System.String)
 extern void Serializer_SerializeString_m8EF870ACEA27199F33FA1B647B801C3E026CF31F (void);
-// 0x00000031 System.Void MiniJSON.Json/Serializer::SerializeOther(System.Object)
+// 0x00000030 System.Void MiniJSON.Json/Serializer::SerializeOther(System.Object)
 extern void Serializer_SerializeOther_m20D11252CFA7B52079C618491BCB3AFE22332BC4 (void);
-static Il2CppMethodPointer s_methodPointers[49] = 
+static Il2CppMethodPointer s_methodPointers[48] = 
 {
 	Cube_appendToText_m4396A04E15079E3F8062CA5109A145CC17042AAF,
 	Cube_Update_m7A81C6F3625ACAB2DEBA548F1A765383F060CFEC,
@@ -129,7 +127,6 @@ static Il2CppMethodPointer s_methodPointers[49] =
 	ReadJson_Load_m8552047011A6FCD458AE6A14340B3502D86E0BC1,
 	ReadJson__ctor_mB3BF7AAFA5B159C8797FFE7056E5CCBC6C93C203,
 	RouteManager_GetPointCount_m37E2BD991FB1C56832F4FFB6C7CC70208A8548F9,
-	RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346,
 	RouteManager_Awake_mE776B9D13AE0D6C1520A3F72F50D548F587D50B2,
 	RouteManager_Start_mEDD05886F372824BE29038664349EEFD5101E66A,
 	RouteManager_Update_m5F6FDC1B88D7BEF1A56F44494B4BC17D75B9DAAD,
@@ -162,7 +159,7 @@ static Il2CppMethodPointer s_methodPointers[49] =
 	Serializer_SerializeString_m8EF870ACEA27199F33FA1B647B801C3E026CF31F,
 	Serializer_SerializeOther_m20D11252CFA7B52079C618491BCB3AFE22332BC4,
 };
-static const int32_t s_InvokerIndices[49] = 
+static const int32_t s_InvokerIndices[48] = 
 {
 	1704,
 	2049,
@@ -181,7 +178,6 @@ static const int32_t s_InvokerIndices[49] =
 	2049,
 	2049,
 	2000,
-	1704,
 	2049,
 	2049,
 	2049,
@@ -219,7 +215,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	49,
+	48,
 	s_methodPointers,
 	0,
 	NULL,
