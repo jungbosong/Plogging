@@ -25,7 +25,7 @@ public class LineManager : MonoBehaviour
     {
         routeManager = routeManager.GetComponent<RouteManager>();
         lineRenderer = this.GetComponent<LineRenderer>();
-        lineRenderer.SetWidth(2f, 2f);
+        lineRenderer.SetWidth(0.05f, 0.05f);
     }
 
 
@@ -53,16 +53,14 @@ public class LineManager : MonoBehaviour
     void CreateObjects()
     {
         Debug.Log("Create Objects");
-        int idx = -1;
+        
         float nowLatitude = latitudeList[0];
         float nowLongitude = longitudeList[0];
+        
         for (int i = 0; i < pointCount; i++)
         {
             GameObject sphereObj = Instantiate(spherePrefab, parent); 
-            ChangeObjectPosition(sphereObj, nowLatitude, nowLongitude, latitudeList[i], longitudeList[i]);
-            idx++;
-            nowLatitude = latitudeList[idx];
-            nowLongitude = longitudeList[idx];
+            ChangeObjectPosition(sphereObj, nowLatitude, nowLongitude, latitudeList[i], longitudeList[i]);           
 
             objPositionList.Add(sphereObj.transform.position);   
         }
@@ -70,11 +68,19 @@ public class LineManager : MonoBehaviour
 
     public void ChangeObjectPosition(GameObject obj, float nowLatitude, float nowLongitude, float nextLatitude, float nextLongitude)
     {    
+        // 언더플로우 방지를 위한 값 수정
+        /*
+        nextLatitude = Mathf.Round(nextLatitude * 10000000) * 0.00000001f; 
+        nextLongitude = Mathf.Round(nextLongitude * 10000000) * 0.00000001f; 
+        nowLatitude = Mathf.Round(nowLatitude * 10000000) * 0.00000001f; 
+        nowLongitude = Mathf.Round(nowLongitude * 10000000) * 0.00000001f; 
+        */
+
         // 다음 목적지 - 현위치 = 유니티에서의 목적지
         float destinationLatitude = nextLatitude - nowLatitude;
         float destinationLongitude = nextLongitude - nowLongitude;
 
-        Vector3 destination = new Vector3(destinationLongitude, destinationLatitude, 0);
+        Vector3 destination = new Vector3(destinationLongitude, 0, destinationLatitude);
 
         // 오브젝트 위치 이동
         //obj = obj.GetComponent<GameObject>();

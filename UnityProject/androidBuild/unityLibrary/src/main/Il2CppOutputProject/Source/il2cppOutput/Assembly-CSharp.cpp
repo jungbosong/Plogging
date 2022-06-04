@@ -245,6 +245,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral5BEFD8CC60A79699B5BB00E37BAC5B62D371E174
 IL2CPP_EXTERN_C String_t* _stringLiteral5F629B25BE4F48980C1EDD2471AE2A239A980D35;
 IL2CPP_EXTERN_C String_t* _stringLiteral6392FE1801B5612013D234DD04E071C404AD5001;
 IL2CPP_EXTERN_C String_t* _stringLiteral6496937B5293CB485DAA9B917BBD89522937BA83;
+IL2CPP_EXTERN_C String_t* _stringLiteral6E42C907C971302421116BFA19C02DCF22EE1C0E;
 IL2CPP_EXTERN_C String_t* _stringLiteral77BA5E25678420F932ACED9EFECA6756A0CD1BEA;
 IL2CPP_EXTERN_C String_t* _stringLiteral77D38C0623F92B292B925F6E72CF5CF99A20D4EB;
 IL2CPP_EXTERN_C String_t* _stringLiteral77FA365523C8AD1C1BCB07FE41D0BA9D232632F4;
@@ -253,10 +254,8 @@ IL2CPP_EXTERN_C String_t* _stringLiteral7E178D61714E19CBB83E719AA7023581493C3C4D
 IL2CPP_EXTERN_C String_t* _stringLiteral7F3238CD8C342B06FB9AB185C610175C84625462;
 IL2CPP_EXTERN_C String_t* _stringLiteral848E5ED630B3142F565DD995C6E8D30187ED33CD;
 IL2CPP_EXTERN_C String_t* _stringLiteral84C1E07F84B6E7BDCC02A904AFEC3BBD2CAE6EAA;
-IL2CPP_EXTERN_C String_t* _stringLiteral8A471DD29E9CF2179BD93F9E9D7FAEE64EEE87D4;
 IL2CPP_EXTERN_C String_t* _stringLiteral8DFFF6900D69E4D0083974E14DBF4DEB5AAF8ED2;
 IL2CPP_EXTERN_C String_t* _stringLiteral8EB2132CE272234E27570467898FF2518A0F8E29;
-IL2CPP_EXTERN_C String_t* _stringLiteral93C7ECDDD104991E4AE6E94C9FC83037443356D5;
 IL2CPP_EXTERN_C String_t* _stringLiteral9B736A9739934A4ACD0D222F5EDAB3AB0209F008;
 IL2CPP_EXTERN_C String_t* _stringLiteralA7C3FCA8C63E127B542B38A5CA5E3FEEDDD1B122;
 IL2CPP_EXTERN_C String_t* _stringLiteralAA236E134566FACF682D16CDBC3E2C735E0EF19D;
@@ -269,6 +268,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB78F235D4291950A7D101307609C259F3E1F033F
 IL2CPP_EXTERN_C String_t* _stringLiteralB7C45DD316C68ABF3429C20058C2981C652192F2;
 IL2CPP_EXTERN_C String_t* _stringLiteralBB1CC10AED50492665B69D0FCC8FD4C533A4DB0E;
 IL2CPP_EXTERN_C String_t* _stringLiteralC176B4F6F2542477D019DEF12376DA784C53AAFA;
+IL2CPP_EXTERN_C String_t* _stringLiteralD2CAEECDC99E1ABD205BEC21337F0649C603BBFF;
 IL2CPP_EXTERN_C String_t* _stringLiteralD4792B4521F24C9B17025273D37BC146DD642957;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA666908BB15F4E1D2649752EC5DCBD0D5C64699;
@@ -4360,10 +4360,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_Awake_m4E88F545E1107D14E441E
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_2;
 		L_2 = Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A(__this, /*hidden argument*/Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A_RuntimeMethod_var);
 		__this->set_lineRenderer_7(L_2);
-		// lineRenderer.SetWidth(2f, 2f);
+		// lineRenderer.SetWidth(0.05f, 0.05f);
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_3 = __this->get_lineRenderer_7();
 		NullCheck(L_3);
-		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (2.0f), (2.0f), /*hidden argument*/NULL);
+		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (0.0500000007f), (0.0500000007f), /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -4454,35 +4454,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_CreateObjects_mE2FA802747F08
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral20CB7D0E357ACAA05869BEB26A86C598A7F73A99);
 		s_Il2CppMethodInitialized = true;
 	}
-	int32_t V_0 = 0;
+	float V_0 = 0.0f;
 	float V_1 = 0.0f;
-	float V_2 = 0.0f;
-	int32_t V_3 = 0;
-	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * V_4 = NULL;
+	int32_t V_2 = 0;
+	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * V_3 = NULL;
 	{
 		// Debug.Log("Create Objects");
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(_stringLiteral20CB7D0E357ACAA05869BEB26A86C598A7F73A99, /*hidden argument*/NULL);
-		// int idx = -1;
-		V_0 = (-1);
 		// float nowLatitude = latitudeList[0];
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_0 = __this->get_latitudeList_8();
 		NullCheck(L_0);
 		float L_1;
 		L_1 = List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_inline(L_0, 0, /*hidden argument*/List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_RuntimeMethod_var);
-		V_1 = L_1;
+		V_0 = L_1;
 		// float nowLongitude = longitudeList[0];
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_2 = __this->get_longitudeList_9();
 		NullCheck(L_2);
 		float L_3;
 		L_3 = List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_inline(L_2, 0, /*hidden argument*/List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_RuntimeMethod_var);
-		V_2 = L_3;
+		V_1 = L_3;
 		// for (int i = 0; i < pointCount; i++)
-		V_3 = 0;
-		goto IL_0098;
+		V_2 = 0;
+		goto IL_0075;
 	}
 
-IL_002a:
+IL_0028:
 	{
 		// GameObject sphereObj = Instantiate(spherePrefab, parent);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_4 = __this->get_spherePrefab_5();
@@ -4490,63 +4487,46 @@ IL_002a:
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_6;
 		L_6 = Object_Instantiate_TisGameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319_mF131D53AB04E75E849487A7ACF79A8B27527F4B8(L_4, L_5, /*hidden argument*/Object_Instantiate_TisGameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319_mF131D53AB04E75E849487A7ACF79A8B27527F4B8_RuntimeMethod_var);
-		V_4 = L_6;
+		V_3 = L_6;
 		// ChangeObjectPosition(sphereObj, nowLatitude, nowLongitude, latitudeList[i], longitudeList[i]);
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_7 = V_4;
-		float L_8 = V_1;
-		float L_9 = V_2;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_7 = V_3;
+		float L_8 = V_0;
+		float L_9 = V_1;
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_10 = __this->get_latitudeList_8();
-		int32_t L_11 = V_3;
+		int32_t L_11 = V_2;
 		NullCheck(L_10);
 		float L_12;
 		L_12 = List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_inline(L_10, L_11, /*hidden argument*/List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_RuntimeMethod_var);
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_13 = __this->get_longitudeList_9();
-		int32_t L_14 = V_3;
+		int32_t L_14 = V_2;
 		NullCheck(L_13);
 		float L_15;
 		L_15 = List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_inline(L_13, L_14, /*hidden argument*/List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_RuntimeMethod_var);
 		LineManager_ChangeObjectPosition_m55F2CCEE3813E1F4102A96FCC754B70EDEF4A66F(__this, L_7, L_8, L_9, L_12, L_15, /*hidden argument*/NULL);
-		// idx++;
-		int32_t L_16 = V_0;
-		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_16, (int32_t)1));
-		// nowLatitude = latitudeList[idx];
-		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_17 = __this->get_latitudeList_8();
-		int32_t L_18 = V_0;
-		NullCheck(L_17);
-		float L_19;
-		L_19 = List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_inline(L_17, L_18, /*hidden argument*/List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_RuntimeMethod_var);
-		V_1 = L_19;
-		// nowLongitude = longitudeList[idx];
-		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_20 = __this->get_longitudeList_9();
-		int32_t L_21 = V_0;
-		NullCheck(L_20);
-		float L_22;
-		L_22 = List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_inline(L_20, L_21, /*hidden argument*/List_1_get_Item_mE747DE332539CAC0473E9C10EC3657830A3BBF97_RuntimeMethod_var);
-		V_2 = L_22;
 		// objPositionList.Add(sphereObj.transform.position);
-		List_1_t577D28CFF6DFE3F6A8D4409F7A21CBF513C04181 * L_23 = __this->get_objPositionList_10();
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_24 = V_4;
-		NullCheck(L_24);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_25;
-		L_25 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_24, /*hidden argument*/NULL);
-		NullCheck(L_25);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_26;
-		L_26 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_25, /*hidden argument*/NULL);
-		NullCheck(L_23);
-		List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59(L_23, L_26, /*hidden argument*/List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59_RuntimeMethod_var);
+		List_1_t577D28CFF6DFE3F6A8D4409F7A21CBF513C04181 * L_16 = __this->get_objPositionList_10();
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_17 = V_3;
+		NullCheck(L_17);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_18;
+		L_18 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_17, /*hidden argument*/NULL);
+		NullCheck(L_18);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_19;
+		L_19 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_18, /*hidden argument*/NULL);
+		NullCheck(L_16);
+		List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59(L_16, L_19, /*hidden argument*/List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59_RuntimeMethod_var);
 		// for (int i = 0; i < pointCount; i++)
-		int32_t L_27 = V_3;
-		V_3 = ((int32_t)il2cpp_codegen_add((int32_t)L_27, (int32_t)1));
+		int32_t L_20 = V_2;
+		V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_20, (int32_t)1));
 	}
 
-IL_0098:
+IL_0075:
 	{
 		// for (int i = 0; i < pointCount; i++)
-		int32_t L_28 = V_3;
-		int32_t L_29 = __this->get_pointCount_11();
-		if ((((int32_t)L_28) < ((int32_t)L_29)))
+		int32_t L_21 = V_2;
+		int32_t L_22 = __this->get_pointCount_11();
+		if ((((int32_t)L_21) < ((int32_t)L_22)))
 		{
-			goto IL_002a;
+			goto IL_0028;
 		}
 	}
 	{
@@ -4570,10 +4550,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_ChangeObjectPosition_m55F2CC
 		float L_2 = ___nextLongitude4;
 		float L_3 = ___nowLongitude2;
 		V_1 = ((float)il2cpp_codegen_subtract((float)L_2, (float)L_3));
-		// Vector3 destination = new Vector3(destinationLongitude, destinationLatitude, 0);
+		// Vector3 destination = new Vector3(destinationLongitude, 0, destinationLatitude);
 		float L_4 = V_1;
 		float L_5 = V_0;
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *)(&V_2), L_4, L_5, (0.0f), /*hidden argument*/NULL);
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *)(&V_2), L_4, (0.0f), L_5, /*hidden argument*/NULL);
 		// obj.transform.position = parent.position + destination;
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_6 = ___obj0;
 		NullCheck(L_6);
@@ -5304,18 +5284,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager__ctor_m4104BE2D87B2EDABF840
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_m893CC03BA01C82718A6ED996182C83EA91A0E74C_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8A471DD29E9CF2179BD93F9E9D7FAEE64EEE87D4);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral93C7ECDDD104991E4AE6E94C9FC83037443356D5);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6E42C907C971302421116BFA19C02DCF22EE1C0E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD2CAEECDC99E1ABD205BEC21337F0649C603BBFF);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF7DDF59B44DDF9253B657C54053522CF694D3FBE);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		// string pointCount = "5";
 		__this->set_pointCount_6(_stringLiteralF7DDF59B44DDF9253B657C54053522CF694D3FBE);
-		// string latitudes = "null,35.153706264525795,35.1536673852898,35.1529285765812,35.152870256418595,35.15220921703724";
-		__this->set_latitudes_7(_stringLiteral93C7ECDDD104991E4AE6E94C9FC83037443356D5);
-		// string longitudes = "null,128.09882570855527,128.0991229057532,128.0989590506816,128.09933124181887,128.0991840490484";
-		__this->set_longitudes_8(_stringLiteral8A471DD29E9CF2179BD93F9E9D7FAEE64EEE87D4);
+		// string latitudes = "null,35.153706264525795,35.15366738528908,35.1529285765812,35.152870256418595,35.15220921703724";
+		__this->set_latitudes_7(_stringLiteralD2CAEECDC99E1ABD205BEC21337F0649C603BBFF);
+		// string longitudes = "null,128.09882570855527,128.0991229057532,128.0989590506816,128.09933124181887,128.09918404990484";
+		__this->set_longitudes_8(_stringLiteral6E42C907C971302421116BFA19C02DCF22EE1C0E);
 		// public List<float> latitudeList = new List<float>();
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_0 = (List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA *)il2cpp_codegen_object_new(List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA_il2cpp_TypeInfo_var);
 		List_1__ctor_m893CC03BA01C82718A6ED996182C83EA91A0E74C(L_0, /*hidden argument*/List_1__ctor_m893CC03BA01C82718A6ED996182C83EA91A0E74C_RuntimeMethod_var);
