@@ -13225,6 +13225,258 @@ inline void Action_1_Invoke_mEAB37079EB59D19D569529B0C5353085E6B5BFA5 (Action_1_
 }
 // System.Void System.Runtime.InteropServices.GCHandle::Free()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GCHandle_Free_mB4E9415544FC9F0075C02AB17E270E49AF006025 (GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 * __this, const RuntimeMethod* method);
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ConvertStridedToGrayscaleJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisConvertStridedToGrayscaleJob_t56655DB995EF94ED1265206867B4A83D07B7CE32_m6D147E3DDE35B4FE4530B5DA921DF0C82ACA9294_gshared (ConvertStridedToGrayscaleJob_t56655DB995EF94ED1265206867B4A83D07B7CE32  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (ConvertStridedToGrayscaleJob_t56655DB995EF94ED1265206867B4A83D07B7CE32 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((ConvertStridedToGrayscaleJob_t56655DB995EF94ED1265206867B4A83D07B7CE32 *)(ConvertStridedToGrayscaleJob_t56655DB995EF94ED1265206867B4A83D07B7CE32 *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.FlipVerticalJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisFlipVerticalJob_t3C6B0734411D731FBF7AC9A29DA2B7338584A540_m76E118CE370C10B3663676EE142FF0D6BAD1B16D_gshared (FlipVerticalJob_t3C6B0734411D731FBF7AC9A29DA2B7338584A540  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (FlipVerticalJob_t3C6B0734411D731FBF7AC9A29DA2B7338584A540 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((FlipVerticalJob_t3C6B0734411D731FBF7AC9A29DA2B7338584A540 *)(FlipVerticalJob_t3C6B0734411D731FBF7AC9A29DA2B7338584A540 *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCoreFaceSubsystem/TransformPoseJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisTransformPoseJob_t677C9167D8394018632D739ADE07E97700BAA250_m372E2F5C34BA3BF08D1338E3A07D38D85E0ED93F_gshared (TransformPoseJob_t677C9167D8394018632D739ADE07E97700BAA250  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (TransformPoseJob_t677C9167D8394018632D739ADE07E97700BAA250 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((TransformPoseJob_t677C9167D8394018632D739ADE07E97700BAA250 *)(TransformPoseJob_t677C9167D8394018632D739ADE07E97700BAA250 *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARFoundation.ARPointCloudManager/PointCloudRaycastJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisPointCloudRaycastJob_t097E5071568968353900E36DD9110FEC04135270_mB71D18D136073C47E880938510A4876317060CFE_gshared (PointCloudRaycastJob_t097E5071568968353900E36DD9110FEC04135270  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (PointCloudRaycastJob_t097E5071568968353900E36DD9110FEC04135270 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((PointCloudRaycastJob_t097E5071568968353900E36DD9110FEC04135270 *)(PointCloudRaycastJob_t097E5071568968353900E36DD9110FEC04135270 *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCoreFaceSubsystem/ARCoreProvider/TransformIndicesJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisTransformIndicesJob_tE663EAFCD377349B53E42CCDB8D54F6C841874B1_mCAEF2C0BBFF2C2D59EB554C1CD46CC0E0C853C91_gshared (TransformIndicesJob_tE663EAFCD377349B53E42CCDB8D54F6C841874B1  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (TransformIndicesJob_tE663EAFCD377349B53E42CCDB8D54F6C841874B1 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((TransformIndicesJob_tE663EAFCD377349B53E42CCDB8D54F6C841874B1 *)(TransformIndicesJob_tE663EAFCD377349B53E42CCDB8D54F6C841874B1 *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCoreFaceSubsystem/ARCoreProvider/TransformUVsJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisTransformUVsJob_tD8F03472DDEFC92ACD82AAB1266A17D507BE6F32_m69232E2A1C92667887A527126BBDA6350F50A5EB_gshared (TransformUVsJob_tD8F03472DDEFC92ACD82AAB1266A17D507BE6F32  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (TransformUVsJob_tD8F03472DDEFC92ACD82AAB1266A17D507BE6F32 *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((TransformUVsJob_tD8F03472DDEFC92ACD82AAB1266A17D507BE6F32 *)(TransformUVsJob_tD8F03472DDEFC92ACD82AAB1266A17D507BE6F32 *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCoreFaceSubsystem/ARCoreProvider/TransformVerticesJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisTransformVerticesJob_t77809E0D8F3DA4608CE116C68F83A4396D49FCEC_m78D9D7FD34763C013012AAC7B87065CD4CEE9CF9_gshared (TransformVerticesJob_t77809E0D8F3DA4608CE116C68F83A4396D49FCEC  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (TransformVerticesJob_t77809E0D8F3DA4608CE116C68F83A4396D49FCEC *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((TransformVerticesJob_t77809E0D8F3DA4608CE116C68F83A4396D49FCEC *)(TransformVerticesJob_t77809E0D8F3DA4608CE116C68F83A4396D49FCEC *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCorePlaneSubsystem/ARCoreProvider/FlipBoundaryHandednessJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisFlipBoundaryHandednessJob_t0C441DB8FEA090BD59B068B67406FF258CFD214D_m2439F47C5507AC80E621C93046D7DB98FDAF5FB6_gshared (FlipBoundaryHandednessJob_t0C441DB8FEA090BD59B068B67406FF258CFD214D  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (FlipBoundaryHandednessJob_t0C441DB8FEA090BD59B068B67406FF258CFD214D *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((FlipBoundaryHandednessJob_t0C441DB8FEA090BD59B068B67406FF258CFD214D *)(FlipBoundaryHandednessJob_t0C441DB8FEA090BD59B068B67406FF258CFD214D *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
+// Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCoreXRDepthSubsystem/ARCoreProvider/CopyIdentifiersJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisCopyIdentifiersJob_tD324D0C48F429D2772540945C8D1F161876F523B_mB55E60A3C685014338EC0C761AAF4B092C95BD28_gshared (CopyIdentifiersJob_tD324D0C48F429D2772540945C8D1F161876F523B  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
+{
+	JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8  V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		void* L_0;
+		L_0 = ((  void* (*) (CopyIdentifiersJob_tD324D0C48F429D2772540945C8D1F161876F523B *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0)->methodPointer)((CopyIdentifiersJob_tD324D0C48F429D2772540945C8D1F161876F523B *)(CopyIdentifiersJob_tD324D0C48F429D2772540945C8D1F161876F523B *)(&___jobData0), /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 0));
+		intptr_t L_1;
+		L_1 = ((  intptr_t (*) (const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1)->methodPointer)(/*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->rgctx_data, 1));
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_2 = ___dependsOn3;
+		JobScheduleParameters__ctor_m7BAC662AF5FA4A96429644CC676D3179A5B143F8((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (void*)(void*)L_0, (intptr_t)L_1, (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_2, (int32_t)1, /*hidden argument*/NULL);
+		int32_t L_3 = ___arrayLength1;
+		int32_t L_4 = ___innerloopBatchCount2;
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_5;
+		L_5 = JobsUtility_ScheduleParallelFor_mB2883217C5BAE5ED43D89478B76849936EDDEE78((JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(JobScheduleParameters_tA29064729507A938ACB05D9F98B2C4A6977E3EF8 *)(&V_0), (int32_t)L_3, (int32_t)L_4, /*hidden argument*/NULL);
+		V_1 = (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_5;
+		goto IL_0022;
+	}
+
+IL_0022:
+	{
+		JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  L_6 = V_1;
+		return (JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847 )L_6;
+	}
+}
 // Unity.Jobs.JobHandle Unity.Jobs.IJobParallelForExtensions::Schedule<UnityEngine.XR.ARCore.ARCoreXRDepthSubsystem/ARCoreProvider/ExtractConfidenceValuesJob>(T,System.Int32,System.Int32,Unity.Jobs.JobHandle)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  IJobParallelForExtensions_Schedule_TisExtractConfidenceValuesJob_t3C3E3C2C06E49CC331FB2A0C7A243A76DBB144B3_m04C99282020DA83D7C0D002DA9BA7ED7AB21832C_gshared (ExtractConfidenceValuesJob_t3C3E3C2C06E49CC331FB2A0C7A243A76DBB144B3  ___jobData0, int32_t ___arrayLength1, int32_t ___innerloopBatchCount2, JobHandle_t8AEB8D31C25D7774C71D62B0C662525E6E36D847  ___dependsOn3, const RuntimeMethod* method)
 {
@@ -19366,6 +19618,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThrowHelper_IfNullAndNullsAreIllegalThen
 	}
 	{
 		il2cpp_codegen_initobj((&V_0), sizeof(RaycastResult_t9EFDE24B29650BD6DC8A49D954A3769E17146BCE ));
+	}
+	{
+		int32_t L_2 = ___argName1;
+		ThrowHelper_ThrowArgumentNullException_m539081110B94B71D92C9761B273E617B23B4BBA5((int32_t)L_2, /*hidden argument*/NULL);
+	}
+
+IL_0019:
+	{
+		return;
+	}
+}
+// System.Void System.ThrowHelper::IfNullAndNullsAreIllegalThenThrow<System.Single>(System.Object,System.ExceptionArgument)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThrowHelper_IfNullAndNullsAreIllegalThenThrow_TisSingle_tE07797BA3C98D4CA9B5A19413C19A76688AB899E_m725C0271801F3A66BFD397B5C1210DBA009259C8_gshared (RuntimeObject * ___value0, int32_t ___argName1, const RuntimeMethod* method)
+{
+	float V_0 = 0.0f;
+	{
+		RuntimeObject * L_0 = ___value0;
+		if (L_0)
+		{
+			goto IL_0019;
+		}
+	}
+	{
+		il2cpp_codegen_initobj((&V_0), sizeof(float));
 	}
 	{
 		int32_t L_2 = ___argName1;

@@ -273,6 +273,34 @@ static void AssemblyU2DCSharp_CustomAttributesCacheGenerator(CustomAttributesCac
 		DebuggableAttribute__ctor_m7FF445C8435494A4847123A668D889E692E55550(tmp, 2LL, NULL);
 	}
 }
+static void LineManager_tA2082DD0E526890137CB63339340AAF233E12A47_CustomAttributesCacheGenerator_routeManager(CustomAttributesCache* cache)
+{
+	{
+		SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 * tmp = (SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 *)cache->attributes[0];
+		SerializeField__ctor_mDE6A7673BA2C1FAD03CFEC65C6D473CC37889DD3(tmp, NULL);
+	}
+}
+static void LineManager_tA2082DD0E526890137CB63339340AAF233E12A47_CustomAttributesCacheGenerator_spherePrefab(CustomAttributesCache* cache)
+{
+	{
+		SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 * tmp = (SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 *)cache->attributes[0];
+		SerializeField__ctor_mDE6A7673BA2C1FAD03CFEC65C6D473CC37889DD3(tmp, NULL);
+	}
+}
+static void LineManager_tA2082DD0E526890137CB63339340AAF233E12A47_CustomAttributesCacheGenerator_parent(CustomAttributesCache* cache)
+{
+	{
+		SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 * tmp = (SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 *)cache->attributes[0];
+		SerializeField__ctor_mDE6A7673BA2C1FAD03CFEC65C6D473CC37889DD3(tmp, NULL);
+	}
+}
+static void RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137_CustomAttributesCacheGenerator_lineManager(CustomAttributesCache* cache)
+{
+	{
+		SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 * tmp = (SerializeField_t6B23EE6CC99B21C3EBD946352112832A70E67E25 *)cache->attributes[0];
+		SerializeField__ctor_mDE6A7673BA2C1FAD03CFEC65C6D473CC37889DD3(tmp, NULL);
+	}
+}
 static void RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137_CustomAttributesCacheGenerator_text(CustomAttributesCache* cache)
 {
 	{
@@ -281,8 +309,12 @@ static void RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137_CustomAttribu
 	}
 }
 IL2CPP_EXTERN_C const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
-const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[2] = 
+const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[6] = 
 {
+	LineManager_tA2082DD0E526890137CB63339340AAF233E12A47_CustomAttributesCacheGenerator_routeManager,
+	LineManager_tA2082DD0E526890137CB63339340AAF233E12A47_CustomAttributesCacheGenerator_spherePrefab,
+	LineManager_tA2082DD0E526890137CB63339340AAF233E12A47_CustomAttributesCacheGenerator_parent,
+	RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137_CustomAttributesCacheGenerator_lineManager,
 	RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137_CustomAttributesCacheGenerator_text,
 	AssemblyU2DCSharp_CustomAttributesCacheGenerator,
 };
