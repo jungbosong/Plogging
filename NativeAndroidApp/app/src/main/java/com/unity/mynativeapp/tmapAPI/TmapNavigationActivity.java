@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.skt.Tmap.TMapGpsManager;
+import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapPolyLine;
 import com.skt.Tmap.TMapView;
@@ -31,7 +34,6 @@ import java.util.Map;
 public class TmapNavigationActivity extends AppCompatActivity implements TMapGpsManager.onLocationChangedCallback {
     boolean isUnityLoaded = false;
     TMapView tMapView = null;       // T Map View
-    TMapPoint tMapPoint = null;     // T Map Point
     TMapGpsManager tMapGPS = null;  // T Map GPS
     String api_key = "l7xx9a6a0f893c67471099e573946a28c3c7";    // 발급받은 TMAP API Key
     Route route;
@@ -41,6 +43,7 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
     //Integer pointCount = 0;
 
     double latitude, longitude;             // 현재위치 위도, 경도 임시저장
+    double end_latitude, end_longitude;     // 쓰레기통 위도, 경도 임시저장
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,8 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         route = (Route)intent.getSerializableExtra("Route");
         latitude = (double) intent.getSerializableExtra("start_lat");
         longitude = (double) intent.getSerializableExtra("start_lon");
+        end_latitude = (double) intent.getSerializableExtra("end_lat");
+        end_longitude = (double) intent.getSerializableExtra("end_lon");
 
         // Initial Setting
         tMapView.setZoomLevel(17);
@@ -79,6 +84,15 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         // 지도 중심 위치 지정
         tMapView.setTrackingMode(true);
 
+        // 쓰레기통 위치 마커 생성
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.marker_pin);
+        TMapMarkerItem markerItem = new TMapMarkerItem();
+        markerItem.setIcon(bitmap);                 // bitmap를 Marker icon으로 사용
+        markerItem.setPosition(0.5f, 1.0f);  // Marker img의 position
+        markerItem.setTMapPoint(new TMapPoint(end_latitude, end_longitude));         // Marker의 위치
+        tMapView.addMarkerItem("trashcan", markerItem);
+
+        // 경로 그리기
         drawPath(route);
 
         // mUnityPlayer = new UnityPlayer(this);
