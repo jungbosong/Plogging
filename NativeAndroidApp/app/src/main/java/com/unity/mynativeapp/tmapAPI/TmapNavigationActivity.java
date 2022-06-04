@@ -64,6 +64,8 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         tMapView.setIconVisibility(true);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
+        tMapView.setCompassMode(true);
+        tMapView.setSightVisible(true);
 
         LinearLayout tmapPathView = (LinearLayout)findViewById(R.id.tmapPathView);
         tmapPathView.addView(tMapView);

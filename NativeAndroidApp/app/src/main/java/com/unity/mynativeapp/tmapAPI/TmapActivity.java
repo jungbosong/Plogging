@@ -25,7 +25,6 @@ import com.skt.Tmap.TMapGpsManager;
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
-import com.unity.mynativeapp.MainActivity;
 import com.unity.mynativeapp.POJO.Trashcan;
 import com.unity.mynativeapp.POJO.pedestrianPath.Route;
 import com.unity.mynativeapp.R;
@@ -85,7 +84,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
 
     // 근처 쓰레기통 검색 및 저장
-    public void getTrashcanList () {
+    public void getNearTrashcanList() {
 
         // 근처 쓰레기통 검색
         for(Trashcan trashcan: trashcans){  // 전체 쓰레기통 중
@@ -223,6 +222,38 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
         // 지도 중심 위치 지정
         tMapView.setTrackingMode(true);
 
+        // 첫 화면 쓰레기통 List 가져오기 및 핀, 버튼 설정
+        getTrashcanList();
+
+        
+        // 현재위치 버튼
+        herebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 지도 중심좌표 이동
+                tMapView.setCenterPoint(longitude, latitude, true);
+                // 쓰레기통 List 가져오기 및 핀, 버튼 설정
+                getTrashcanList();
+            }
+        });
+    }
+
+
+    @Override
+    public void onLocationChange(Location location) {
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
+        tMapView.setLocationPoint(longitude, latitude);                 // 지도 현재위치 지정
+        tMapView.setCenterPoint(longitude, latitude, true);   // 지도 중심좌표 이동
+
+        // 현재위치 확인 test
+        Toast.makeText(getApplicationContext(), "longitude: "+longitude+"\nlatitude: "+latitude , Toast.LENGTH_LONG).show();
+    }
+
+    // 모든 쓰레기통 읽어오기
+    public void getTrashcanList(){
+
         // 쓰레기통 정보 한 번 읽어오기
         databaseReference.child("Trashcan").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -246,7 +277,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                     Log.d("GET TRASHCAN LIST TEST", "trashcan info: \n Latitude: " + trashcans.get(0).getLatitude() + ", "+ trashcans.get(0).getLongitude());
 
                     // 근처 쓰레기통 검색 및 저장
-                    getTrashcanList();
+                    getNearTrashcanList();
                     if(trashcanList.size() < 1){
                         Toast.makeText(TmapActivity.this, "근처 쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
                         return;
@@ -303,27 +334,5 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
             }
         });
 
-
-        // 현재위치 버튼
-        herebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tMapView.setCenterPoint(longitude, latitude, true);   // 지도 중심좌표 이동
-            }
-        });
     }
-
-
-    @Override
-    public void onLocationChange(Location location) {
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
-
-        tMapView.setLocationPoint(longitude, latitude);                 // 지도 현재위치 지정
-        tMapView.setCenterPoint(longitude, latitude, true);   // 지도 중심좌표 이동
-
-        // 현재위치 확인 test
-        Toast.makeText(getApplicationContext(), "longitude: "+longitude+"\nlatitude: "+latitude , Toast.LENGTH_LONG).show();
-    }
-
 }
