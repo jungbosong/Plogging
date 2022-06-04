@@ -10,7 +10,7 @@ public class RouteManager : MonoBehaviour
     [SerializeField]
     LineManager lineManager;
     [SerializeField]
-    public Text text;
+    //public Text text;
 
     string pointCount = "5";
     public int GetPointCount()
@@ -24,7 +24,7 @@ public class RouteManager : MonoBehaviour
     public List<float> longitudeList = new List<float>();
 
 
-    void appendToText(string line) { text.text += line + "\n"; }
+    //void appendToText(string line) { text.text += line + "\n"; }
 
     /*
     void PrintPointCount(string pointCount)
@@ -67,15 +67,15 @@ public class RouteManager : MonoBehaviour
             pointCount = overrideActivity.Call<string>("getPointCount");
             latitudes = overrideActivity.Call<string>("getLatitudes");
             longitudes = overrideActivity.Call<string>("getLongitudes");
-            appendToText(pointCount);
-            appendToText("latitudes");
-            appendToText(latitudes);
-            appendToText("longitudes");
-            appendToText(longitudes);
+            //appendToText(pointCount);
+            //appendToText("latitudes");
+            //appendToText(latitudes);
+            //appendToText("longitudes");
+            //appendToText(longitudes);
         } catch(Exception e)
         {
-            appendToText("Exception during showHostMainWindow");
-            appendToText(e.Message);
+            //appendToText("Exception during showHostMainWindow");
+            //appendToText(e.Message);
         }        
     }
 
