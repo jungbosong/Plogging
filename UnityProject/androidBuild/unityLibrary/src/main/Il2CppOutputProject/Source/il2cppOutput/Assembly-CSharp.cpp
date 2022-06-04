@@ -4360,10 +4360,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_Awake_m4E88F545E1107D14E441E
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_2;
 		L_2 = Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A(__this, /*hidden argument*/Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A_RuntimeMethod_var);
 		__this->set_lineRenderer_7(L_2);
-		// lineRenderer.SetWidth(0.05f, 0.05f);
+		// lineRenderer.SetWidth(4f, 4f);
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_3 = __this->get_lineRenderer_7();
 		NullCheck(L_3);
-		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (0.0500000007f), (0.0500000007f), /*hidden argument*/NULL);
+		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (4.0f), (4.0f), /*hidden argument*/NULL);
 		// }
 		return;
 	}
