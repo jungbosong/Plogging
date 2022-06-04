@@ -4345,10 +4345,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_Awake_m4E88F545E1107D14E441E
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_2;
 		L_2 = Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A(__this, /*hidden argument*/Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A_RuntimeMethod_var);
 		__this->set_lineRenderer_7(L_2);
-		// lineRenderer.SetWidth(4f, 4f);
+		// lineRenderer.SetWidth(8f, 8f);
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_3 = __this->get_lineRenderer_7();
 		NullCheck(L_3);
-		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (4.0f), (4.0f), /*hidden argument*/NULL);
+		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (8.0f), (8.0f), /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -4535,10 +4535,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_ChangeObjectPosition_m55F2CC
 		float L_2 = ___nextLongitude4;
 		float L_3 = ___nowLongitude2;
 		V_1 = ((float)il2cpp_codegen_subtract((float)L_2, (float)L_3));
-		// Vector3 destination = new Vector3(destinationLongitude * 1000000, -5f, destinationLatitude * 1000000);
+		// Vector3 destination = new Vector3(destinationLongitude * 1000, -5f, destinationLatitude * 1000);
 		float L_4 = V_1;
 		float L_5 = V_0;
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *)(&V_2), ((float)il2cpp_codegen_multiply((float)L_4, (float)(1000000.0f))), (-5.0f), ((float)il2cpp_codegen_multiply((float)L_5, (float)(1000000.0f))), /*hidden argument*/NULL);
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *)(&V_2), ((float)il2cpp_codegen_multiply((float)L_4, (float)(1000.0f))), (-5.0f), ((float)il2cpp_codegen_multiply((float)L_5, (float)(1000.0f))), /*hidden argument*/NULL);
 		// obj.transform.position = parent.position + destination;
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_6 = ___obj0;
 		NullCheck(L_6);
