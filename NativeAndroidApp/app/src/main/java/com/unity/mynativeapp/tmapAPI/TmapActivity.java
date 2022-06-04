@@ -25,6 +25,7 @@ import com.skt.Tmap.TMapGpsManager;
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
 import com.skt.Tmap.TMapView;
+import com.unity.mynativeapp.MainActivity;
 import com.unity.mynativeapp.POJO.Trashcan;
 import com.unity.mynativeapp.POJO.pedestrianPath.Route;
 import com.unity.mynativeapp.R;
@@ -51,6 +52,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
     Intent intentMap;   // navigation 지도 Activity
     Intent intentList;  // 쓰레기통 목록 Activity
+    Intent intentMain;  // main Activity
     FloatingActionButton herebutton, trashcanbutton;// 쓰레기통 목록 버튼
 
     // REST API - 고정 data
@@ -214,12 +216,12 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
         tMapGPS = new TMapGpsManager(this);
 
         // Initial Setting
-        //tMapGPS.setMinTime(1000);     // 애뮬 테스트할 때 주석처리
+        tMapGPS.setMinTime(1000);     // 애뮬 테스트할 때 주석처리
         tMapGPS.setMinDistance(10);
         tMapGPS.setProvider(tMapGPS.GPS_PROVIDER);
 
-        //tMapGPS.OpenGps();            // 애뮬 테스트할 때 주석처리
-        /*latitude = tMapGPS.getLocation().getLatitude();         // 실제 device 사용
+       /* tMapGPS.OpenGps();            // 애뮬 테스트할 때 주석처리
+        latitude = tMapGPS.getLocation().getLatitude();         // 실제 device 사용
         longitude = tMapGPS.getLocation().getLongitude();*/
         latitude = 35.153759;           // 애뮬 사용
         longitude = 128.098837;
@@ -235,67 +237,68 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                 // 만약 DB에 등록된 쓰레기통 목록이 없다면
                 if(snapshot.getChildren()==null) {
                     Toast.makeText(TmapActivity.this, "쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
-                    return; // 메소드 빠져나감
+                    intentMain = new Intent(TmapActivity.this, MainActivity.class);  // TrashcanfloatingActivity intent 생성
+                    startActivity(intentMain);
                 }
+                else{
+                    // 지정한 위치의 데이터를 포함하는 DataSnapshot을 수신한다
+                    for (DataSnapshot postSnapshot: snapshot.getChildren()){
+                        Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
+                        trashcans.add(trashcan);
+                    }
+                    // getValue를 통해 tid의 하부 child인 name, creator, latitude, longitude, report, tid에 대한 데이터를 받아와
+                    // Trashcan.class를 통해 옮겨담는다.
 
-                // 지정한 위치의 데이터를 포함하는 DataSnapshot을 수신한다
-                for (DataSnapshot postSnapshot: snapshot.getChildren()){
-                    Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
-                    trashcans.add(trashcan);
-                }
-                // getValue를 통해 tid의 하부 child인 name, creator, latitude, longitude, report, tid에 대한 데이터를 받아와
-                // Trashcan.class를 통해 옮겨담는다.
+                    Log.e("TmapActivity", "GET TRASHCAN LIST TEST\n");
+                    Log.d("GET TRASHCAN LIST TEST", "trashcan info: \n Latitude: " + trashcans.get(0).getLatitude() + ", "+ trashcans.get(0).getLongitude());
 
-                Log.e("TmapActivity", "GET TRASHCAN LIST TEST\n");
-                Log.d("GET TRASHCAN LIST TEST", "trashcan info: \n Latitude: " + trashcans.get(0).getLatitude() + ", "+ trashcans.get(0).getLongitude());
+                    // 근처 쓰레기통 검색 및 저장
+                    getTrashcanList();
+                    if(trashcanList.size() < 1){
+                        Toast.makeText(TmapActivity.this, "근처 쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                // 근처 쓰레기통 검색 및 저장
-                getTrashcanList();
-                if(trashcanList.size() < 1){
-                    Toast.makeText(TmapActivity.this, "근처 쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                    // 쓰레기통 위치에 핀 생성
+                    addMarketMarker();
 
-                // 쓰레기통 위치에 핀 생성
-                addMarketMarker();
-
-                // 핀/ 풍선뷰 우측 버튼 클릭
-                tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
-                    @Override
-                    public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
-                        for(Trashcan trashcan : trashcanList){
-                            if(trashcan.getTid().equals(tMapMarkerItem.getID())){
-                                // 쓰레기통 경로 데이터 요청 및 전달 (경로 안내 Activity로)
-                                getRouteData(trashcan.getLatitude(), trashcan.getLongitude());
+                    // 핀/ 풍선뷰 우측 버튼 클릭
+                    tMapView.setOnCalloutRightButtonClickListener(new TMapView.OnCalloutRightButtonClickCallback() {
+                        @Override
+                        public void onCalloutRightButton(TMapMarkerItem tMapMarkerItem) {
+                            for(Trashcan trashcan : trashcanList){
+                                if(trashcan.getTid().equals(tMapMarkerItem.getID())){
+                                    // 쓰레기통 경로 데이터 요청 및 전달 (경로 안내 Activity로)
+                                    getRouteData(trashcan.getLatitude(), trashcan.getLongitude());
+                                }
                             }
                         }
-                    }
-                });
+                    });
 
-                // 쓰레기통 버튼
-                trashcanbutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    // 쓰레기통 버튼
+                    trashcanbutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
 
-                        // 쓰레기통까지 거리 저장
-                        for(Trashcan trashcan: trashcanList){
-                            int distance = (int) Math.round(getDistance(latitude, longitude, trashcan.getLatitude(), trashcan.getLongitude()));
-                            trashcan.setDistance(distance);
+                            // 쓰레기통까지 거리 저장
+                            for(Trashcan trashcan: trashcanList){
+                                int distance = (int) Math.round(getDistance(latitude, longitude, trashcan.getLatitude(), trashcan.getLongitude()));
+                                trashcan.setDistance(distance);
+                            }
+                            Collections.sort(trashcanList); // distance 기준 근처 쓰레기통 목록 오름차순 정렬
+                            Log.e("TmapActivity ", "trashcnabutton TEST");
+                            Log.d("trashcnabutton TEST ", "first trashcan distance: "+ trashcanList.get(0).getDistance());
+
+
+                            // Activity로 데이터 전달, Activity 이동
+                            intentList = new Intent(TmapActivity.this, TrashcanfloatingActivity.class);  // TrashcanfloatingActivity intent 생성
+                            intentList.putExtra("trashcanList", (Serializable) trashcanList);   // 쓰레기통 목록
+                            intentList.putExtra("start_lat", latitude);          // 현재 위치(double)
+                            intentList.putExtra("start_lon", longitude);
+                            startActivity(intentList);  // Activity 이동
                         }
-                        Collections.sort(trashcanList); // distance 기준 근처 쓰레기통 목록 오름차순 정렬
-                        Log.e("TmapActivity ", "trashcnabutton TEST");
-                        Log.d("trashcnabutton TEST ", "first trashcan distance: "+ trashcanList.get(0).getDistance());
-
-
-                        // Activity로 데이터 전달, Activity 이동
-                        intentList = new Intent(TmapActivity.this, TrashcanfloatingActivity.class);  // TrashcanfloatingActivity intent 생성
-                        intentList.putExtra("trashcanList", (Serializable) trashcanList);   // 쓰레기통 목록
-                        intentList.putExtra("start_lat", latitude);          // 현재 위치(double)
-                        intentList.putExtra("start_lon", longitude);
-                        startActivity(intentList);  // Activity 이동
-                    }
-                });
-
+                    });
+                }
             }
 
             @Override
