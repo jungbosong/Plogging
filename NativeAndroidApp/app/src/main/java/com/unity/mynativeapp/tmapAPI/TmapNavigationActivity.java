@@ -51,21 +51,16 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         tMapView.setSKTMapApiKey(api_key);      // API Key
         Intent intent = getIntent();
         route = (Route)intent.getSerializableExtra("Route");
-        latitude = (double) intent.getSerializableExtra("start_lat");
-        longitude = (double) intent.getSerializableExtra("start_lon");
 
         // Initial Setting
         tMapView.setZoomLevel(17);
         tMapView.setIconVisibility(true);
         tMapView.setMapType(TMapView.MAPTYPE_STANDARD);
         tMapView.setLanguage(TMapView.LANGUAGE_KOREAN);
+        tMapView.setTrackingMode(true);
 
         LinearLayout tmapPathView = (LinearLayout)findViewById(R.id.tmapPathView);
         tmapPathView.addView(tMapView);
-
-        // 첫 중심위치 지정
-        tMapView.setCenterPoint(longitude, latitude);
-        tMapView.setLocationPoint(longitude, latitude);
 
         // GPS using T Map
         tMapGPS = new TMapGpsManager(this);
@@ -73,11 +68,17 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         // Initial Setting
         tMapGPS.setMinTime(1000);
         tMapGPS.setMinDistance(10);
-        tMapGPS.setProvider(tMapGPS.NETWORK_PROVIDER);
-        tMapGPS.OpenGps();
+        tMapGPS.setProvider(tMapGPS.GPS_PROVIDER);
 
-        // 지도 중심 위치 지정
-        tMapView.setTrackingMode(true);
+        //tMapGPS.OpenGps();    // 실제 device 사용
+       //latitude = 35.153759;   // 애뮬 사용
+        //longitude = 128.098837;
+        latitude = tMapGPS.getLocation().getLatitude();         // 실제 device 사용
+        longitude = tMapGPS.getLocation().getLongitude();
+
+
+        tMapView.setLocationPoint(longitude, latitude);     // 지도 현재위치 지정
+        tMapView.setCenterPoint(longitude, latitude, false);   // 지도 중심좌표 이동
 
         drawPath(route);
 

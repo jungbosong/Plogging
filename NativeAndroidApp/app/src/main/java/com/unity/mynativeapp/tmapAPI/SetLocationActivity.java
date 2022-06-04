@@ -37,8 +37,6 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
     String name;
     boolean check;
     double latitude, longitude;
-    double set_latitude, set_longitude;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +69,14 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         // Initial Setting
         tMapGPS.setMinDistance(1000);
         tMapGPS.setMinDistance(10);
-        tMapGPS.setProvider(tMapGPS.NETWORK_PROVIDER);
+        tMapGPS.setProvider(tMapGPS.GPS_PROVIDER);
         tMapGPS.OpenGps();
 
         // 지도 중심 위치 지정
-        tMapView.setTrackingMode(true);
+        tMapPoint = tMapGPS.getLocation();  // 실제 device 사용
+        tMapView.setCenterPoint(tMapPoint.getLongitude(), tMapPoint.getLatitude());
+        /*TMapPoint tempPoint = new TMapPoint(35.153759, 128.098837); // 애뮬 사용
+        tMapView.setCenterPoint(tempPoint.getLongitude(), tempPoint.getLatitude());*/
 
         name = getIntent().getStringExtra("name");
         check = getIntent().getBooleanExtra("check", false);
@@ -109,13 +110,21 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         set_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "(전달) 핀 위치 : " + set_latitude + ", \n" + set_longitude, Toast.LENGTH_SHORT).show();
+                // 실제 device
+                tMapPoint = tMapGPS.getLocation();
+                double set_lat = tMapPoint.getLatitude();
+                double set_lon = tMapPoint.getLongitude();
+                /*//애뮬 test
+                double set_lat = tempPoint.getLatitude();
+                double set_lon = tempPoint.getLongitude();*/
+
+                Toast.makeText(getApplicationContext(), "(전달) 핀 위치 : " + set_lat + ", \n" + set_lon, Toast.LENGTH_SHORT).show();
 
                 // 위치정보 반환
                 Intent result_intent = new Intent();
                 result_intent.putExtra("name", name);
-                result_intent.putExtra("latitude", set_latitude);
-                result_intent.putExtra("longitude", set_longitude);
+                result_intent.putExtra("latitude", set_lat);
+                result_intent.putExtra("longitude", set_lon);
                 // 이전 activity(fragment) 이동
                 setResult(Activity.RESULT_OK, result_intent);   //결과 저장
                 finish();   // 액티비티 종료
@@ -143,8 +152,7 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         markerItem.setTMapPoint(point);             // Marker 위치 지정
         tMapView.addMarkerItem("set_marker", markerItem);   // 지도에 마커 추가
 
-        // 선택한 위치 저장
-        set_latitude = point.getLatitude();
-        set_longitude =  point.getLatitude();
+        //test
+        Toast.makeText(getApplicationContext(), "(선택) 핀 위치 : " + point.getLatitude() + ", \n" + point.getLatitude(), Toast.LENGTH_SHORT).show();
     }
 }
