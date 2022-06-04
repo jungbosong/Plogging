@@ -4535,10 +4535,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_ChangeObjectPosition_m55F2CC
 		float L_2 = ___nextLongitude4;
 		float L_3 = ___nowLongitude2;
 		V_1 = ((float)il2cpp_codegen_subtract((float)L_2, (float)L_3));
-		// Vector3 destination = new Vector3(destinationLongitude * 1000, -5f, destinationLatitude * 1000);
+		// Vector3 destination = new Vector3(destinationLongitude * 10000, -5f, destinationLatitude * 10000);
 		float L_4 = V_1;
 		float L_5 = V_0;
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *)(&V_2), ((float)il2cpp_codegen_multiply((float)L_4, (float)(1000.0f))), (-5.0f), ((float)il2cpp_codegen_multiply((float)L_5, (float)(1000.0f))), /*hidden argument*/NULL);
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E *)(&V_2), ((float)il2cpp_codegen_multiply((float)L_4, (float)(10000.0f))), (-5.0f), ((float)il2cpp_codegen_multiply((float)L_5, (float)(10000.0f))), /*hidden argument*/NULL);
 		// obj.transform.position = parent.position + destination;
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_6 = ___obj0;
 		NullCheck(L_6);
