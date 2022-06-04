@@ -25,7 +25,7 @@ public class LineManager : MonoBehaviour
     {
         routeManager = routeManager.GetComponent<RouteManager>();
         lineRenderer = this.GetComponent<LineRenderer>();
-        lineRenderer.SetWidth(8f, 8f);
+        lineRenderer.SetWidth(4f, 4f);
     }
 
 
@@ -63,7 +63,7 @@ public class LineManager : MonoBehaviour
             ChangeObjectPosition(sphereObj, nowLatitude, nowLongitude, latitudeList[i], longitudeList[i]);           
 
             objPositionList.Add(sphereObj.transform.position);   
-            //sphereObj.SetActive(false);
+            sphereObj.SetActive(true);
         }
     }
 
