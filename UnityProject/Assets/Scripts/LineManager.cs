@@ -80,7 +80,7 @@ public class LineManager : MonoBehaviour
         float destinationLatitude = nextLatitude - nowLatitude;
         float destinationLongitude = nextLongitude - nowLongitude;
 
-        Vector3 destination = new Vector3(destinationLongitude, 0, destinationLatitude);
+        Vector3 destination = new Vector3(destinationLongitude * 10000, 0, destinationLatitude * 10000);
 
         // 오브젝트 위치 이동
         //obj = obj.GetComponent<GameObject>();
