@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 using UnityEngine;
 
 
@@ -9,7 +9,6 @@ public class RouteManager : MonoBehaviour
 {
     [SerializeField]
     LineManager lineManager;
-    [SerializeField]
     //public Text text;
 
     string pointCount = "5";

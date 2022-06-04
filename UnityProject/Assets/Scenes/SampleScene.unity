@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineManager: {fileID: 1753797320}
-  text: {fileID: 1207234438}
+  pointCount: 5
   latitudeList: []
   longitudeList: []
 --- !u!4 &1416709769
@@ -944,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1996279762
 MonoBehaviour:
   m_ObjectHideFlags: 0
