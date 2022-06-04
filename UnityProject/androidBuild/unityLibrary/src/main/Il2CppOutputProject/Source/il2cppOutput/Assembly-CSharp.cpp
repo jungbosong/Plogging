@@ -3661,6 +3661,8 @@ inline void List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59 (List_1_t577D28
 {
 	((  void (*) (List_1_t577D28CFF6DFE3F6A8D4409F7A21CBF513C04181 *, Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E , const RuntimeMethod*))List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59_gshared)(__this, ___item0, method);
 }
+// System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86 (GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * __this, bool ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.Vector3::.ctor(System.Single,System.Single,System.Single)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline (Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E * __this, float ___x0, float ___y1, float ___z2, const RuntimeMethod* method);
 // UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3)
@@ -4345,10 +4347,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_Awake_m4E88F545E1107D14E441E
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_2;
 		L_2 = Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A(__this, /*hidden argument*/Component_GetComponent_TisLineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967_mD5BC9EADE1AA529A5299A4D8B020FB49663DAC3A_RuntimeMethod_var);
 		__this->set_lineRenderer_7(L_2);
-		// lineRenderer.SetWidth(8f, 8f);
+		// lineRenderer.SetWidth(4f, 4f);
 		LineRenderer_t237E878F3E77C127A540DE7AC4681B3706727967 * L_3 = __this->get_lineRenderer_7();
 		NullCheck(L_3);
-		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (8.0f), (8.0f), /*hidden argument*/NULL);
+		LineRenderer_SetWidth_m99E4B8A35922D1B273283BF04A3E3D9EAED781A4(L_3, (4.0f), (4.0f), /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -4461,7 +4463,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineManager_CreateObjects_mE2FA802747F08
 		V_1 = L_3;
 		// for (int i = 0; i < pointCount; i++)
 		V_2 = 0;
-		goto IL_0075;
+		goto IL_007c;
 	}
 
 IL_0028:
@@ -4499,17 +4501,21 @@ IL_0028:
 		L_19 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_18, /*hidden argument*/NULL);
 		NullCheck(L_16);
 		List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59(L_16, L_19, /*hidden argument*/List_1_Add_mAE131B53917AD7132F6BA2C05D5D17C38C5A2E59_RuntimeMethod_var);
-		// for (int i = 0; i < pointCount; i++)
-		int32_t L_20 = V_2;
-		V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_20, (int32_t)1));
-	}
-
-IL_0075:
-	{
+		// sphereObj.SetActive(true);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_20 = V_3;
+		NullCheck(L_20);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_20, (bool)1, /*hidden argument*/NULL);
 		// for (int i = 0; i < pointCount; i++)
 		int32_t L_21 = V_2;
-		int32_t L_22 = __this->get_pointCount_11();
-		if ((((int32_t)L_21) < ((int32_t)L_22)))
+		V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_21, (int32_t)1));
+	}
+
+IL_007c:
+	{
+		// for (int i = 0; i < pointCount; i++)
+		int32_t L_22 = V_2;
+		int32_t L_23 = __this->get_pointCount_11();
+		if ((((int32_t)L_22) < ((int32_t)L_23)))
 		{
 			goto IL_0028;
 		}
