@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.company.product.OverrideArActivity;
-import com.unity.mynativeapp.POJO.pedestrianPath.Feature;
-import com.unity.mynativeapp.POJO.pedestrianPath.Route;
-import com.unity.mynativeapp.R;
+import com.unity.mynativeapp.POJO.Feature;
+import com.unity.mynativeapp.POJO.Route;
 
 import java.util.List;
 

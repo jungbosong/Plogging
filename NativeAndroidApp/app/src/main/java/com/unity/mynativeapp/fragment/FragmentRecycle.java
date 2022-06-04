@@ -11,9 +11,7 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
-import com.unity.mynativeapp.MainActivity;
 import com.unity.mynativeapp.R;
 import com.unity.mynativeapp.fragment.recycle.bagActivity;
 import com.unity.mynativeapp.fragment.recycle.canActivity;

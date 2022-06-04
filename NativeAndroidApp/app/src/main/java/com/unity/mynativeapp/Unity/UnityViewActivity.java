@@ -6,11 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.company.product.OverrideArActivity;
 import com.company.product.OverrideUnityActivity;
-import com.unity.mynativeapp.POJO.pedestrianPath.Feature;
-import com.unity.mynativeapp.POJO.pedestrianPath.Route;
-import com.unity3d.player.UnityPlayer;
+import com.unity.mynativeapp.POJO.Feature;
+import com.unity.mynativeapp.POJO.Route;
 
 import java.util.List;
 

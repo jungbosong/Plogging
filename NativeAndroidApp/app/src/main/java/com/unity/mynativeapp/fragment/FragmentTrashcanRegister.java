@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.unity.mynativeapp.BackPressedListener;
 import com.unity.mynativeapp.POJO.Trashcan;
 import com.unity.mynativeapp.R;
-import com.unity.mynativeapp.tmapAPI.SetLocationActivity;
+import com.unity.mynativeapp.activity.SetLocationActivity;
 
 import java.util.HashMap;
 import java.util.Map;

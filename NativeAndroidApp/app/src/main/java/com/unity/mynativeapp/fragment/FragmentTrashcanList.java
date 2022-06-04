@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.unity.mynativeapp.BackPressedListener;
 import com.unity.mynativeapp.POJO.Trashcan;
 import com.unity.mynativeapp.R;
+import com.unity.mynativeapp.adapter.FragmentTrashcanAdapter;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -32,8 +33,6 @@ import java.util.Objects;
 public class FragmentTrashcanList extends Fragment implements BackPressedListener {
     RecyclerView recyclerview;
     RecyclerView.LayoutManager layoutManager;
-    FragmentAdapter fragmentAdapter;
-    ArrayList<FragmentAdapter> certificationBoards;
     ArrayList<String> contentIdList;
 
     private final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
