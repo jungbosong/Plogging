@@ -245,7 +245,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral5BEFD8CC60A79699B5BB00E37BAC5B62D371E174
 IL2CPP_EXTERN_C String_t* _stringLiteral5F629B25BE4F48980C1EDD2471AE2A239A980D35;
 IL2CPP_EXTERN_C String_t* _stringLiteral6392FE1801B5612013D234DD04E071C404AD5001;
 IL2CPP_EXTERN_C String_t* _stringLiteral6496937B5293CB485DAA9B917BBD89522937BA83;
-IL2CPP_EXTERN_C String_t* _stringLiteral6E42C907C971302421116BFA19C02DCF22EE1C0E;
 IL2CPP_EXTERN_C String_t* _stringLiteral77BA5E25678420F932ACED9EFECA6756A0CD1BEA;
 IL2CPP_EXTERN_C String_t* _stringLiteral77D38C0623F92B292B925F6E72CF5CF99A20D4EB;
 IL2CPP_EXTERN_C String_t* _stringLiteral77FA365523C8AD1C1BCB07FE41D0BA9D232632F4;
@@ -268,7 +267,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB78F235D4291950A7D101307609C259F3E1F033F
 IL2CPP_EXTERN_C String_t* _stringLiteralB7C45DD316C68ABF3429C20058C2981C652192F2;
 IL2CPP_EXTERN_C String_t* _stringLiteralBB1CC10AED50492665B69D0FCC8FD4C533A4DB0E;
 IL2CPP_EXTERN_C String_t* _stringLiteralC176B4F6F2542477D019DEF12376DA784C53AAFA;
-IL2CPP_EXTERN_C String_t* _stringLiteralD2CAEECDC99E1ABD205BEC21337F0649C603BBFF;
 IL2CPP_EXTERN_C String_t* _stringLiteralD4792B4521F24C9B17025273D37BC146DD642957;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA666908BB15F4E1D2649752EC5DCBD0D5C64699;
@@ -3742,6 +3740,8 @@ inline LineManager_tA2082DD0E526890137CB63339340AAF233E12A47 * Component_GetComp
 {
 	return ((  LineManager_tA2082DD0E526890137CB63339340AAF233E12A47 * (*) (Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684 *, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m69D9C576D6DD024C709E29EEADBC8041299A3AA7_gshared)(__this, method);
 }
+// System.Void RouteManager::GetRouteData()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager_GetRouteData_mA908EC50FAE878ADBDE0061E5CB5ED2545AE0A62 (RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137 * __this, const RuntimeMethod* method);
 // System.Collections.Generic.List`1<System.Single> RouteManager::ParsingData(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * RouteManager_ParsingData_mDD49746F6E3DF9D2ED11A47ED468A3E1DE2ACE22 (RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137 * __this, String_t* ___data0, const RuntimeMethod* method);
 // System.Void RouteManager::PrintList(System.Collections.Generic.List`1<System.Single>)
@@ -5012,6 +5012,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager_Awake_mE776B9D13AE0D6C1520A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager_Start_mEDD05886F372824BE29038664349EEFD5101E66A (RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137 * __this, const RuntimeMethod* method)
 {
 	{
+		// GetRouteData();
+		RouteManager_GetRouteData_mA908EC50FAE878ADBDE0061E5CB5ED2545AE0A62(__this, /*hidden argument*/NULL);
 		// latitudeList = ParsingData(latitudes);
 		String_t* L_0 = __this->get_latitudes_7();
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_1;
@@ -5039,6 +5041,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager_Start_mEDD05886F372824BE290
 // System.Void RouteManager::Update()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager_Update_m5F6FDC1B88D7BEF1A56F44494B4BC17D75B9DAAD (RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137 * __this, const RuntimeMethod* method)
 {
+	{
+		// if (Application.platform == RuntimePlatform.Android)
+		int32_t L_0;
+		L_0 = Application_get_platform_mB22F7F39CDD46667C3EF64507E55BB7DA18F66C4(/*hidden argument*/NULL);
+		if ((!(((uint32_t)L_0) == ((uint32_t)((int32_t)11)))))
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		// if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+		bool L_1;
+		L_1 = Input_GetKeyDown_m476116696E71771641BBECBAB1A4C55E69018220(((int32_t)27), /*hidden argument*/NULL);
+		if (!L_1)
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		// if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+		Application_Quit_m8D720E5092786C2EE32310D85FE61C253D3B1F2A(/*hidden argument*/NULL);
+	}
+
+IL_0017:
 	{
 		// }
 		return;
@@ -5284,18 +5310,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager__ctor_m4104BE2D87B2EDABF840
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_m893CC03BA01C82718A6ED996182C83EA91A0E74C_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6E42C907C971302421116BFA19C02DCF22EE1C0E);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD2CAEECDC99E1ABD205BEC21337F0649C603BBFF);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF7DDF59B44DDF9253B657C54053522CF694D3FBE);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		// string pointCount = "5";
 		__this->set_pointCount_6(_stringLiteralF7DDF59B44DDF9253B657C54053522CF694D3FBE);
-		// string latitudes = "null,35.153706264525795,35.15366738528908,35.1529285765812,35.152870256418595,35.15220921703724";
-		__this->set_latitudes_7(_stringLiteralD2CAEECDC99E1ABD205BEC21337F0649C603BBFF);
-		// string longitudes = "null,128.09882570855527,128.0991229057532,128.0989590506816,128.09933124181887,128.09918404990484";
-		__this->set_longitudes_8(_stringLiteral6E42C907C971302421116BFA19C02DCF22EE1C0E);
 		// public List<float> latitudeList = new List<float>();
 		List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA * L_0 = (List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA *)il2cpp_codegen_object_new(List_1_t6726F9309570A0BDC5D42E10777F3E2931C487AA_il2cpp_TypeInfo_var);
 		List_1__ctor_m893CC03BA01C82718A6ED996182C83EA91A0E74C(L_0, /*hidden argument*/List_1__ctor_m893CC03BA01C82718A6ED996182C83EA91A0E74C_RuntimeMethod_var);
