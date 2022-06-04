@@ -35,6 +35,7 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
     TMapGpsManager tMapGPS = null;  // T Map GPS
     String api_key = "l7xx9a6a0f893c67471099e573946a28c3c7";    // 발급받은 TMAP API Key
     Route route;
+    String latitudes, longitudes;
 
     //protected UnityPlayer mUnityPlayer;
     //Integer pointCount = 0;
@@ -87,6 +88,16 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         */
     }
 
+    public String makeLatitudes(String latitudes, double latitude)
+    {
+        return latitudes + "," + latitude;
+    }
+
+    public String makeLongitude(String longitudes, double longitude)
+    {
+        return longitudes + "," + longitude;
+    }
+
     // 경로 그리는 함수
     public void drawPath(Route route)
     {
@@ -110,6 +121,9 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
                 coordinates = features.get(i).getGeometry().getCoordinates();
                 longitude = Double.parseDouble(coordinates.get(0).toString());
                 latitude = Double.parseDouble(coordinates.get(1).toString());
+
+                latitudes = makeLatitudes(latitudes, latitude);
+                longitudes = makeLongitude(longitudes, longitude);
 
                 Log.e("Load Route Test", "Point Count: " + features.get(i).getProperties().getPointIndex() + "\n");
                 Log.e("Load Route Test","coordinates: " + coordinates.get(0).toString() + "\t" + coordinates.get(1).toString() + "\n");
@@ -137,6 +151,9 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
 
         Intent intent = new Intent(this, UnityViewActivity.class);
         intent.putExtra("Route", route);
+        intent.putExtra("Latitudes", latitudes);
+        intent.putExtra("Longitudes", longitudes);
+
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivityForResult(intent, 1);
     }

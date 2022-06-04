@@ -223,6 +223,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral52D8B9245A2A273A4683E8EE2EBD1BCC9F0D8B50
 IL2CPP_EXTERN_C String_t* _stringLiteral5962E944D7340CE47999BF097B4AFD70C1501FB9;
 IL2CPP_EXTERN_C String_t* _stringLiteral5BEFD8CC60A79699B5BB00E37BAC5B62D371E174;
 IL2CPP_EXTERN_C String_t* _stringLiteral5F629B25BE4F48980C1EDD2471AE2A239A980D35;
+IL2CPP_EXTERN_C String_t* _stringLiteral6392FE1801B5612013D234DD04E071C404AD5001;
 IL2CPP_EXTERN_C String_t* _stringLiteral6496937B5293CB485DAA9B917BBD89522937BA83;
 IL2CPP_EXTERN_C String_t* _stringLiteral77BA5E25678420F932ACED9EFECA6756A0CD1BEA;
 IL2CPP_EXTERN_C String_t* _stringLiteral77D38C0623F92B292B925F6E72CF5CF99A20D4EB;
@@ -238,11 +239,14 @@ IL2CPP_EXTERN_C String_t* _stringLiteral9B736A9739934A4ACD0D222F5EDAB3AB0209F008
 IL2CPP_EXTERN_C String_t* _stringLiteralA7C3FCA8C63E127B542B38A5CA5E3FEEDDD1B122;
 IL2CPP_EXTERN_C String_t* _stringLiteralAA236E134566FACF682D16CDBC3E2C735E0EF19D;
 IL2CPP_EXTERN_C String_t* _stringLiteralAF76631C9924DA21CC9961B508E27EB5D8012412;
+IL2CPP_EXTERN_C String_t* _stringLiteralAF9D54DA42D3AA95F1A72643B0653BC1378A501B;
 IL2CPP_EXTERN_C String_t* _stringLiteralB033FD2F890CA8FC2F620F48B8407DD98B58052F;
 IL2CPP_EXTERN_C String_t* _stringLiteralB1CE20834084DE198D78F4901EBE3F2DF71A6E3B;
 IL2CPP_EXTERN_C String_t* _stringLiteralB78F235D4291950A7D101307609C259F3E1F033F;
 IL2CPP_EXTERN_C String_t* _stringLiteralB7C45DD316C68ABF3429C20058C2981C652192F2;
+IL2CPP_EXTERN_C String_t* _stringLiteralBB1CC10AED50492665B69D0FCC8FD4C533A4DB0E;
 IL2CPP_EXTERN_C String_t* _stringLiteralC176B4F6F2542477D019DEF12376DA784C53AAFA;
+IL2CPP_EXTERN_C String_t* _stringLiteralD4792B4521F24C9B17025273D37BC146DD642957;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA666908BB15F4E1D2649752EC5DCBD0D5C64699;
 IL2CPP_EXTERN_C String_t* _stringLiteralE12CB0AF6D20B39CEC0E75469FA0FEC7A353CE66;
@@ -2231,6 +2235,12 @@ struct  RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137  : public MonoBeh
 public:
 	// UnityEngine.UI.Text RouteManager::text
 	Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * ___text_4;
+	// System.String RouteManager::pointCount
+	String_t* ___pointCount_5;
+	// System.String RouteManager::latitudes
+	String_t* ___latitudes_6;
+	// System.String RouteManager::longitudes
+	String_t* ___longitudes_7;
 
 public:
 	inline static int32_t get_offset_of_text_4() { return static_cast<int32_t>(offsetof(RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137, ___text_4)); }
@@ -2240,6 +2250,33 @@ public:
 	{
 		___text_4 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&___text_4), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_pointCount_5() { return static_cast<int32_t>(offsetof(RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137, ___pointCount_5)); }
+	inline String_t* get_pointCount_5() const { return ___pointCount_5; }
+	inline String_t** get_address_of_pointCount_5() { return &___pointCount_5; }
+	inline void set_pointCount_5(String_t* value)
+	{
+		___pointCount_5 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___pointCount_5), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_latitudes_6() { return static_cast<int32_t>(offsetof(RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137, ___latitudes_6)); }
+	inline String_t* get_latitudes_6() const { return ___latitudes_6; }
+	inline String_t** get_address_of_latitudes_6() { return &___latitudes_6; }
+	inline void set_latitudes_6(String_t* value)
+	{
+		___latitudes_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___latitudes_6), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_longitudes_7() { return static_cast<int32_t>(offsetof(RouteManager_tB8A08B5977B7C91565A6573CE3DE86059CE05137, ___longitudes_7)); }
+	inline String_t* get_longitudes_7() const { return ___longitudes_7; }
+	inline String_t** get_address_of_longitudes_7() { return &___longitudes_7; }
+	inline void set_longitudes_7(String_t* value)
+	{
+		___longitudes_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___longitudes_7), (void*)value);
 	}
 };
 
@@ -3979,8 +4016,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RouteManager_GetRouteData_mA908EC50FAE87
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_GetStatic_TisAndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E_mC84C97A7EC20ED712D21107C9FA32E0785021153_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0E5C45732CF934F82F95E76B7B0C6479BEB9F2D1);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6392FE1801B5612013D234DD04E071C404AD5001);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7E178D61714E19CBB83E719AA7023581493C3C4D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAA236E134566FACF682D16CDBC3E2C735E0EF19D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAF9D54DA42D3AA95F1A72643B0653BC1378A501B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBB1CC10AED50492665B69D0FCC8FD4C533A4DB0E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD4792B4521F24C9B17025273D37BC146DD642957);
 		s_Il2CppMethodInitialized = true;
 	}
 	AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E * V_0 = NULL;
@@ -3999,47 +4040,74 @@ IL_0000:
 		AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E * L_1;
 		L_1 = AndroidJavaObject_GetStatic_TisAndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E_mC84C97A7EC20ED712D21107C9FA32E0785021153(L_0, _stringLiteralAA236E134566FACF682D16CDBC3E2C735E0EF19D, /*hidden argument*/AndroidJavaObject_GetStatic_TisAndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E_mC84C97A7EC20ED712D21107C9FA32E0785021153_RuntimeMethod_var);
 		V_0 = L_1;
-		// text.text = overrideActivity.Call<string>("getPointCount");
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_2 = __this->get_text_4();
-		AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E * L_3 = V_0;
-		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_4;
-		L_4 = Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_inline(/*hidden argument*/Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_RuntimeMethod_var);
-		NullCheck(L_3);
-		String_t* L_5;
-		L_5 = AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE(L_3, _stringLiteral7E178D61714E19CBB83E719AA7023581493C3C4D, L_4, /*hidden argument*/AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE_RuntimeMethod_var);
+		// pointCount = overrideActivity.Call<string>("getPointCount");
+		AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E * L_2 = V_0;
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_3;
+		L_3 = Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_inline(/*hidden argument*/Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_RuntimeMethod_var);
 		NullCheck(L_2);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_2, L_5);
+		String_t* L_4;
+		L_4 = AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE(L_2, _stringLiteral7E178D61714E19CBB83E719AA7023581493C3C4D, L_3, /*hidden argument*/AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE_RuntimeMethod_var);
+		__this->set_pointCount_5(L_4);
+		// latitudes = overrideActivity.Call<string>("getLatitudes");
+		AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E * L_5 = V_0;
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_6;
+		L_6 = Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_inline(/*hidden argument*/Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_RuntimeMethod_var);
+		NullCheck(L_5);
+		String_t* L_7;
+		L_7 = AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE(L_5, _stringLiteralBB1CC10AED50492665B69D0FCC8FD4C533A4DB0E, L_6, /*hidden argument*/AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE_RuntimeMethod_var);
+		__this->set_latitudes_6(L_7);
+		// longitudes = overrideActivity.Call<string>("getLongitudes");
+		AndroidJavaObject_t10188D5695DCD09C9F621B44B0A8C93A2281236E * L_8 = V_0;
+		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_9;
+		L_9 = Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_inline(/*hidden argument*/Array_Empty_TisRuntimeObject_m1FBC21243DF3542384C523801E8CA8A97606C747_RuntimeMethod_var);
+		NullCheck(L_8);
+		String_t* L_10;
+		L_10 = AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE(L_8, _stringLiteralAF9D54DA42D3AA95F1A72643B0653BC1378A501B, L_9, /*hidden argument*/AndroidJavaObject_Call_TisString_t_mB2E722C64FC7BD9F98B983053A6D3F9D94D355AE_RuntimeMethod_var);
+		__this->set_longitudes_7(L_10);
+		// appendToText(pointCount);
+		String_t* L_11 = __this->get_pointCount_5();
+		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, L_11, /*hidden argument*/NULL);
+		// appendToText("latitudes");
+		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, _stringLiteral6392FE1801B5612013D234DD04E071C404AD5001, /*hidden argument*/NULL);
+		// appendToText(latitudes);
+		String_t* L_12 = __this->get_latitudes_6();
+		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, L_12, /*hidden argument*/NULL);
+		// appendToText("longitudes");
+		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, _stringLiteralD4792B4521F24C9B17025273D37BC146DD642957, /*hidden argument*/NULL);
+		// appendToText(longitudes);
+		String_t* L_13 = __this->get_longitudes_7();
+		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, L_13, /*hidden argument*/NULL);
 		// } catch(Exception e)
-		goto IL_004c;
+		goto IL_00ad;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0032;
+			goto CATCH_0093;
 		}
 		throw e;
 	}
 
-CATCH_0032:
+CATCH_0093:
 	{ // begin catch(System.Exception)
 		// } catch(Exception e)
 		V_1 = ((Exception_t *)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t *));
 		// appendToText("Exception during showHostMainWindow");
 		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral8DFFF6900D69E4D0083974E14DBF4DEB5AAF8ED2)), /*hidden argument*/NULL);
 		// appendToText(e.Message);
-		Exception_t * L_6 = V_1;
-		NullCheck(L_6);
-		String_t* L_7;
-		L_7 = VirtFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_6);
-		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, L_7, /*hidden argument*/NULL);
+		Exception_t * L_14 = V_1;
+		NullCheck(L_14);
+		String_t* L_15;
+		L_15 = VirtFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_14);
+		RouteManager_appendToText_m68D1BA3FEF332FB059114FFBDD773A9045170346(__this, L_15, /*hidden argument*/NULL);
 		// }
 		IL2CPP_POP_ACTIVE_EXCEPTION();
-		goto IL_004c;
+		goto IL_00ad;
 	} // end catch (depth: 1)
 
-IL_004c:
+IL_00ad:
 	{
 		// }
 		return;

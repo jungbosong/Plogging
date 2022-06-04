@@ -3,7 +3,6 @@
     package="com.unity.mynativeapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -24,12 +23,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Unity.ArActivity"></activity>
         <activity
             android:name=".tmapAPI.ShowLocationActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_show_location">
-        </activity>
-
+            android:label="@string/title_activity_show_location"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".tmapAPI.SetLocationActivity"
             android:label="@string/title_activity_set_location" />

@@ -17,6 +17,7 @@ import java.util.List;
 public class UnityViewActivity extends OverrideUnityActivity {
     Route route;
     Integer pointCount = 0;
+    String latitudes, longitudes;
     //protected UnityPlayer mUnityPlayer;
 
     // Setup activity layout
@@ -27,6 +28,8 @@ public class UnityViewActivity extends OverrideUnityActivity {
         Intent intent = getIntent();
         handleIntent(intent);
         route = (Route)intent.getSerializableExtra("Route");
+        latitudes = (String)intent.getSerializableExtra("Latitudes");
+        longitudes = (String)intent.getSerializableExtra("Longitudes");
 
         List<Feature> features = route.getFeatures();
         int featureCount = features.size();
@@ -42,6 +45,7 @@ public class UnityViewActivity extends OverrideUnityActivity {
        // mUnityPlayer = new UnityPlayer(this);
 
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -73,6 +77,18 @@ public class UnityViewActivity extends OverrideUnityActivity {
         String pointCountString = pointCount.toString();
         //mUnityPlayer.UnitySendMessage("RouteManager", "PrintPointCount", pointCountString);
         return pointCountString;
+    }
+
+    @Override
+    protected String getLatitudes()
+    {
+        return latitudes;
+    }
+
+    @Override
+    protected String getLongitudes()
+    {
+        return longitudes;
     }
 
     @Override public void onUnityPlayerUnloaded() {
