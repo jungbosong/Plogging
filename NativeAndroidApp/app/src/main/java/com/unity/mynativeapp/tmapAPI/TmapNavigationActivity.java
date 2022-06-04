@@ -20,7 +20,9 @@ import com.skt.Tmap.TMapView;
 import com.unity.mynativeapp.POJO.pedestrianPath.Feature;
 import com.unity.mynativeapp.POJO.pedestrianPath.Route;
 import com.unity.mynativeapp.R;
+import com.unity.mynativeapp.Unity.ArActivity;
 import com.unity.mynativeapp.Unity.UnityViewActivity;
+import com.unity3d.player.UnityPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,11 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
     TMapPoint tMapPoint = null;     // T Map Point
     TMapGpsManager tMapGPS = null;  // T Map GPS
     String api_key = "l7xx9a6a0f893c67471099e573946a28c3c7";    // 발급받은 TMAP API Key
+    Route route;
+    String latitudes, longitudes;
+
+    //protected UnityPlayer mUnityPlayer;
+    //Integer pointCount = 0;
 
     double latitude, longitude;             // 현재위치 위도, 경도 임시저장
 
@@ -43,7 +50,7 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         tMapView = new TMapView(this);  // T Map View
         tMapView.setSKTMapApiKey(api_key);      // API Key
         Intent intent = getIntent();
-        Route route = (Route)intent.getSerializableExtra("Route");
+        route = (Route)intent.getSerializableExtra("Route");
 
         // Initial Setting
         tMapView.setZoomLevel(17);
@@ -73,6 +80,22 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
 
         drawPath(route);
 
+       // mUnityPlayer = new UnityPlayer(this);
+        /*
+        int glesMode = mUnityPlayer.getSettings().getInt("gles_mode", 1);
+        boolean tureColor888 = false;
+        mUnityPlayer.init(glesMode, tureColor888);
+        */
+    }
+
+    public String makeLatitudes(String latitudes, double latitude)
+    {
+        return latitudes + "," + latitude;
+    }
+
+    public String makeLongitude(String longitudes, double longitude)
+    {
+        return longitudes + "," + longitude;
     }
 
     // 경로 그리는 함수
@@ -93,9 +116,14 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
 
             if(features.get(i).getGeometry().getType().equals("Point"))
             {
+                //pointCount++;
+
                 coordinates = features.get(i).getGeometry().getCoordinates();
                 longitude = Double.parseDouble(coordinates.get(0).toString());
                 latitude = Double.parseDouble(coordinates.get(1).toString());
+
+                latitudes = makeLatitudes(latitudes, latitude);
+                longitudes = makeLongitude(longitudes, longitude);
 
                 Log.e("Load Route Test", "Point Count: " + features.get(i).getProperties().getPointIndex() + "\n");
                 Log.e("Load Route Test","coordinates: " + coordinates.get(0).toString() + "\t" + coordinates.get(1).toString() + "\n");
@@ -118,7 +146,14 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
 
     public void clickLoadUnity(View v) {
         isUnityLoaded = true;
+
+        //mUnityPlayer.UnitySendMessage("RouteManager", "PrintPointCount", pointCount.toString());
+
         Intent intent = new Intent(this, UnityViewActivity.class);
+        intent.putExtra("Route", route);
+        intent.putExtra("Latitudes", latitudes);
+        intent.putExtra("Longitudes", longitudes);
+
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivityForResult(intent, 1);
     }

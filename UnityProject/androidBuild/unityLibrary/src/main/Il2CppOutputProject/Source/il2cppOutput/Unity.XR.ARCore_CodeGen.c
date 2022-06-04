@@ -1590,19 +1590,19 @@ static const Il2CppTokenRangePair s_rgctxIndices[6] =
 };
 static const Il2CppRGCTXDefinition s_rgctxValues[13] = 
 {
-	{ (Il2CppRGCTXDataType)2, 488 },
-	{ (Il2CppRGCTXDataType)2, 1819 },
-	{ (Il2CppRGCTXDataType)3, 8455 },
-	{ (Il2CppRGCTXDataType)3, 8454 },
-	{ (Il2CppRGCTXDataType)2, 487 },
+	{ (Il2CppRGCTXDataType)2, 494 },
+	{ (Il2CppRGCTXDataType)2, 1842 },
+	{ (Il2CppRGCTXDataType)3, 8652 },
+	{ (Il2CppRGCTXDataType)3, 8651 },
+	{ (Il2CppRGCTXDataType)2, 493 },
 	{ (Il2CppRGCTXDataType)3, 39 },
-	{ (Il2CppRGCTXDataType)2, 486 },
+	{ (Il2CppRGCTXDataType)2, 492 },
 	{ (Il2CppRGCTXDataType)3, 38 },
 	{ (Il2CppRGCTXDataType)2, 123 },
-	{ (Il2CppRGCTXDataType)3, 11416 },
-	{ (Il2CppRGCTXDataType)3, 6940 },
-	{ (Il2CppRGCTXDataType)3, 11491 },
-	{ (Il2CppRGCTXDataType)3, 7677 },
+	{ (Il2CppRGCTXDataType)3, 11639 },
+	{ (Il2CppRGCTXDataType)3, 7137 },
+	{ (Il2CppRGCTXDataType)3, 11714 },
+	{ (Il2CppRGCTXDataType)3, 7874 },
 };
 extern const CustomAttributesCacheGenerator g_Unity_XR_ARCore_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_XR_ARCore_CodeGenModule;
