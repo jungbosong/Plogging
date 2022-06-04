@@ -146,7 +146,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
     // 쓰레기통 경로 데이터 요청 및 전달 (경로 안내 Activity로)
     // <param> 목표 쓰레기통 위치 (위도/경도)
     // </summery>
-    public void getRouteData(double end_latitude, double end_longitude) {
+    public void getRouteData(double end_latitude, double end_longitude , String name) {
 
         // Retrofit 인스턴스로 인터페이스 객체 구현
         RetrofitInterface service = RetrofitClient.getInterface();
@@ -164,6 +164,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                     intentMap.putExtra("start_lon", longitude);
                     intentMap.putExtra("end_lat", end_latitude);       // 쓰레기통 위치(double)
                     intentMap.putExtra("end_lon", end_longitude);
+                    intentMap.putExtra("name", name);                  // 쓰레기통 이름(name)
                     intentMap.putExtra("Route", result);               // 경로 데이터(Route)
                     startActivity(intentMap);  // Activity 이동
                     //test
@@ -264,7 +265,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                             for(Trashcan trashcan : trashcanList){
                                 if(trashcan.getTid().equals(tMapMarkerItem.getID())){
                                     // 쓰레기통 경로 데이터 요청 및 전달 (경로 안내 Activity로)
-                                    getRouteData(trashcan.getLatitude(), trashcan.getLongitude());
+                                    getRouteData(trashcan.getLatitude(), trashcan.getLongitude(), trashcan.getName());
                                 }
                             }
                         }
