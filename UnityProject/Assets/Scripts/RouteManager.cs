@@ -17,8 +17,9 @@ public class RouteManager : MonoBehaviour
     {
         return int.Parse(pointCount);
     }
-    string latitudes = "null,35.153706264525795,35.15366738528908,35.1529285765812,35.152870256418595,35.15220921703724";
-    string longitudes = "null,128.09882570855527,128.0991229057532,128.0989590506816,128.09933124181887,128.09918404990484";
+    //string latitudes = "null,35.153706264525795,35.15366738528908,35.1529285765812,35.152870256418595,35.15220921703724";
+    //string longitudes = "null,128.09882570855527,128.0991229057532,128.0989590506816,128.09933124181887,128.09918404990484";
+    string latitudes, longitudes;
     public List<float> latitudeList = new List<float>();
     public List<float> longitudeList = new List<float>();
 
@@ -40,7 +41,7 @@ public class RouteManager : MonoBehaviour
 
     void Start()
     {
-        //GetRouteData();    
+        GetRouteData();    
         latitudeList = ParsingData(latitudes);
         longitudeList = ParsingData(longitudes);
 
@@ -52,8 +53,8 @@ public class RouteManager : MonoBehaviour
 
     void Update()
     {		
-		//if (Application.platform == RuntimePlatform.Android)
-        //    if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+		if (Application.platform == RuntimePlatform.Android)
+            if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 
 
@@ -63,7 +64,6 @@ public class RouteManager : MonoBehaviour
         {
             AndroidJavaClass jc = new AndroidJavaClass("com.company.product.OverrideUnityActivity");
             AndroidJavaObject overrideActivity = jc.GetStatic<AndroidJavaObject>("instance");
-            //pointCount = overrideActivity.Call<int>("getPointCount");
             pointCount = overrideActivity.Call<string>("getPointCount");
             latitudes = overrideActivity.Call<string>("getLatitudes");
             longitudes = overrideActivity.Call<string>("getLongitudes");

@@ -71,8 +71,10 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         tMapGPS.setProvider(tMapGPS.GPS_PROVIDER);
 
         //tMapGPS.OpenGps();    // 실제 device 사용
-        latitude = 35.153759;   // 애뮬 사용
-        longitude = 128.098837;
+       //latitude = 35.153759;   // 애뮬 사용
+        //longitude = 128.098837;
+        latitude = tMapGPS.getLocation().getLatitude();         // 실제 device 사용
+        longitude = tMapGPS.getLocation().getLongitude();
 
 
         tMapView.setLocationPoint(longitude, latitude);     // 지도 현재위치 지정
