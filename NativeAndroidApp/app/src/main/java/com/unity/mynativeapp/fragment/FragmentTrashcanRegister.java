@@ -97,13 +97,12 @@ public class FragmentTrashcanRegister extends Fragment implements BackPressedLis
                     Map<String, Object> childUpdates = new HashMap<>();     // update할 child(경로+값)
                     Map<String, Object> postValues = null;                  // child 값을 저장할 HashMap
 
-                    // 수정 중 아닐 경우
-                    if(bundle == null)
-                        tid = mDatabase.child("Trashcan").push().getKey();      // tid 랜덤 생성, 빈 쓰레기통 목록 추가
-                    else
+                    // 수정 중인 경우
+                    if(bundle != null)
                         name = trashcanName.getText().toString();   // name만 변경하는 경우 name 다시 가져오기
+                    else // 수록중일 경우
+                        tid = mDatabase.child("Trashcan").push().getKey();      // tid 랜덤 생성, 빈 쓰레기통 목록 추가
 
-                    
                     Trashcan post = new Trashcan(tid, uid, name, latitude, longitude, 0);  // 입력된 trashcan 정보로 객체 생성
                     postValues = post.TrashcantoMap();                      // 객체에 저장된 정보를 HashMap으로 전환
 
