@@ -120,6 +120,7 @@ public class TrashcanAdapter extends BaseAdapter {
                             intentMap.putExtra("start_lon", start_longitude);
                             intentMap.putExtra("end_lat", latitude);           // 쓰레기통 위치(double)
                             intentMap.putExtra("end_lon", longitude);
+                            intentMap.putExtra("name", title);                 // 쓰레기통 이름(title)
                             intentMap.putExtra("Route", result);               // 경로 데이터(Route)
                             context.startActivity(intentMap);  // Activity 이동
                             //test

@@ -1,6 +1,7 @@
 package com.unity.mynativeapp.Unity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -142,16 +143,17 @@ public class UnityViewActivity extends OverrideUnityActivity {
 
         {
             Button myButton = new Button(this);
-            myButton.setText("Finish");
+            myButton.setText("AR 종료");
             myButton.setX(30);
             myButton.setY(30);
-            myButton.setBackgroundResource(R.drawable.shape);
+            myButton.setTextColor(Color.WHITE);
+            myButton.setBackgroundResource(R.drawable.button_shape);
             myButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     finish();
                 }
             });
-            layout.addView(myButton, 100, 80);
+            layout.addView(myButton, 150, 80);
         }
     }
 
