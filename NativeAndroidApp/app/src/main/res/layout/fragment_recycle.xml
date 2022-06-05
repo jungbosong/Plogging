@@ -24,6 +24,7 @@
             android:background="#00FFFFFF">
             <TableLayout>
                 <Button
+                    android:paddingLeft="10dp"
                     android:layout_margin="10dp"
                     android:id="@+id/gallery_layout"
                     android:layout_width="wrap_content"
@@ -38,6 +39,7 @@
             <TableLayout>
 
                 <Button
+                    android:paddingLeft="10dp"
                     android:layout_margin="10dp"
                     android:id="@+id/camera_layout"
                     android:layout_width="wrap_content"

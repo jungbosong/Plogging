@@ -46,10 +46,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Unity.UnityActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".fragment.recycle.umbrellaActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />

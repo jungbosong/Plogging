@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.skt.Tmap.TMapGpsManager;
@@ -33,7 +34,8 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
     TMapGpsManager tMapGPS = null;  // T Map GPS
     String api_key = "l7xx9a6a0f893c67471099e573946a28c3c7";    // 발급받은 TMAP API Key
     Route route;
-    String latitudes, longitudes;
+    String latitudes, longitudes, name;
+    TextView textView;
 
     //protected UnityPlayer mUnityPlayer;
     //Integer pointCount = 0;
@@ -54,6 +56,7 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         longitude = (double) intent.getSerializableExtra("start_lon");
         end_latitude = (double) intent.getSerializableExtra("end_lat");
         end_longitude = (double) intent.getSerializableExtra("end_lon");
+        name = (String)intent.getSerializableExtra("name");
 
         // Initial Setting
         tMapView.setZoomLevel(17);
@@ -89,6 +92,9 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
         markerItem.setPosition(0.5f, 1.0f);  // Marker img의 position
         markerItem.setTMapPoint(new TMapPoint(end_latitude, end_longitude));         // Marker의 위치
         tMapView.addMarkerItem("trashcan", markerItem);
+
+        textView = findViewById(R.id.trashcanname);
+        textView.setText(name);
 
         // 경로 그리기
         drawPath(route);
@@ -211,8 +217,5 @@ public class TmapNavigationActivity extends AppCompatActivity implements TMapGps
 
         tMapView.setLocationPoint(longitude, latitude);                 // 지도 현재위치 지정
         tMapView.setCenterPoint(longitude, latitude, true);   // 지도 중심좌표 이동
-
-        // 현재위치 확인 test
-        Toast.makeText(getApplicationContext(), "longitude: "+longitude+"\nlatitude: "+latitude , Toast.LENGTH_LONG).show();
     }
 }

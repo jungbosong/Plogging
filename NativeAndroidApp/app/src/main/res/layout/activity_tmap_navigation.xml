@@ -5,22 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.TmapNavigationActivity">
-
-    <Button
-        android:id = "@+id/arbutton"
-        android:text="AR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
-        android:onClick="clickLoadUnity"
-        />
     <LinearLayout
         android:id="@+id/tmapPathView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:layout_gravity="bottom"
+
+        android:orientation="vertical" />
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_margin="20dp"
+                android:drawableRight="@drawable/locationpin_color"
+                android:textSize="30dp"
+                android:drawableTint="#1E88E5"
+                android:textColor="@color/black"
+                android:text="출발지"
+                android:drawablePadding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_margin="20dp"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"
+                android:text="현위치"
+                android:textColor="@color/black"
+                android:background="@drawable/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_margin="20dp"
+                android:drawableRight="@drawable/locationpin_color"
+                android:textSize="30dp"
+                android:drawableTint="#E53935"
+                android:textColor="@color/black"
+                android:text="도착지"
+                android:drawablePadding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/trashcanname"
+                android:layout_margin="20dp"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"
+                android:text="도착지"
+                android:textColor="@color/black"
+                android:background="@drawable/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id = "@+id/arbutton"
+        android:text="AR"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:onClick="clickLoadUnity"
+        android:background="@drawable/arshape"
+        android:layout_marginBottom="50dp"
+        />
+
+
 
 
 </android.widget.FrameLayout>

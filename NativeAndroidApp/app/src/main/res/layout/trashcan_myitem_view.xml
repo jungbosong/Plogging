@@ -57,7 +57,6 @@
             android:id="@+id/delete"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="#FFFFFF"
             android:padding="30dp"
             android:scaleType="centerInside"
             android:src="@drawable/trashcan" />

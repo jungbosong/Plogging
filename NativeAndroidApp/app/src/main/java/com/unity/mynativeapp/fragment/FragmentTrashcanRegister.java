@@ -133,7 +133,6 @@ public class FragmentTrashcanRegister extends Fragment implements BackPressedLis
             name = data.getExtras().getString("name");
             latitude = data.getExtras().getDouble("latitude");
             longitude = data.getExtras().getDouble("longitude");
-            Toast.makeText(getActivity(), "(반환) 핀 위치 : " + latitude + ", \n" + longitude, Toast.LENGTH_SHORT).show();
         }
     }
 

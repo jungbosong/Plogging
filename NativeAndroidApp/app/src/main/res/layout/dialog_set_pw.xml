@@ -35,6 +35,8 @@
             <Button
                 android:text="취소"
                 android:textSize="10dp"
+                android:background="@drawable/button_shape"
+                android:textColor="@color/white"
                 android:id="@+id/btnCancle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -42,6 +44,8 @@
             <Button
                 android:text="확인"
                 android:textSize="10dp"
+                android:background="@drawable/button_shape"
+                android:textColor="@color/white"
                 android:layout_marginLeft="4dp"
                 android:id="@+id/btnSave"
                 android:layout_width="wrap_content"

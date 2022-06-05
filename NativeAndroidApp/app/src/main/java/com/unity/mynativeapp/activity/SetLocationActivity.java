@@ -32,7 +32,7 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
     TMapPoint tMapPoint = null;
     TMapGpsManager tMapGPS = null;
     TMapMarkerItem markerItem = null;
-    Button set_button;
+    Button set_button, here_button;
 
     String name;
     boolean check;
@@ -59,6 +59,7 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         LinearLayout linearLayoutTmap = (LinearLayout)findViewById(R.id.linearLayoutSetTmap);
         linearLayoutTmap.addView(tMapView);
         set_button = (Button) findViewById(R.id.set_btn);
+        here_button = (Button)findViewById(R.id.locationHere);
 
         // Request For GPS permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -109,8 +110,6 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         set_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "(전달) 핀 위치 : " + set_latitude + ", \n" + set_longitude, Toast.LENGTH_SHORT).show();
-
                 // 위치정보 반환
                 Intent result_intent = new Intent();
                 result_intent.putExtra("name", name);
@@ -119,6 +118,15 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
                 // 이전 activity(fragment) 이동
                 setResult(Activity.RESULT_OK, result_intent);   //결과 저장
                 finish();   // 액티비티 종료
+            }
+        });
+
+        // 현재위치 버튼 클릭 시 지도 중심화면 재설정
+        here_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 지도 중심좌표 이동
+                tMapView.setCenterPoint(longitude, latitude, true);
             }
         });
 

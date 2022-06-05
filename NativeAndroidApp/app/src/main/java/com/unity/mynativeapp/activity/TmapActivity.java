@@ -248,9 +248,6 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
         tMapView.setLocationPoint(longitude, latitude);                 // 지도 현재위치 지정
         tMapView.setCenterPoint(longitude, latitude, true);   // 지도 중심좌표 이동
-
-        // 현재위치 확인 test
-        Toast.makeText(getApplicationContext(), "longitude: "+longitude+"\nlatitude: "+latitude , Toast.LENGTH_LONG).show();
     }
 
     // 모든 쓰레기통 읽어오기
@@ -259,7 +256,8 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
         // 쓰레기통 정보 한 번 읽어오기
         databaseReference.child("Trashcan").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {                // 서버 연결 성공
+
 
                 // 만약 DB에 등록된 쓰레기통 목록이 없다면
                 if(snapshot.getChildren()==null) {
@@ -331,7 +329,7 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {                     // 서버 연결 실패
                 Log.w("TmapActivity","loadPost:onCancelled", error.toException());
             }
         });

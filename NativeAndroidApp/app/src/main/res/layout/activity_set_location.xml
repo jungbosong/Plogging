@@ -11,9 +11,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="650dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#FFFFFF"
+        android:layout_gravity="bottom|left"
+        android:background="@drawable/button_shape"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
         android:text="위치 선택"        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/locationHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:tint="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/here"
+        />
 
     <LinearLayout
         android:id="@+id/linearLayoutSetTmap"

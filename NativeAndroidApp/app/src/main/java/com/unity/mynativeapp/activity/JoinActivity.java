@@ -2,10 +2,14 @@ package com.unity.mynativeapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.unity.mynativeapp.R;
 
+import org.w3c.dom.Text;
+
 
 public class JoinActivity extends AppCompatActivity {
 
@@ -24,8 +30,8 @@ public class JoinActivity extends AppCompatActivity {
     Button userjoin;
     private static final String TAG = "JoinActivity";
     private FirebaseAuth firebaseAuth;
+    TextView error_email, error_pw, error_pwcheck;
 
-    
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
@@ -37,7 +43,70 @@ public class JoinActivity extends AppCompatActivity {
         userPw = findViewById(R.id.userPw);
         userPwCheck = findViewById(R.id.userPwCheck);
         userjoin = findViewById(R.id.userjoin);
-        
+
+        error_email = findViewById(R.id.error_email);
+        error_pw = findViewById(R.id.error_pw);
+        error_pwcheck = findViewById(R.id.error_pwcheck);
+
+
+        userEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(!Patterns.EMAIL_ADDRESS.matcher(editable.toString()).matches()){
+                    error_email.setText("이메일 형식으로 입력해주세요.");
+                }
+                else{
+                    error_email.setText("");
+                }
+            }
+        });
+        userPw.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.toString().getBytes().length < 6){
+                    error_pw.setText("6자리이상 입력해주세요.");
+                }
+                else{
+                    error_pw.setText("");
+                }
+            }
+        });
+
+        userPwCheck.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(!userPw.getText().toString().equals(userPwCheck.getText().toString())) {
+                    error_pwcheck.setText("같은 비밀번호를 입력해주세요.");
+                }
+                else{
+                    error_pwcheck.setText("");
+                }
+            }
+        });
         // 회원가입 버튼 클릭 이벤트
         userjoin.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -74,12 +143,12 @@ public class JoinActivity extends AppCompatActivity {
                         });
                     }
                     else{
-                        Toast.makeText(JoinActivity.this, "비밀번호를 6자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(JoinActivity.this, "비밀번호를 6자 이상 입력해주세요.", Toast.LENGTH_SHORT).show();
                         return;
                     }
                                     }
                 else{   // 비밀번호 오류 시
-                    Toast.makeText(JoinActivity.this, "비밀번호가 틀렸습니다. 다시 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(JoinActivity.this, "비밀번호가 틀렸습니다. 다시 입력해 주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 

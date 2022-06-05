@@ -58,8 +58,8 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:gravity="center"
-        android:text="시작할려면 로그인 해주세요"
-        android:textSize="15sp"
+        android:text="시작하려면 로그인 해주세요"
+        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/userEmailLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.242"
@@ -70,7 +70,7 @@
     <EditText
         android:id="@+id/userEmailLogin"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="200dp"
         android:ems="10"
         android:hint="이메일"
@@ -85,7 +85,7 @@
     <EditText
         android:id="@+id/userPwLogin"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="100dp"
         android:ems="10"
         android:gravity=""
@@ -96,11 +96,27 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.533" />
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#E53935"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/LoginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPwLogin"
+        app:layout_constraintVertical_bias="0.0">
+
+    </TextView>
+
     <Button
         android:id="@+id/LoginButton"
-        android:layout_width="297dp"
-        android:layout_height="57dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:background="@drawable/shape"
         android:gravity="center"
         android:text="로그인하기"
@@ -173,7 +189,7 @@
             android:id="@+id/userjoin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/camera"
+            android:drawableRight="@drawable/arraw_size"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:text="회원가입하기 "

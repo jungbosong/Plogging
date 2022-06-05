@@ -13,7 +13,6 @@ public class Trashcan implements Serializable, Comparable<Trashcan>
     private String tid;       //trashcan 고유 id
     private String creator;   // trashcan 생성 user id
     private String name;      //trashcan 이름
-    //private String region;  //trashcan 지역
     private Double latitude;  //trashcan location : 위도
     private Double longitude; //trashcan location : 경도
     private Integer report;   //trashcan 신고 횟수
@@ -28,7 +27,6 @@ public class Trashcan implements Serializable, Comparable<Trashcan>
         this.tid = tid;
         this.creator = creator;
         this.name = name;
-        //this.region = region;
         this.latitude = latitude;
         this.longitude = longitude;
         this.report = report;
@@ -42,7 +40,6 @@ public class Trashcan implements Serializable, Comparable<Trashcan>
         result.put("tid", tid);
         result.put("creator",creator);
         result.put("name", name);
-        //result.put("region", region);
         result.put("latitude", latitude);
         result.put("longitude", longitude);
         result.put("report", report);
@@ -56,8 +53,6 @@ public class Trashcan implements Serializable, Comparable<Trashcan>
     public void setCreator(String creator) { this.creator = creator; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    //public String getRegion() { return region; }
-    //public void setRegion(String region) { this.region = region; }
     public Double getLatitude() { return latitude; }
     public void setLatitude(Double latitude) { this.latitude = latitude; }
     public Double getLongitude() { return longitude; }
@@ -85,11 +80,6 @@ public class Trashcan implements Serializable, Comparable<Trashcan>
         sb.append(this.name);
         sb.append(',');
         sb.append(System.getProperty("line.separator"));
-        /*sb.append("region");
-        sb.append('=');
-        sb.append(this.region);
-        sb.append(',');
-        sb.append(System.getProperty("line.separator"));*/
         sb.append("latitude");
         sb.append('=');
         sb.append(((this.latitude == null)?"<null>":this.latitude));

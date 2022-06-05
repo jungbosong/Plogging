@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import com.company.product.OverrideUnityActivity;
 import com.unity.mynativeapp.POJO.Feature;
 import com.unity.mynativeapp.POJO.Route;
+import com.unity.mynativeapp.R;
 
 import java.util.List;
 
@@ -60,7 +61,7 @@ public class UnityViewActivity extends OverrideUnityActivity {
                 finish();
             }
     }
-
+/*
     @Override
     protected void showMainActivity(String setToColor) {
         Intent intent = new Intent(this, UnityActivity.class);
@@ -68,6 +69,8 @@ public class UnityViewActivity extends OverrideUnityActivity {
         intent.putExtra("setColor", setToColor);
         startActivity(intent);
     }
+
+ */
 
     @Override
     protected String getPointCount()
@@ -90,7 +93,7 @@ public class UnityViewActivity extends OverrideUnityActivity {
     }
 
     @Override public void onUnityPlayerUnloaded() {
-        showMainActivity("");
+
     }
 
     public void addControlsToUnityFrame() {
@@ -140,15 +143,15 @@ public class UnityViewActivity extends OverrideUnityActivity {
         {
             Button myButton = new Button(this);
             myButton.setText("Finish");
-            myButton.setX(630);
-            myButton.setY(800);
-
+            myButton.setX(30);
+            myButton.setY(30);
+            myButton.setBackgroundResource(R.drawable.shape);
             myButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     finish();
                 }
             });
-            layout.addView(myButton, 300, 200);
+            layout.addView(myButton, 100, 80);
         }
     }
 

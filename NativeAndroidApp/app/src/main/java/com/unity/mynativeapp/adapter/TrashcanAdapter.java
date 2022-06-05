@@ -89,7 +89,7 @@ public class TrashcanAdapter extends BaseAdapter {
         titleView = convertView.findViewById(R.id.TrashcanName);
         distanceView = convertView.findViewById(R.id.TrashcanDistance);
         titleView.setText(listViewItem.getName());
-        distanceView.setText("이동거리 : " + listViewItem.getDistance() + " m ");
+        distanceView.setText("거리 : " + listViewItem.getDistance() + " m ");
 
         // 선택 쓰레기통 정보
         String tid = listViewItemList.get(pos).getTid();
@@ -163,6 +163,8 @@ public class TrashcanAdapter extends BaseAdapter {
                 Map<String, Object> childUpdates = new HashMap<>();
                 if(report<3) // 누적 신고횟수 3 이하(신고값 +1)
                     childUpdates.put("/Trashcan/" + tid + "/report", report+1);
+                else // 누적 신고횟수 3 초과(쓰레기통 객체 삭제)
+                    childUpdates.put("/Trashcan/" + tid, null);
                 reference.updateChildren(childUpdates);
             }
         });

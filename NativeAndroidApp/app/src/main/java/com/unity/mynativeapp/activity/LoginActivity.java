@@ -2,6 +2,9 @@ package com.unity.mynativeapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +18,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.type.Color;
 import com.unity.mynativeapp.R;
 import com.unity.mynativeapp.SetPwDialog;
+
+import org.w3c.dom.Text;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText userEmailLogin, userPwLogin;
     Button LoginButton;
-    TextView userjoin, findPW;
-
+    TextView userjoin, findPW, error_text;
+    String preText;
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -37,6 +43,29 @@ public class LoginActivity extends AppCompatActivity {
         LoginButton = (Button) findViewById(R.id.LoginButton);
         userjoin = (TextView) findViewById(R.id.userjoin);
         findPW = (TextView) findViewById(R.id.findPw);
+        error_text = (TextView) findViewById(R.id.error_text);
+
+        userEmailLogin.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(!Patterns.EMAIL_ADDRESS.matcher(editable.toString()).matches()){
+                    error_text.setText("이메일 형식으로 입력해주세요.");
+                }
+                else{
+                    error_text.setText("");
+                }
+            }
+        });
+
+
 
         // 로그인 버튼
         LoginButton.setOnClickListener(new View.OnClickListener(){

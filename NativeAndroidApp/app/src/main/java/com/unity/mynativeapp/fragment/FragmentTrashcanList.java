@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.unity.mynativeapp.BackPressedListener;
 import com.unity.mynativeapp.POJO.Trashcan;
 import com.unity.mynativeapp.R;
+import com.unity.mynativeapp.activity.TmapActivity;
 import com.unity.mynativeapp.adapter.FragmentTrashcanAdapter;
 
 import java.util.ArrayList;
@@ -59,25 +60,22 @@ public class FragmentTrashcanList extends Fragment implements BackPressedListene
                 .addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
-                    trashcanList.add(trashcan);
-                }
-                Log.e("FragmentTrashcanList", "GET USER TRASHCAN LIST TEST");
-                Log.d("GET USER TRASHCAN LIST TEST", "first trashcan name: " + trashcanList.get(0).getName());
-                listView = view.findViewById(R.id.list);
-                adapter = new FragmentTrashcanAdapter(getContext(),trashcanList, FragmentTrashcanList.this);
-                listView.setAdapter(adapter);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {  // 서버 연결 성공
+                    for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                        Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
+                        trashcanList.add(trashcan);
+                    }
+                    Log.e("FragmentTrashcanList", "GET USER TRASHCAN LIST TEST");
+                    listView = view.findViewById(R.id.list);
+                    adapter = new FragmentTrashcanAdapter(getContext(),trashcanList, FragmentTrashcanList.this);
+                    listView.setAdapter(adapter);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {  // 서버 연결 실패
                 Log.w("GET USER TRASHCAN LIST TEST","Error", error.toException());
-                Toast.makeText(getActivity(), "등록한 쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
             }
         });
-
         return view;
     }
 

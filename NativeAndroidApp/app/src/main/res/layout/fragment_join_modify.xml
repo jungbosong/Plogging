@@ -5,22 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:layout_gravity="center">
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="150dp"
         android:foregroundGravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,12 +34,19 @@
 
         <EditText
             android:id="@+id/userEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="15"
             android:hint="example@gnu.ac.kr"
             android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/error_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E53935"
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,12 +57,19 @@
 
         <EditText
             android:id="@+id/userPw"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="15"
             android:hint="최소 6자 이상 입력"
             android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/error_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E53935"
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,27 +79,35 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/userPwChecks"
-            android:layout_width="wrap_content"
+            android:id="@+id/userPwCheck"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="15"
             android:hint="동일한 비밀번호 입력"
             android:inputType="textPassword" />
 
+        <TextView
+            android:id="@+id/error_pwcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E53935"
+            android:layout_marginBottom="20dp" />
+
+
     </LinearLayout>
 
     <Button
         android:id="@+id/user_modify"
-        android:layout_width="353dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape"
         android:text="회원 정보 수정"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

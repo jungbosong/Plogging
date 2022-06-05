@@ -60,15 +60,12 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.trashcanRegister:
-                        Toast.makeText(MainActivity.this, "trasjcanRegister", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new FragmentTrashcanRegister()).commit();
                         break;
                     case R.id.mytrashcan:
-                        Toast.makeText(MainActivity.this, "mytrashcan", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new FragmentTrashcanList()).commit();
                         break;
                     case R.id.logout:
-                        Toast.makeText(MainActivity.this, "logout", Toast.LENGTH_SHORT).show();
                         // 파이어베이스 계정 로그아웃
                         FirebaseAuth.getInstance().signOut();
                         // 로그인 화면으로 이동
@@ -76,11 +73,9 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.joinmodify:
-                        Toast.makeText(MainActivity.this, "joinmodify", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new FragmentJoinModify()).commit();
                         break;
                     case R.id.recycle:
-                        Toast.makeText(MainActivity.this, "recycle", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new FragmentRecycle()).commit();
                         break;
                 }
