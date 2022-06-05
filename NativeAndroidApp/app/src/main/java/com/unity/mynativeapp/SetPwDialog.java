@@ -21,7 +21,7 @@ import java.util.Objects;
 public class SetPwDialog extends Dialog {
     private FirebaseAuth firebaseAuth;
     private EditText et_text;
-    private Context mContext;
+    private final Context mContext;
     Button saveButton, cancelButton;
 
     @Override
