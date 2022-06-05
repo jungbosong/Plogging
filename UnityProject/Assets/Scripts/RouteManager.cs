@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using UnityEngine.UI;
 using UnityEngine;
 
 
@@ -9,7 +8,6 @@ public class RouteManager : MonoBehaviour
 {
     [SerializeField]
     LineManager lineManager;
-    //public Text text;
 
     string pointCount = "5";
     public int GetPointCount()
@@ -22,16 +20,6 @@ public class RouteManager : MonoBehaviour
     public List<float> latitudeList = new List<float>();
     public List<float> longitudeList = new List<float>();
 
-
-    //void appendToText(string line) { text.text += line + "\n"; }
-
-    /*
-    void PrintPointCount(string pointCount)
-    {
-        appendToText( "PointCount: " + pointCount.ToString());
-    }
-    */
-
     void Awake()
     {
         lineManager = lineManager.GetComponent<LineManager>();
@@ -43,9 +31,6 @@ public class RouteManager : MonoBehaviour
         GetRouteData();    
         latitudeList = ParsingData(latitudes);
         longitudeList = ParsingData(longitudes);
-
-        PrintList(latitudeList);
-        PrintList(longitudeList);
 
         lineManager.DrawLine();
     }
@@ -66,16 +51,11 @@ public class RouteManager : MonoBehaviour
             pointCount = overrideActivity.Call<string>("getPointCount");
             latitudes = overrideActivity.Call<string>("getLatitudes");
             longitudes = overrideActivity.Call<string>("getLongitudes");
-            //appendToText(pointCount);
-            //appendToText("latitudes");
-            //appendToText(latitudes);
-            //appendToText("longitudes");
-            //appendToText(longitudes);
-        } catch(Exception e)
+        }
+        catch(Exception e) 
         {
-            //appendToText("Exception during showHostMainWindow");
-            //appendToText(e.Message);
-        }        
+            
+        }
     }
 
     List<float> ParsingData(string data)
@@ -90,14 +70,6 @@ public class RouteManager : MonoBehaviour
         }
         
         return resultList;
-    }
-
-    void PrintList(List<float> data)
-    {
-        for(int i = 0; i < data.Count; i++)
-        {
-            Debug.Log(data[i]);
-        }
     }
 }
 

@@ -814,6 +814,8 @@ MonoBehaviour:
   routeManager: {fileID: 1416709768}
   spherePrefab: {fileID: 369817171492406597, guid: d99735178d5253246bef219748058156,
     type: 3}
+  slimePrefab: {fileID: 5786636190149809962, guid: 8ce010b04420f0945bb1f4b8b48332ac,
+    type: 3}
   parent: {fileID: 1753797321}
 --- !u!4 &1753797321
 Transform:
@@ -891,8 +893,8 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key1: {r: 0, g: 0, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -908,7 +910,7 @@ LineRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
