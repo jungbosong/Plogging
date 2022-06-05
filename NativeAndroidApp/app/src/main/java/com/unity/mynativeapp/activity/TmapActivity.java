@@ -87,7 +87,8 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
 
     // 근처 쓰레기통 검색 및 저장
     public void getNearTrashcanList() {
-
+        // 근처 쓰레기통 목록 초기화
+        trashcanList.clear();
         // 근처 쓰레기통 검색
         for(Trashcan trashcan: trashcans){  // 전체 쓰레기통 중
             if(1000 >= getDistance(latitude, longitude, trashcan.getLatitude(), trashcan.getLongitude())){
@@ -258,13 +259,15 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {                // 서버 연결 성공
 
-
                 // 만약 DB에 등록된 쓰레기통 목록이 없다면
                 if(snapshot.getChildren()==null) {
                     Toast.makeText(TmapActivity.this, "쓰레기통이 없습니다.", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 else{
+                    // 쓰레기통 목록 초기화
+                    trashcans.clear();
+
                     // 지정한 위치의 데이터를 포함하는 DataSnapshot을 수신한다
                     for (DataSnapshot postSnapshot: snapshot.getChildren()){
                         Trashcan trashcan = postSnapshot.getValue(Trashcan.class);
@@ -308,14 +311,13 @@ public class TmapActivity extends AppCompatActivity implements TMapGpsManager.on
                         public void onClick(View v) {
 
                             // 쓰레기통까지 거리 저장
+                            Log.e("TmapActivity ", "trashcnabutton TEST");
                             for(Trashcan trashcan: trashcanList){
                                 int distance = (int) Math.round(getDistance(latitude, longitude, trashcan.getLatitude(), trashcan.getLongitude()));
                                 trashcan.setDistance(distance);
+                                Log.d("trashcnabutton TEST ", "all trashcan name: "+ trashcan.getName());
                             }
                             Collections.sort(trashcanList); // distance 기준 근처 쓰레기통 목록 오름차순 정렬
-                            Log.e("TmapActivity ", "trashcnabutton TEST");
-                            Log.d("trashcnabutton TEST ", "first trashcan distance: "+ trashcanList.get(0).getDistance());
-
 
                             // Activity로 데이터 전달, Activity 이동
                             intentList = new Intent(TmapActivity.this, TrashcanfloatingActivity.class);  // TrashcanfloatingActivity intent 생성

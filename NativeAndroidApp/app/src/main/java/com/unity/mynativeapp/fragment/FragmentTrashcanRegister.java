@@ -67,6 +67,7 @@ public class FragmentTrashcanRegister extends Fragment implements BackPressedLis
         locationchoose.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 name = trashcanName.getText().toString();
+
                 if(!(name == null || name.length() == 0)){
                     // 위치 선택 지도 이동
                     Intent intent = new Intent(getActivity(), SetLocationActivity.class);

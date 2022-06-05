@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.skt.Tmap.TMapGpsManager;
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPoint;
@@ -29,10 +30,10 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
 
     String api_key ="l7xx9a6a0f893c67471099e573946a28c3c7";
     TMapView tMapView = null;
-    TMapPoint tMapPoint = null;
     TMapGpsManager tMapGPS = null;
     TMapMarkerItem markerItem = null;
-    Button set_button, here_button;
+    Button set_button;
+    FloatingActionButton here_button;
 
     String name;
     boolean check;
@@ -59,7 +60,7 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
         LinearLayout linearLayoutTmap = (LinearLayout)findViewById(R.id.linearLayoutSetTmap);
         linearLayoutTmap.addView(tMapView);
         set_button = (Button) findViewById(R.id.set_btn);
-        here_button = (Button)findViewById(R.id.locationHere);
+        here_button = (FloatingActionButton) findViewById(R.id.locationHere);
 
         // Request For GPS permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -153,6 +154,6 @@ public class SetLocationActivity extends AppCompatActivity implements TMapGpsMan
 
         // 선택한 위치 저장
         set_latitude = point.getLatitude();
-        set_longitude =  point.getLatitude();
+        set_longitude =  point.getLongitude();
     }
 }
