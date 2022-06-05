@@ -8,7 +8,7 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
 {
     public static OverrideUnityActivity instance = null;
 
-   // abstract protected void showMainActivity(String setToColor);
+    abstract protected void showMainActivity(String setToColor);
     abstract protected String getPointCount();
     abstract protected String getLatitudes();
     abstract protected String getLongitudes();
